@@ -1,5 +1,11 @@
 $(document).ready(function() {
 	setSize();
+	
+	$(".card").each(function()	{
+		var mainHeight = $(this).outerHeight() - $(this).children("header").outerHeight() - $(this).children("header").outerHeight();
+		$(this).children(".main").outerHeight(mainHeight);
+	});	
+
 });
 
 $(window).resize(function() {

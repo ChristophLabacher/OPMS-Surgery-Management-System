@@ -9,6 +9,6 @@ $(document).ready(function() {
 		$( ".timescale" ).css("left", scrollLeft + "px");		
 		
 		var scrollTop = $( ".content" ).scrollTop();
-		$( ".column header" ).css("top", scrollTop + "px");		
+		$( ".column header.room" ).css("top", scrollTop + "px");		
 	});
 });
