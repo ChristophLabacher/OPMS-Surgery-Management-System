@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+/************************
+*		Colors			*
+************************/
+
+$white: rgb(255, 255, 255);
+$grey1: rgb(200, 200, 200);
+$grey2: rgb(179, 179, 179);
+$grey3: rgb(114, 114, 114);
+$grey4: rgb(112, 112, 112);
+$grey5: rgb(99, 99, 99);
+$grey6: rgb(71, 71, 71);
+$grey7: rgb(63, 63, 63);
+$grey8: rgb(58, 58, 58);
+$grey9: rgb(45, 45, 45);
+$black: rgb(0, 0, 0);
+
+$lightyellow: rgb(237, 191, 64);
+$yellow: rgb(247, 159, 52);
+$darkyellow: rgb(232, 120, 37);
+$lightblue: rgb(50, 179, 224);
+$darkblue: rgb(13, 131, 182);
+$lightgreen: rgb(0, 175, 150);
+$darkgreen: rgb(0, 135, 112);
+$red: rgb(211, 49, 49);
+
+/************************
+*		Grid			*
+************************/
+
+html	{
+	font-size: 10px;
+	cursor: default;
+}
+	
+body	{
+	overflow: hidden;
+}
+
+/************************
+*		STRUCTURE		*
+************************/
+
+header	{
+	height: 5rem;
+	width: 100%;
+}
+
+nav	{
+	height: 100%;
+	width: 6rem;
+	float: left;
+}
+
+.toolbar	{
+	height: 6rem;
+	width: 100%;
+	float: left;
+}
+
+.content	{
+	float: left;
+	position: relative;
+	overflow-x: scroll;
+	overflow-y: auto;
+}
+
+.timescale	{
+	width: 5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-top: 5rem;
+	z-index: 2;
+	
+	section	{
+		height: 12rem;
+	}
+}
+
+.timetable	{
+	overflow: hidden;
+}
+
+.column	{
+	width: 18rem;
+	height: 100%;
+	position: relative;
+	float: left;
+	overflow: hidden;
+	transition: width .6s;
+	
+	header	{
+		height: 5rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	
+	&.active	{
+		width: 18rem * 4;
+	}
+	
+	.column-content	{
+		width: 18rem * 4;
+		height: 100%;		
+	}
+	
+	.cards	{
+		width: 18rem;
+		height: 100%;
+		float: left;
+	}
+	
+	.details	{
+		width: 18rem * 3;
+		height: 100%;
+		float: left;
+	}
+}
+
+footer	{
+	height: 0;
+	//height: 4rem;
+	width: 100%;
+}
+
+/************************
+*		CONTENTS		*
+************************/
+
+header	{
+	background-image: linear-gradient($grey6 0%, $grey7 100%);
+	border-bottom: 1px solid $black;	
+}
+
+nav	{
+	background-color: $grey5;
+	border-right: 1px solid $grey7;	
+}
+
+.toolbar	{
+	background-color: $grey6;
+}
+
+.timescale	{
+	text-align: right;
+	
+	background-color: $grey1;
+	box-shadow: 0 0 3px black;
+	//border-right: 1px solid $grey4;	
+	
+	section	{
+		padding-right: 1rem;
+		padding-top: .3rem;
+		border-top: 1px solid $grey5;
+	}
+}
+
+.timetable	{
+	background: linear-gradient(
+	  to bottom,
+	  $grey3,
+	  $grey3 50%,
+	  $grey5 50%,
+	  $grey5
+	);
+	background-size: 100% 12rem;
+	background-position: 0 -2rem;
+}
+
+.column	{
+	border-right: 1px solid $grey5;		
+
+	header	{
+		background-color: $grey1;
+		background-image: none;
+		border-bottom: none;
+		
+		line-height: 5rem;
+		text-align: center;
+		vertical-align: middle;
+	}
+}
+
+footer	{
+	background-image: linear-gradient($grey6 0%, $grey7 100%);
+	border-top: 1px solid $black;	
+}
+
+
+/************************
+*		TYPOGRAPHY		*
+************************/
+
+body {
+	font-family: DIN, "DIN Pro", Helvetica, Arial, sans-serif;
+	color: #000000;
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 1.5em;	
+	background-color: #FFFFFF;
+}
+
+.clickable:hover	{
+	cursor: pointer;
+}
+
+/************************
+*		RESPONSIVE		*
+************************/
+@media all and (max-width: 480px) {
+
+}

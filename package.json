@@ -1,0 +1,8 @@
+{
+  "name": "OP-Management Software",
+  "main": "index.html",
+  "window": {
+    "title": "OP-Management Software",
+    "toolbar": false
+  }
+}
