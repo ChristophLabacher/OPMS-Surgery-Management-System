@@ -30,11 +30,11 @@ $grey5: hsl(189,0,39);
 $grey6: hsl(189,0,28);
 
 //Cool grey
-$grey1: hsl(211,20,10);
-$grey2: hsl(211,14,15);
+$grey1: hsl(211,25,10);
+$grey2: hsl(211,20,15);
 $grey3: hsl(211,3,44);
 $grey4: hsl(211,3,46);
-$grey5: hsl(211,5,39);
+$grey5: hsl(211,8,39);
 $grey6: hsl(211,10,23);
 $grey7: hsl(211,10,34);
 
@@ -98,7 +98,7 @@ nav	{
 	top: 0;
 	left: 0;
 	padding-top: 5rem;
-	z-index: 2;
+	z-index: 3;
 	
 	section	{
 		height: 12rem;
@@ -233,7 +233,7 @@ nav	{
 		text-transform: uppercase;
 		letter-spacing: .03em;
 		transition: all .5s;
-		border-right: 1px solid $grey2;
+		//border-right: 1px solid $grey2;
 		
 		&:hover	{
 			color: $lightgreen;
@@ -251,7 +251,7 @@ nav	{
 		&.right	{
 			float: right;	
 			border-right: none;
-			border-left: 1px solid $grey2;
+			//border-left: 1px solid $grey2;
 		}
 	}
 }
@@ -276,13 +276,18 @@ nav	{
 		);
 		background-size: 100% 12rem;
 */
-		
+		border-top: 1px solid $grey7;		
 		padding-right: .5rem;
 		padding-top: .3rem;
+		
+		&:first-of-type	{
+			border-top: none;
+		}
 	}
 }
 
 .timetable	{
+
 	background: linear-gradient(
 	  to bottom,
 	  $grey3,
@@ -331,7 +336,7 @@ nav	{
 		}
 	}
 	
-	header	{
+	.header	{
 		border-radius: 3px 3px 0 0;
 		padding: .7rem;
 		height: auto;
@@ -342,10 +347,9 @@ nav	{
 	.main	{
 		background-color: $grey6;
 		padding: .7rem;
-		//height: 100%;
 	}
 	
-	footer	{
+	.footer	{
 		border-radius: 0 0 3px 3px;
 		padding: 0 .7rem .7rem .7rem;
 		height: auto;

@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	setSize();
 	
-	$(".card").each(function()	{
-		var mainHeight = $(this).outerHeight() - $(this).children("header").outerHeight() - $(this).children("header").outerHeight();
-		$(this).children(".main").outerHeight(mainHeight);
+	$(".card-container").each(function()	{
+		var mainHeight2 = $(this).outerHeight() - $(this).find("header").outerHeight() - $(this).find("footer").outerHeight();
+		$(this).find(".main").outerHeight(mainHeight2);
 	});	
 
 });
@@ -17,6 +17,11 @@ function setSize()	{
 	
 	// Height of the main-element: Screen height - header - footer
 	var mainHeight = $(window).height() - $("header").outerHeight() - $("footer").outerHeight();
+		console.log($(window).height());
+	console.log($("header").outerHeight() );
+	console.log($("footer").outerHeight() );
+
+	console.log(mainHeight);
 	$("main").outerHeight(mainHeight);	
 	
 	// Width of toolbar and content: Screen width - nav
