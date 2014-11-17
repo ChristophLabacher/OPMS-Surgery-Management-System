@@ -1,0 +1,124 @@
+html	{
+	font-size: 10px;
+}
+
+@import 'reset';
+@import 'color';
+@import 'structure';
+@import 'z-index';
+
+body	{
+	font-family: "DIN Pro", "DIN Next", DIN, Helvetica, Arial, sans-serif;
+	color: $black;
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 1.5em;	
+}
+
+/************************
+*		CONTAINER		*
+************************/
+
+header	{
+	background-color: $black;
+}
+
+nav	{
+	background-color: $red;
+	transition: width .5s;
+	
+	.action-list li	{
+		width: 23rem;
+		padding: 0;
+	}
+}
+
+main	{
+	background-color: $darkblue;
+}
+
+footer	{
+	background-color: $black;
+}
+
+/************************
+*		ELEMENTS		*
+************************/
+
+.toolbar	{
+	height: 5rem;
+	background-color: $lightblue;
+	transition: height .5s;
+	
+	&:hover	{
+			height: 15rem;
+	}
+}
+
+.center	{
+	position: relative;
+}
+
+.scale	{
+	background-color: $lightyellow;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.action-list	{
+	li	{
+		height: 5rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		float: left;
+		
+		line-height: 5rem;
+		vertical-align: middle;
+		
+		text-transform: uppercase;
+		color: $white;
+		
+		img	{
+			padding: 1.5rem;
+			width: 5rem;
+			float: left;
+		}
+		
+		&:hover	{
+			cursor: pointer;
+		}
+		
+		&.right	{
+			float: right;
+		}
+	}
+}
+
+/************************
+*		SCHEDULE		*
+************************/
+
+.scale-time	{
+	width: 5rem;
+	
+	li	{
+		height: 12rem;
+	}
+}
+
+.scale-room	{
+	width: 100%;
+	height: 5rem;
+	
+	li	{
+		width: 18rem;
+		height: 5rem;
+		float: left;
+	}
+}
+
+.table	{
+	width: 2000px;
+	height: 2000px;
+}
