@@ -11,27 +11,33 @@
 
 		<!-------------------------<!--! STYLES ------------------------------>
 		<link rel="stylesheet" type="text/css" href="styles/normalize.css">
-		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<link rel="stylesheet" type="text/css" href="styles/styleAlt.css">
 	
 		<!-------------------------<!--! LIBARIES ------------------------------>
 		<script type="text/javascript" src="scripts/libaries/jquery.js"></script>
 		
 		<!-------------------------<!--! SCRIPTS ------------------------------>
-		<script type="text/javascript" src="scripts/setup.js"></script>
-		<script type="text/javascript" src="scripts/function.js"></script>
+		<script type="text/javascript" src="scripts/setupAlt.js"></script>
+		<script type="text/javascript" src="scripts/functionAlt.js"></script>
 	
 	</head>
 	
 	<body>
 		
-		<header>OPMS</header>
+		<header class="clearfix">
+			<h1>Surgery Management System</h1>
+			<time>Fr. 21.11.14 | 03:46</time>
+		</header>
 		
 		<main class="clearfix">
 		
 			<nav>
 				<ul class="clearfix">
-					<li><img src="imgs/assets/icons/surgery.png"></li>
-					<li><img src="imgs/assets/icons/time.png"></li>
+					<li><img src="imgs/assets/icons/statistic.png">Statistiken</li>
+					<li><img src="imgs/assets/icons/barchart.png">Status</li>
+					<li class="active"><img src="imgs/assets/icons/schedule.png">Zeitplan</li>
+					<li><img src="imgs/assets/icons/person.png">Schichtplan</li>
+					<li class="warning"><img src="imgs/assets/icons/message.png">Mitteilungen</li>
 				</ul>				
 			</nav>
 			
@@ -74,7 +80,7 @@
 				</div>
 				
 				<div class="timetable">
-					<article class="column clickable">
+					<article class="column">
 						<header class="room"><b>Saal 1</b> – Neurologie</header>
 						
 						<div class="column-content cleafix">
@@ -112,8 +118,28 @@
 
 						<div class="column-content cleafix">
 							<section class="cards">
+							
+								<div class="card-container" style="top: 170px; height: 120px;">
+									<div class="card passed">
+										<div class="header">
+											Maier, Ursula<br>
+											20.12.48
+										</div>
+										
+										<div class="main">
+											<p>Implementation zementfreie HTP li.</p>
+											<p>OP: AVJ, AJW, BAP</p>
+										</div>
+										
+										<div class="footer">
+											Saal 2<br>
+											14:30 – 16:00
+										</div>
+									</div>
+								</div>
 								
 							</section>
+
 							
 							<section class="details">
 								
@@ -123,30 +149,80 @@
 					
 					<article class="column">
 						<header class="room">Saal 3</header>
+						
+							<section class="cards">
+								
+							</section>
+							
+							<section class="details">
+								
+							</section>
 					</article>
 					
 					<article class="column">
 						<header class="room">Saal 4</header>
+							<section class="cards">
+								
+							</section>
+							
+							<section class="details">
+								
+							</section>
 					</article>
 					
 					<article class="column">
 						<header class="room">Saal 5</header>
+							<section class="cards">
+								
+							</section>
+							
+							<section class="details">
+								
+							</section>
 					</article>
 					
 					<article class="column">
 						<header class="room">Saal 6</header>
+							<section class="cards">
+								
+							</section>
+							
+							<section class="details">
+								
+							</section>
 					</article>
 					
 					<article class="column">
 						<header class="room">Saal 7</header>
+							<section class="cards">
+								
+							</section>
+							
+							<section class="details">
+								
+							</section>
 					</article>
 					
 					<article class="column">
 						<header class="room">Saal 8</header>
+							<section class="cards">
+								
+							</section>
+							
+							<section class="details">
+								
+							</section>
 					</article>
 					
 					<article class="column">
 						<header class="room">Saal 9</header>
+							<section class="cards">
+								
+							</section>
+							
+							<section class="details">
+								
+							</section>
 					</article>
 					
 					<article class="column">
@@ -173,7 +249,10 @@
 			
 		</main>
 
-		<footer>Footer</footer>
+		<footer class="clearfix">
+			<h1>Dr. Max Mustermann</h1>
+			<time>Fr. 21.11.14 | 03:46</time>
+		</footer>
 	
 	</body>
 	

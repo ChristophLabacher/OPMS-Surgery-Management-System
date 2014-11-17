@@ -1,0 +1,26 @@
+header	{
+	height: 5rem;
+	width: 100%;
+}
+
+nav	{
+	width: 5rem;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	
+	&:hover	{
+		width: 23rem;
+	}
+}
+
+main	{
+	overflow: hidden;
+}
+
+footer	{
+	height: 3rem;
+	width: 100%;
+	float: left;
+
+}

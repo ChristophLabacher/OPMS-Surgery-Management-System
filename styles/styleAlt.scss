@@ -6,6 +6,7 @@
 
 $white: rgb(255, 255, 255);
 
+
 // header, footer
 //$grey1: #252525;
 $grey1: hsl(189,0,15);
@@ -30,13 +31,20 @@ $grey5: hsl(189,0,39);
 $grey6: hsl(189,0,28);
 
 //Cool grey
+
+$grey0: hsl(211,20,5);
 $grey1: hsl(211,25,10);
 $grey2: hsl(211,20,15);
+$grey2: hsl(211,20,13);
 $grey3: hsl(211,3,44);
 $grey4: hsl(211,3,46);
 $grey5: hsl(211,8,39);
+$transparentgrey5: rgba(110, 115, 120, .8);
 $grey6: hsl(211,10,23);
+$grey6: hsl(211,10,18);
 $grey7: hsl(211,10,34);
+$grey8: hsl(211,20,15);
+
 
 $black: rgb(0, 0, 0);
 
@@ -74,9 +82,12 @@ header	{
 
 nav	{
 	height: 100%;
-	width: 5rem;
-	width: 0;
+	width: 18rem;
+	overflow: hidden;
+	//width: 5rem;
+	//width: 0;
 	float: left;
+	transition: width .8s;
 }
 
 .toolbar	{
@@ -98,7 +109,7 @@ nav	{
 	top: 0;
 	left: 0;
 	padding-top: 5rem;
-	z-index: 3;
+	z-index: 5;
 	
 	section	{
 		height: 12rem;
@@ -122,7 +133,7 @@ nav	{
 		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: 2;
+		z-index: 4;
 	}
 	
 	&.active	{
@@ -148,8 +159,8 @@ nav	{
 }
 
 footer	{
-	//height: 0;
-	height: 4rem;
+	height: 0;
+	//height: 3rem;
 	width: 100%;
 }
 
@@ -161,18 +172,46 @@ body > header	{
 	background-color: $grey1;
 	line-height: 5rem;
 	vertical-align: middle;
-	padding-left: 2rem;
+	padding-left: 1.5rem;
 	padding-right: 2rem;
-		
-	color: $lightgreen;
-	font-weight: 500;
-	letter-spacing: .05em;
-	text-transform: uppercase;
+	color: $grey3;
+	
+	h1	{
+		color: $lightgreen;
+		font-weight: 500;
+		letter-spacing: .05em;
+		text-transform: uppercase;
+		font-size: 1em;
+		margin: 0;
+		float: left;
+	}
+	
+	time	{
+		float: right;
+	}
 }
 
 footer	{
 	background-color: $grey1;
-}
+	line-height: 3rem;
+	vertical-align: middle;
+	padding-left: 1.5rem;
+	padding-right: 2rem;
+	color: $grey3;
+	
+	h1	{
+		//color: $lightgreen;
+		font-weight: 300;
+		letter-spacing: .05em;
+		text-transform: uppercase;
+		font-size: 1em;
+		margin: 0;
+		float: left;
+	}
+	
+	time	{
+		float: right;
+	}}
 
 nav	{
 	background-color: $grey2;
@@ -188,22 +227,39 @@ nav	{
 	
 	li {
 		height: 5rem;
-		width: 5rem;
-		padding: (5rem - 2.5rem)/2;
-		
+		width: 18rem;
+		padding: (5rem - 2rem)/2;
+		color: $white;
+		line-height: 2rem;
+		text-transform: uppercase;
+		letter-spacing: .03em;
+		transition: all .5s;
+		letter-spacing: .05em;
+				
 		border-bottom: 1px solid $grey1;
 		display: block;
-		border-right: 1px solid $grey1;	
-		transition: all .3s;
+		//border-right: 1px solid $grey1;	
+		transition: all .1s;
 		
 		&:hover	{
 			cursor: pointer;
-			background-color: $darkgreen;
-			box-shadow: inset 0 0 2px rgba(0,0,0,.5);
+			background-color: $lightgreen;
+			//box-shadow: inset 0 0 2px rgba(0,0,0,.5);
 		}
 		
 		img	{
-			width: 2.5rem;
+			float: left;
+			height: 2rem;
+			padding-right: (5rem - 2rem)/2;
+		}
+		
+		&.active	{
+			background-color: $darkgreen;
+		}
+		
+		&.warning	{
+			//border-left: .5rem solid red;
+			//padding-left: (5rem - 2rem)/2 - .5rem;
 		}
 	}
 }
@@ -232,7 +288,7 @@ nav	{
 		color: $white;
 		text-transform: uppercase;
 		letter-spacing: .03em;
-		transition: all .5s;
+		transition: all .1s;
 		//border-right: 1px solid $grey2;
 		
 		&:hover	{
@@ -257,12 +313,13 @@ nav	{
 }
 
 .content	{
+	background-color: $grey2;
+
 }
 
 .timescale	{
 	background-color: $grey5;
 	border-right: 1px solid $grey7;
-	
 	text-align: right;
 	
 	section	{
@@ -276,7 +333,7 @@ nav	{
 		);
 		background-size: 100% 12rem;
 */
-		border-top: 1px solid $grey7;		
+		border-top: 1px dotted $grey7;		
 		padding-right: .5rem;
 		padding-top: .3rem;
 		
@@ -284,10 +341,23 @@ nav	{
 			border-top: none;
 		}
 	}
+	
+	.now	{
+		margin: 0;
+		width: 100%;
+		border: none;
+		position: absolute;
+		z-index: 0;
+		background-color: $white;
+		padding: .1rem .5rem;
+		//box-shadow: 0 0 3px rgba(0,0,0,.4);
+
+	}
 }
 
 .timetable	{
-
+	background-color: $grey8;
+/*
 	background: linear-gradient(
 	  to bottom,
 	  $grey3,
@@ -295,18 +365,21 @@ nav	{
 	  $grey4 50%,
 	  $grey4
 	);
+*/
 	background-size: 100% 12rem;
 	background-position: 0 -7rem;
 }
 
 .column	{
-	//border-right: 1px solid $grey5;
+	border-right: 1px dotted $grey0;
 
 	header.room	{
 		border-bottom: none;
 		background-color: $grey5;
+		//background-color: $transparentgrey5;
+
 		border-bottom: 1px solid $grey7;
-		border-right: 1px solid $grey7;
+	//	border-right: 1px solid $grey7;
 
 		line-height: 5rem;
 		text-align: center;
@@ -314,9 +387,32 @@ nav	{
 	}
 	
 	.details	{
-		background-color: $grey6;
+		background-color: $grey1;
 		box-shadow: inset 0 0 6px rgba(0,0,0,.5);
 	}
+	
+	hr	{
+		margin: 0;
+		width: 100%;
+		border: none;
+		border-top: 1px dotted $grey0;
+		position: absolute;
+		z-index: 0;
+		
+		&:nth-of-type(even)	{
+			opacity: 0.4;
+		}
+		
+		&.now	{
+			border-top: 2px solid $white;
+			z-index: 2;
+			box-shadow: 0 0 3px rgba(0,0,0,.4);
+		}
+	}
+}
+
+.cards	{
+	position: relative;
 }
 
 .card-container	{
@@ -325,14 +421,21 @@ nav	{
 	padding: 0 1rem;
 	//background-color: black;
 	color: $grey4;
+	z-index: 2;
 	
+	&:hover	{
+		z-index: 3;
+	}
+
 	.card	{
 		border-radius: 3px;
-		box-shadow: 0 0 4px rgba(0,0,0,.1);
+		//box-shadow: 0 0 4px rgba(0,0,0,.1);
 		transition: box-shadow .7s;
 		
 		&:hover	{
-			box-shadow: 0 0 15px rgba(0,0,0,.4);			
+			box-shadow: 0 0 15px rgba(0,0,0,.4);	
+			z-index: 99;	
+			cursor: pointer;	
 		}
 	}
 	
@@ -341,7 +444,7 @@ nav	{
 		padding: .7rem;
 		height: auto;
 		color: $white;
-		background-color: $darkblue;
+		background-color: $lightblue;
 	}
 	
 	.main	{
@@ -355,6 +458,20 @@ nav	{
 		height: auto;
 		background-color: $grey6;
 	}
+	
+	.passed	{
+		opacity: .3;
+		box-shadow: none;
+		transition: opacity .5s;
+		
+		&:hover	{
+			opacity: 1;
+		}
+		
+		.header	{
+			background-color: $darkyellow;
+		}
+	}
 }
 
 
@@ -364,7 +481,7 @@ nav	{
 ************************/
 
 body {
-	font-family: DIN, "DIN Pro", Helvetica, Arial, sans-serif;
+	font-family: "DIN Pro", "DIN Next", DIN, Helvetica, Arial, sans-serif;
 	color: $black;
 	font-weight: 300;
 	font-size: 13px;
