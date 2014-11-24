@@ -1,5 +1,14 @@
+/************************
+*		BASECOLORS		*
+************************/
+
 $white: rgb(255,255,255);
 $black: rgb(0,0,0);
+
+
+/************************
+*		COLORSCALE		*
+************************/
 
 $lightyellow: rgb(237, 191, 64);
 $yellow: rgb(247, 159, 52);
@@ -9,3 +18,57 @@ $darkblue: rgb(13, 131, 182);
 $lightgreen: rgb(0, 175, 150);
 $darkgreen: rgb(0, 135, 112);
 $red: rgb(211, 49, 49);
+
+
+/************************
+*		UI COLORS		*
+************************/
+
+// header & footer background
+$grey1: hsl(211,25,10);
+
+// nav background
+$grey2: hsl(211,20,15);
+
+// toolbar background
+$grey3: hsl(211,10,18);
+
+// scale background
+$grey4: hsl(211,8,39);
+
+// table background
+$grey5: hsl(211,20,15);
+
+// nav border
+$grey6: hsl(211,25,10);
+
+// card background
+$grey7: hsl(211,10,25);
+
+// column-cards hr, column-container border
+$grey8: hsl(211,20,3);
+
+// scale border
+$grey9: hsl(211,10,30);
+
+// column-details background
+$grey10: hsl(211,25,10);
+
+// sidebar background
+$grey11: hsl(211,8,48);
+
+// sidebar-details background
+$grey12: hsl(211,13,13);
+
+// action-list:hover, toolbar-content background
+$grey13: hsl(211,13,13);
+
+// card text 
+$grey14: hsl(211,10,55);
+
+// Input background
+$grey15: hsl(211,10,10);
+
+// Input border
+$grey16: hsl(211,10,3);
+

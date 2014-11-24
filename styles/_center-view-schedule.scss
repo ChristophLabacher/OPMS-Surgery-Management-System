@@ -1,0 +1,163 @@
+.scale	{
+	background-color: $grey4;
+}
+
+.scale-time	{
+	width: 5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 5rem;
+	
+	text-align: center;
+	
+	li	{
+		border-top: 1px dotted $grey9;
+		height: 12rem;
+		padding-top: .3rem;
+		
+		&:first-of-type	{
+			border: none;
+		}
+	}
+}
+
+.scale-room	{
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 5rem;
+	height: 5rem;
+	
+	text-align: center;
+	line-height: 5rem;
+	vertical-align: middle;
+	
+	li	{
+		height: 5rem;
+		width: 18rem;
+		float: left;
+		border-right: 1px dotted $grey9;
+		
+		&.active	{
+			width: 4*18rem;
+		}
+		
+		&:last-of-type	{
+			border: none;
+		}
+	}
+}
+
+.scale-overlay	{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 5rem;	
+	width: 5rem;
+}
+
+.table	{
+	margin-left: 5rem;
+	margin-top: 5rem;
+	overflow: scroll;
+	
+	background-color: $grey5;
+}
+
+.column-container	{
+	width: 18rem;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	border-right: 1px dotted $grey8;
+
+	&.active	{
+		width: 4*18rem;
+	}
+}
+
+.column	{
+	width: 4*18rem;
+	height: 100%;
+
+}
+
+.column-cards	{
+	width: 18rem;
+	height: 100%;
+	float: left;
+	position: relative;
+		
+	hr	{
+		position: absolute;
+		width: 100%;
+		border: none;
+		border-top: 1px dotted $grey8;
+		
+		&:nth-of-type(odd)	{
+			opacity: .3;
+		}
+	}
+}
+
+.column-details	{
+	width: 3*18rem;
+	height: 100%;
+	float: left;
+	background-color: $grey10;
+}
+
+.card-container	{
+	position: absolute;
+	padding: 0 1rem;
+	width: 100%;
+}
+
+.card	{
+	width: 100%;
+	//height: 400px;
+	position: relative;
+	border-radius: $border-radius;
+	background-color: $grey7;
+	color: $grey14;
+
+	.header	{
+		border-radius: $border-radius $border-radius 0 0;
+		padding: .7rem 1rem;
+		cursor: grab;
+		color: $white;
+	}
+	
+	.main	{
+		padding: .7rem 1rem;
+		
+		.diagnose	{
+			margin-bottom: .5rem;
+		}
+	}
+	
+	.footer	{
+		padding: 0 1rem 1rem 1rem;	
+		position: absolute;
+		bottom: 0;
+		width: 100%;	
+	}
+}
+
+.sidebar	{
+	padding-top: 1rem;
+}
+
+.sidebar .card-container	{
+	position: static;
+	padding-bottom: 1rem;
+	float: left;
+}
+
+.add-surgery	{
+	width: 2 * 18rem;
+	height: 2 * 18rem;
+	float: left;
+	padding: 2rem;
+}
