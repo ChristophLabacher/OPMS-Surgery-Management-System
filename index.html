@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+	
+		<!-------------------------<!--! META ------------------------------>
+		<title>Surgery Management System</title>
+		
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+		<!-------------------------<!--! STYLES ------------------------------>
+		<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+	
+		<!-------------------------<!--! LIBARIES ------------------------------>
+		<script type="text/javascript" src="scripts/libaries/jquery.js"></script>
+		
+		<!-------------------------<!--! SCRIPTS ------------------------------>
+		<script type="text/javascript" src="scripts/setup.js"></script>
+		<script type="text/javascript" src="scripts/function.js"></script>
+	
+	</head>
+	
+	<body>
+		
+		<header class="clearfix">
+			<h1>Surgery Management System</h1>
+			<time>Fr. 21.11.14 | 03:46</time>
+		</header>
+		
+		<main>
+			<nav class="inactive">
+				<ul class="action-list clearfix">
+					<li><img src="imgs/assets/icons/statistic.png">Statistiken</li>
+					<li id="barchart"><img src="imgs/assets/icons/barchart.png">Status</li>
+					<li class="active" id="schedule"><img src="imgs/assets/icons/schedule.png">Zeitplan</li>
+					<li><img src="imgs/assets/icons/person.png">Schichtplan</li>
+					<li class="warning"><img src="imgs/assets/icons/message.png">Mitteilungen</li>
+				</ul>
+				
+				<ul class="action-list expand clearfix">
+					<li class=""><img src="imgs/assets/icons/arrow-right.png">Menü ausklappen</li>
+				</ul>
+			</nav>
+			
+			<div class="center clearfix">
+				
+				<div class="center-view barchart">
+					<div class="toolbar">
+						<ul class="action-list clearfix">
+							<li><img src="imgs/assets/icons/time.png">Fr., 21.11.14</li>
+							<li><img src="imgs/assets/icons/emergency.png">Not-OP</li>
+							<li><img src="imgs/assets/icons/print.png">Ansicht drucken</li>
+							<li class="right"><img src="imgs/assets/icons/add.png">OP anlegen</li>
+						</ul>
+						
+						<div class="toolbar-content">
+							<ul class="action-list">
+								<li>Gestern</li>
+								<li>Heute</li>
+								<li>Morgen</li>
+							</ul>
+						</div><!-- content -->
+					</div><!-- toolbar -->
+					
+					<div class="content">
+						
+						<div class="content-main clearfix">
+							Barchart							
+						</div><!-- content-main -->
+
+					</div><!-- content -->
+					
+				</div><!-- center-view barchart -->
+				
+				<div class="center-view schedule">
+					<div class="toolbar">
+						<ul class="action-list clearfix">
+							<li><img src="imgs/assets/icons/time.png">Fr., 21.11.14</li>
+							<li><img src="imgs/assets/icons/emergency.png">Not-OP</li>
+							<li><img src="imgs/assets/icons/print.png">Ansicht drucken</li>
+							<li class="right"><img src="imgs/assets/icons/add.png">OP anlegen</li>
+						</ul>
+						
+						<div class="toolbar-content">
+							<ul class="action-list">
+								<li>Gestern</li>
+								<li>Heute</li>
+								<li>Morgen</li>
+							</ul>
+							
+							<form>
+								<input placeholder="Quickentry" autofocus="true">
+							</form>
+							
+						</div><!-- content -->
+					</div><!-- toolbar -->
+					
+					<div class="content">
+						
+						<div class="content-main clearfix">
+							<div class="scale scale-time">
+								<ul>
+									<li>00:00</li>
+									<li>01:00</li>
+									<li>02:00</li>
+									<li>03:00</li>
+									<li>04:00</li>
+									<li>05:00</li>
+									<li>06:00</li>
+									<li>07:00</li>
+									<li>08:00</li>
+									<li>09:00</li>
+									<li>10:00</li>
+									<li>11:00</li>
+									<li>12:00</li>
+									<li>13:00</li>
+									<li>14:00</li>
+									<li>15:00</li>
+									<li>16:00</li>
+									<li>17:00</li>
+									<li>18:00</li>
+									<li>19:00</li>
+									<li>20:00</li>
+									<li>21:00</li>
+									<li>22:00</li>
+									<li>23:00</li>
+								</ul>
+							</div><!-- scale-time -->
+							
+							<div class="scale scale-room clearfix">
+								<ul>
+									<li>Saal 1</li>
+									<li>Saal 2</li>
+									<li class="active">Saal 3</li>
+									<li>Saal 4</li>
+									<li>Saal 5</li>
+									<li>Saal 6</li>
+									<li>Saal 7</li>
+									<li>Saal 8</li>
+									<li>Saal 9</li>
+									<li>Saal 10</li>
+									<li>Saal 11</li>
+									<li>Saal 12</li>
+								</ul>
+							</div><!-- scale-room -->
+							
+							<div class="scale scale-overlay"></div>
+							
+							<div class="table">
+								<div class="table-content clearfix">
+									
+									<div class="column-container">
+										<div class="column clearfix">
+											<div class="column-cards">
+												
+												<article class="card-container" style="top: 120px;">
+													<div class="card" style="height: 200px;">
+														<section class="header state-1">
+															<p>Maximilian Mustermann-Müller</p>
+															<p>13.04.1949</p>
+														</section>
+														
+														<section class="main">
+															<p class="diagnose">Implementation zementfreie HTP li.</p>
+															<p>OP: AVJ, AJW, BAP</p>
+														</section>
+														
+														<section class="footer">
+															<p>
+																<p>Saal 1</p>
+																<p>03:00 – 05:00</p>
+															</p>
+														</section>
+													</div>
+												</article>
+												
+											</div>
+											
+											<div class="column-details"></div>
+										</div>
+									</div>
+									
+									<div class="column-container">
+										<div class="column clearfix">
+											<div class="column-cards">
+												<article class="card-container" style="top: 200px;">
+													<div class="card" style="height: 240px;">
+														<section class="header state-5">
+															<p>Fritz Müller</p>
+															<p>13.04.1949</p>
+														</section>
+														
+														<section class="main">
+															<p class="diagnose">Implementation zementfreie HTP li.</p>
+															<p>OP: AVJ, AJW, BAP</p>
+														</section>
+														
+														<section class="footer">
+															<p>
+																<p>Saal 2</p>
+																<p>03:00 – 05:00</p>
+															</p>
+														</section>
+													</div>
+												</article>
+											</div>
+											
+											<div class="column-details"></div>
+										</div>
+									</div>
+									
+									<div class="column-container active">
+										<div class="column clearfix">
+											<div class="column-cards">
+											</div>
+											
+											<div class="column-details"></div>
+										</div>
+									</div>
+									
+									<div class="column-container">
+										<div class="column clearfix">
+											<div class="column-cards">
+											</div>
+											
+											<div class="column-details"></div>
+										</div>
+									</div>
+									
+									<div class="column-container">
+										<div class="column clearfix">
+											<div class="column-cards">
+											</div>
+											
+											<div class="column-details"></div>
+										</div>
+									</div>
+									
+									<div class="column-container">
+										<div class="column clearfix">
+											<div class="column-cards">
+											</div>
+											
+											<div class="column-details"></div>
+										</div>
+									</div>
+									
+									<div class="column-container">
+										<div class="column clearfix">
+											<div class="column-cards">
+											</div>
+											
+											<div class="column-details"></div>
+										</div>
+									</div>
+									
+								</div>
+							</div><!-- table -->
+							
+						</div><!-- content-main -->
+						
+						<div class="content-side clearfix">
+							<div class="sidebar clearfix">
+								
+								<article class="card-container">
+									<div class="card" style="height: 330px;">
+									</div>
+								</article>
+								
+								<article class="card-container">
+									<div class="card" style="height: 280px;">
+									</div>
+								</article>
+								
+								<article class="card-container">
+									<div class="card" style="height: 410px;">
+									</div>
+								</article>
+								
+							</div>
+							<div class="sidebar-details clearfix">
+								
+								<div class="add-surgery">
+									<form>
+										<input placeholder="test">
+										<input>
+									</form>
+									
+								</div>
+								<div class="add-surgery">2</div>
+								<div class="add-surgery">3</div>
+								<div class="add-surgery">4</div>
+								
+							</div>
+						</div><!-- content-side -->
+					</div><!-- content -->
+					
+					
+				</div><!-- center-view schedule -->
+								
+			</div><!-- center -->
+		</main>
+		
+		<!--<footer></footer>-->
+		
+	</body>
