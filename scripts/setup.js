@@ -20,7 +20,6 @@ function setSize()	{
 	// Set each center view to fill the centr
 	var centerViewHeight = $(".center").outerHeight();
 	$(".center-view").outerHeight(centerViewHeight);
-	$(".center").css("top", -centerViewHeight);
 	
 	// Set the width of the room scale according to its content
 	var widthScaleRoom = 0;

@@ -18,6 +18,7 @@
 		
 		<!-------------------------<!--! SCRIPTS ------------------------------>
 		<script type="text/javascript" src="scripts/setup.js"></script>
+		<script type="text/javascript" src="scripts/getData.js"></script>
 		<script type="text/javascript" src="scripts/function.js"></script>
 	
 	</head>
@@ -45,34 +46,6 @@
 			</nav>
 			
 			<div class="center clearfix">
-				
-				<div class="center-view barchart">
-					<div class="toolbar">
-						<ul class="action-list clearfix">
-							<li><img src="imgs/assets/icons/time.png">Fr., 21.11.14</li>
-							<li><img src="imgs/assets/icons/emergency.png">Not-OP</li>
-							<li><img src="imgs/assets/icons/print.png">Ansicht drucken</li>
-							<li class="right"><img src="imgs/assets/icons/add.png">OP anlegen</li>
-						</ul>
-						
-						<div class="toolbar-content">
-							<ul class="action-list">
-								<li>Gestern</li>
-								<li>Heute</li>
-								<li>Morgen</li>
-							</ul>
-						</div><!-- content -->
-					</div><!-- toolbar -->
-					
-					<div class="content">
-						
-						<div class="content-main clearfix">
-							Barchart							
-						</div><!-- content-main -->
-
-					</div><!-- content -->
-					
-				</div><!-- center-view barchart -->
 				
 				<div class="center-view schedule">
 					<div class="toolbar">
@@ -151,67 +124,7 @@
 							<div class="table">
 								<div class="table-content clearfix">
 									
-									<div class="column-container">
-										<div class="column clearfix">
-											<div class="column-cards">
-												
-												<article class="card-container" style="top: 120px;">
-													<div class="card" style="height: 200px;">
-														<section class="header state-1">
-															<p>Maximilian Mustermann-Müller</p>
-															<p>13.04.1949</p>
-														</section>
-														
-														<section class="main">
-															<p class="diagnose">Implementation zementfreie HTP li.</p>
-															<p>OP: AVJ, AJW, BAP</p>
-														</section>
-														
-														<section class="footer">
-															<p>
-																<p>Saal 1</p>
-																<p>03:00 – 05:00</p>
-															</p>
-														</section>
-													</div>
-												</article>
-												
-											</div>
-											
-											<div class="column-details"></div>
-										</div>
-									</div>
-									
-									<div class="column-container">
-										<div class="column clearfix">
-											<div class="column-cards">
-												<article class="card-container" style="top: 200px;">
-													<div class="card" style="height: 240px;">
-														<section class="header state-5">
-															<p>Fritz Müller</p>
-															<p>13.04.1949</p>
-														</section>
-														
-														<section class="main">
-															<p class="diagnose">Implementation zementfreie HTP li.</p>
-															<p>OP: AVJ, AJW, BAP</p>
-														</section>
-														
-														<section class="footer">
-															<p>
-																<p>Saal 2</p>
-																<p>03:00 – 05:00</p>
-															</p>
-														</section>
-													</div>
-												</article>
-											</div>
-											
-											<div class="column-details"></div>
-										</div>
-									</div>
-									
-									<div class="column-container active">
+									<div class="column-container" room="1">
 										<div class="column clearfix">
 											<div class="column-cards">
 											</div>
@@ -220,7 +133,7 @@
 										</div>
 									</div>
 									
-									<div class="column-container">
+									<div class="column-container" room="2">
 										<div class="column clearfix">
 											<div class="column-cards">
 											</div>
@@ -229,7 +142,25 @@
 										</div>
 									</div>
 									
-									<div class="column-container">
+									<div class="column-container active" room="3">
+										<div class="column clearfix">
+											<div class="column-cards">
+											</div>
+											
+											<div class="column-details"></div>
+										</div>
+									</div>
+									
+									<div class="column-container" room="4">
+										<div class="column clearfix">
+											<div class="column-cards">
+											</div>
+											
+											<div class="column-details"></div>
+										</div>
+									</div>
+									
+									<div class="column-container" room="5">
 										<div class="column clearfix">
 											<div class="column-cards">
 											</div>

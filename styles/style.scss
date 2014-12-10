@@ -241,13 +241,30 @@ input	{
 	color: $black !important;
 }
 
-.state-4	{
+.state-2	{
+	background-color: $yellow;
+}
+
+.state-3, .state-11	{
+	background-color: $darkyellow;
+}
+
+.state-4, .state-10	{
 	background-color: $lightblue;
 }
 
-.state-5	{
+.state-5, .state-9	{
 	background-color: $darkblue;
 }
+
+.state-6, .state-8	{
+	background-color: $lightgreen;
+}
+
+.state-7	{
+	background-color: $darkgreen;
+}
+
 
 
 /************************

@@ -20,24 +20,13 @@ $(document).ready(function() {
 			$(".toolbar").toggleClass("active");
 		}
 	});
-	
-	$("#barchart").click(function()	{
-		$("nav li").removeClass("active");
-		$(this).addClass("active");
-		//$(".center").css("top", 0);
-	});
-	$("#schedule").click(function()	{
-		$("nav li").removeClass("active");
-		$(this).addClass("active");
-		//$(".center").css("top", -$(".center").outerHeight());
-	});
 
 	// When the table is scrolled transform the scales accordingly
 	$(".table").scroll(function() {
 		var scrollLeft = $( ".table" ).scrollLeft();
-		$( ".scale-room" ).css("left", -scrollLeft + "px");		
+		$( ".scale-room" ).css("transform", "translateX(" + -scrollLeft + "px)");		
 		
 		var scrollTop = $( ".table" ).scrollTop();
-		$( ".scale-time" ).css("top", -scrollTop + "px");		
+		$( ".scale-time" ).css("transform", "translateY(" + -scrollTop + "px)");		
 	});
 });
