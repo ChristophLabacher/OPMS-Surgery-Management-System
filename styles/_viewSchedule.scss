@@ -1,0 +1,111 @@
+.schedule	{
+	.toolbar .add-surgery	{
+		float: right;
+		
+		li	{
+			width: $bigUnit;
+		}
+	}
+	
+	.scale	{
+		list-style: none;
+	}
+	
+	.scale-time	{
+		width: 5rem;
+		padding-top: 5rem;
+		
+		float: left;
+		
+		text-align: center;
+		
+		li	{
+			height: 12rem;
+			padding-top: .5rem;	
+			border-top: 1px solid black;
+			
+			&:first-child	{
+				border-top: none;
+			}
+		}
+		
+		background-color: olive;
+	}
+	
+	.scale-rooms	{
+		height: 5rem;
+		width: 11 * $bigUnit;	
+		margin-left: 5rem;
+		
+		li {
+			height: 5rem;
+			width: $bigUnit;
+			float: left;
+			
+			padding: 2.5rem 0 0 1rem;
+			
+			abbr	{
+				opacity: .6;
+				
+				&:before	{
+					content: "· ";
+				}
+			}
+			
+			&.active	{
+				width: 3 * $bigUnit;
+			}
+		}
+	}
+	
+	.timetable	{
+		height: 24 * 12rem;
+		width: 11 * $bigUnit;
+		margin-left: 5rem;
+		
+		background-color: lime;
+	}
+	
+	.column	{
+		float: left;
+		width: $bigUnit;
+		height: 24 * 12rem;
+		
+		overflow: hidden;
+		
+		border-right: 1px solid black;
+		
+		&.active	{
+			width: 3 * $bigUnit;
+		}
+		
+		.column-main	{
+			position: relative;
+			
+			width: $bigUnit;
+			height: 100%;
+
+			float: left;
+			
+			hr	{
+				margin: 0;
+				
+				position: absolute;
+				width: 100%;
+
+				border-top: 1px solid black;
+				
+				&:nth-of-type(odd)	{
+					border-style: dotted;
+				}
+			}
+		}
+		
+		.column-details	{
+			width: 2* $bigUnit;
+			height: 100%;
+
+			margin-left: $bigUnit;
+		}
+	}
+}

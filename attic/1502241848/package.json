@@ -1,0 +1,15 @@
+{
+  "name": "Money",
+  "main": "index.html",
+  "window": {
+    "title": "Money",
+    "toolbar": false,
+    "width": 1440,
+    "height": 900,
+    //"width": 1240,
+    //"height": 700,
+    "min_width": 640,
+    "min_height": 400,
+    "position":"center"
+  }
+}
