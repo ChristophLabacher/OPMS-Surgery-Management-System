@@ -1,0 +1,350 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+/************************
+*		CLEARFIX		*
+************************/
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+html[xmlns] .clearfix {
+  display: block; }
+
+* html .clearfix {
+  height: 1%; }
+
+html {
+  font-size: 10px;
+  background-color: grey;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+/************************
+*		BODY		*
+************************/
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  height: 100vh; }
+
+nav {
+  width: 5rem;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  -webkit-transition: width 0.5s;
+          transition: width 0.5s;
+  background-color: #FF0000; }
+  nav.active {
+    width: 25rem; }
+
+main {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: #FFFF00; }
+
+/************************
+*		NAV				*
+************************/
+nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden; }
+  nav ul.action-list li {
+    width: 25rem;
+    padding: 0; }
+    nav ul.action-list li img {
+      height: 5rem;
+      width: 5rem;
+      padding: 1.2rem;
+      margin-top: 0;
+      margin-right: 0.5rem; }
+  nav ul.action-list:nth-of-type(2) {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    height: 100%; }
+    nav ul.action-list:nth-of-type(2) li {
+      height: 100%; }
+    nav ul.action-list:nth-of-type(2):hover {
+      cursor: pointer;
+      background-color: lime; }
+
+/************************
+*		VIEW			*
+************************/
+.view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100vh; }
+  .view .toolbar {
+    width: 100%;
+    height: 5rem;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    overflow: hidden;
+    background-color: green; }
+    .view .toolbar.active {
+      height: 10rem; }
+    .view .toolbar .toolbar-top {
+      width: 100%;
+      height: 5rem; }
+    .view .toolbar .toolbar-content {
+      height: 5rem;
+      background-color: fuchsia; }
+  .view .center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-flex-shrink: 1;
+        -ms-flex-negative: 1;
+            flex-shrink: 1;
+    background-color: navy; }
+    .view .center .center-main {
+      -webkit-box-flex: 1;
+      -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+      -webkit-flex-shrink: 1;
+          -ms-flex-negative: 1;
+              flex-shrink: 1;
+      overflow: hidden;
+      background-color: maroon; }
+    .view .center .center-side {
+      -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+              flex-shrink: 0;
+      width: 20rem;
+      overflow: hidden;
+      background-color: silver; }
+
+/************************
+*		ACTION-LIST		*
+************************/
+ul.action-list {
+  float: left; }
+  ul.action-list li {
+    float: left;
+    height: 5rem;
+    padding: 0 2rem;
+    overflow: hidden;
+    list-style: none;
+    line-height: 5rem;
+    text-transform: uppercase;
+    -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s; }
+    ul.action-list li img {
+      display: block;
+      float: left;
+      width: 2rem;
+      height: 2rem;
+      margin-top: 1.5rem;
+      margin-right: 1rem; }
+    ul.action-list li:hover {
+      cursor: pointer;
+      background-color: lime; }
+
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  color: #FFFFFF;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2em;
+  cursor: default;
+  -webkit-font-feature-settings: 'tnum';
+  -moz-font-feature-settings: 'tnum';
+  -ms-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum'; }
+
+.schedule .toolbar .add-surgery {
+  float: right; }
+  .schedule .toolbar .add-surgery li {
+    width: 20rem; }
+.schedule .scale {
+  list-style: none; }
+.schedule .scale-time {
+  width: 5rem;
+  padding-top: 5rem;
+  float: left;
+  text-align: center;
+  background-color: olive; }
+  .schedule .scale-time li {
+    height: 12rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid black; }
+    .schedule .scale-time li:first-child {
+      border-top: none; }
+.schedule .scale-rooms {
+  height: 5rem;
+  width: 220rem;
+  margin-left: 5rem; }
+  .schedule .scale-rooms li {
+    height: 5rem;
+    width: 20rem;
+    float: left;
+    padding: 2.5rem 0 0 1rem; }
+    .schedule .scale-rooms li abbr {
+      opacity: 0.6; }
+      .schedule .scale-rooms li abbr:before {
+        content: "· "; }
+    .schedule .scale-rooms li.active {
+      width: 60rem; }
+.schedule .timetable {
+  height: 288rem;
+  width: 220rem;
+  margin-left: 5rem;
+  background-color: lime; }
+.schedule .column {
+  float: left;
+  width: 20rem;
+  height: 288rem;
+  overflow: hidden;
+  border-right: 1px solid black; }
+  .schedule .column.active {
+    width: 60rem; }
+  .schedule .column .column-main {
+    position: relative;
+    width: 20rem;
+    height: 100%;
+    float: left; }
+    .schedule .column .column-main hr {
+      margin: 0;
+      position: absolute;
+      width: 100%;
+      border-top: 1px solid black; }
+      .schedule .column .column-main hr:nth-of-type(odd) {
+        border-style: dotted; }
+  .schedule .column .column-details {
+    width: 40rem;
+    height: 100%;
+    margin-left: 20rem; }
