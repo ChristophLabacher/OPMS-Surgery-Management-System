@@ -161,16 +161,23 @@ nav {
       margin-top: 0;
       margin-right: 0.5rem; }
   nav ul.action-list:nth-of-type(2) {
+    position: relative;
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    height: 100%; }
+    height: 100%;
+    opacity: 0.6;
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s; }
     nav ul.action-list:nth-of-type(2) li {
-      height: 100%; }
+      position: absolute;
+      bottom: 0; }
+    nav ul.action-list:nth-of-type(2) li:hover {
+      background-color: transparent; }
     nav ul.action-list:nth-of-type(2):hover {
-      cursor: pointer;
-      background-color: lime; }
+      opacity: 1;
+      cursor: pointer; }
 
 /************************
 *		VIEW			*
@@ -290,12 +297,30 @@ body {
   float: right; }
   .schedule .toolbar .add-surgery li {
     width: 20rem; }
+.schedule .center-main {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+.schedule .center-side {
+  -webkit-transition: width 0.6s;
+          transition: width 0.6s; }
+  .schedule .center-side.active {
+    width: 80rem; }
 .schedule .scale {
-  list-style: none; }
+  list-style: none;
+  position: absolute; }
 .schedule .scale-time {
   width: 5rem;
   padding-top: 5rem;
   float: left;
+  z-index: 1;
   text-align: center;
   background-color: olive; }
   .schedule .scale-time li {
@@ -319,10 +344,13 @@ body {
         content: "· "; }
     .schedule .scale-rooms li.active {
       width: 60rem; }
+.schedule .timetable-container {
+  margin: 5rem 0 0 5rem;
+  overflow: hidden;
+  position: relative; }
 .schedule .timetable {
   height: 288rem;
   width: 220rem;
-  margin-left: 5rem;
   background-color: lime; }
 .schedule .column {
   float: left;

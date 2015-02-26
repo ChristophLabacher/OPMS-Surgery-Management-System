@@ -57,17 +57,28 @@ nav	{
 		}
 	}
 	
+	// expand menu button
 	ul.action-list:nth-of-type(2)	{
+		position: relative;
+		
 		flex-grow: 1;
 		height: 100%;
+		opacity: .6;
+		
+		transition: opacity .3s;
 		
 		li {
-			height: 100%;
+			position: absolute;
+			bottom: 0;
+		}
+		
+		li:hover {
+			background-color: transparent;
 		}
 		
 		&:hover	{
+			opacity: 1;
 			cursor: pointer;
-			background-color: lime;
 		}
 	}
 }
@@ -121,8 +132,7 @@ nav	{
 		
 		.center-main	{
 			flex-grow: 1;
-			flex-shrink: 1;
-			
+			flex-shrink: 1;			
 			overflow: hidden;
 			
 			background-color: maroon;
@@ -130,9 +140,7 @@ nav	{
 		
 		.center-side	{
 			flex-shrink: 0;
-			
 			width: $bigUnit;
-			
 			overflow: hidden;
 			
 			background-color: silver;

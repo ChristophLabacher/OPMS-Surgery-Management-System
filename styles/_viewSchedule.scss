@@ -7,8 +7,24 @@
 		}
 	}
 	
+	.center-main	{
+		position: relative;
+		
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.center-side	{
+		transition: width .6s;
+		
+		&.active	{
+			width: 4 * $bigUnit;
+		}
+	}
+	
 	.scale	{
 		list-style: none;
+		position: absolute;
 	}
 	
 	.scale-time	{
@@ -16,6 +32,7 @@
 		padding-top: 5rem;
 		
 		float: left;
+		z-index: 1;
 		
 		text-align: center;
 		
@@ -58,11 +75,15 @@
 		}
 	}
 	
+	.timetable-container	{
+		margin: 5rem 0 0 5rem;
+		overflow: hidden;
+		position: relative;
+	}
+	
 	.timetable	{
 		height: 24 * 12rem;
 		width: 11 * $bigUnit;
-		margin-left: 5rem;
-		
 		background-color: lime;
 	}
 	
