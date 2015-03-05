@@ -13,5 +13,6 @@ $(document).ready(function()	{
 		}
 		
 		target.toggleClass("active");
+		$(this).toggleClass("active");
 	});
 });

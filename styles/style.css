@@ -106,6 +106,31 @@ html {
 *		UI COLORS		*
 ************************/
 /************************
+*		STATES		*
+************************/
+.state-1 {
+  background-color: #edbf40;
+  color: black !important; }
+
+.state-2 {
+  background-color: #f79f34; }
+
+.state-3, .state-11 {
+  background-color: #e87825; }
+
+.state-4, .state-10 {
+  background-color: #32b3e0; }
+
+.state-5, .state-9 {
+  background-color: #0d83b6; }
+
+.state-6, .state-8 {
+  background-color: #00af96; }
+
+.state-7 {
+  background-color: #008770; }
+
+/************************
 *		BODY		*
 ************************/
 body {
@@ -219,16 +244,16 @@ nav {
         -ms-flex-negative: 0;
             flex-shrink: 0;
     overflow: hidden;
+    background-color: #3b3c3d;
     border-bottom: 1px solid #262728;
-    background-color: #3b3c3d; }
+    -webkit-transition: height 0.5s;
+            transition: height 0.5s; }
     .view .toolbar.active {
       height: 10rem; }
     .view .toolbar .toolbar-top {
       width: 100%;
       height: 5rem;
       border-bottom: 1px solid #262728; }
-      .view .toolbar .toolbar-top li.active {
-        border-right: 1px solid #262728; }
     .view .toolbar .toolbar-content {
       height: 5rem;
       background-color: #363738; }
@@ -285,8 +310,8 @@ ul.action-list {
     list-style: none;
     line-height: 5rem;
     text-transform: uppercase;
-    background-color: #3b3c3d;
-    border-bottom: 1px solid #262728;
+    letter-spacing: 0.04em;
+    border: 1px solid transparent;
     -webkit-transition: all 0.3s;
             transition: all 0.3s; }
     ul.action-list li img {
@@ -298,10 +323,15 @@ ul.action-list {
       margin-right: 1rem; }
     ul.action-list li:hover {
       cursor: pointer;
-      background-color: #414344; }
+      background-color: #363738;
+      border-left: 1px solid #262728;
+      border-right: 1px solid #262728; }
     ul.action-list li.active {
       background-color: #363738;
-      border-bottom: 1px solid transparent; }
+      border-left: 1px solid #262728;
+      border-right: 1px solid #262728; }
+      ul.action-list li.active:first-child {
+        border-left-color: transparent; }
 
 /************************
 *		SCROLLBARS		*
@@ -326,19 +356,38 @@ body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
   color: white;
   font-weight: 300;
-  font-size: 14px;
-  line-height: 1.2em;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  line-height: 1.4em;
   cursor: default;
   -webkit-font-feature-settings: 'tnum';
   -moz-font-feature-settings: 'tnum';
   -ms-font-feature-settings: 'tnum';
   font-feature-settings: 'tnum'; }
 
+strong {
+  font-weight: 500; }
+
+.card {
+  z-index: 2; }
+
 .schedule .toolbar .add-surgery {
   float: right; }
   .schedule .toolbar .add-surgery li {
     border-left: 1px solid #262728;
     width: 20rem; }
+    .schedule .toolbar .add-surgery li img {
+      -webkit-transform: rotate(0);
+          -ms-transform: rotate(0);
+              transform: rotate(0);
+      -webkit-transition: -webkit-transform 0.5s;
+              transition: transform 0.5s; }
+    .schedule .toolbar .add-surgery li.active {
+      background-color: #414344; }
+      .schedule .toolbar .add-surgery li.active img {
+        -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+                transform: rotate(45deg); }
 .schedule .center-main {
   position: relative;
   display: -webkit-box;
@@ -434,3 +483,42 @@ body {
     background-color: #262728; }
   .schedule .column:last-child {
     border-right: none; }
+
+.card-container {
+  position: absolute;
+  padding: 0 1rem;
+  width: 100%; }
+
+.card {
+  width: 100%;
+  position: relative;
+  border-radius: 3px;
+  background-color: #363738;
+  color: #999999;
+  cursor: pointer; }
+  .card .header {
+    border-radius: 3px 3px 0 0;
+    padding: 1rem 1rem;
+    cursor: move;
+    color: white; }
+    .card .header .name {
+      font-weight: 500; }
+  .card .main {
+    padding: 0.7rem 1rem; }
+    .card .main .diagnose {
+      margin-bottom: 0.5rem; }
+  .card .footer {
+    padding: 0 1rem 1rem 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+  .card .handle {
+    position: absolute;
+    height: 1rem;
+    width: 100%; }
+  .card .handle-top {
+    top: 0;
+    cursor: n-resize; }
+  .card .handle-bottom {
+    bottom: 0;
+    cursor: s-resize; }

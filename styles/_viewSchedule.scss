@@ -5,6 +5,19 @@
 		li	{
 			border-left: 1px solid $grey6;
 			width: $bigUnit;
+			
+			img	{
+				transform: rotate(0);
+				transition: transform .5s;
+			}
+			
+			&.active	{
+				background-color: $grey3;
+				
+				img	{
+					transform: rotate(45deg);
+				}
+			}
 		}
 	}
 	
@@ -149,5 +162,62 @@
 		&:last-child	{
 			border-right: none;
 		}
+	}
+}
+
+.card-container	{
+	position: absolute;
+	padding: 0 1rem;
+	width: 100%;
+}
+
+.card	{
+	width: 100%;
+	position: relative;
+	border-radius: 3px;
+	background-color: $grey5;
+	color: $grey0;
+	cursor: pointer;
+
+	.header	{
+		border-radius: 3px 3px 0 0;
+		padding: 1rem 1rem;
+		cursor: move;
+		color: $white;
+		
+		.name	{
+			font-weight: 500;
+		}
+	}
+	
+	.main	{
+		padding: .7rem 1rem;
+		
+		.diagnose	{
+			margin-bottom: .5rem;
+		}
+	}
+	
+	.footer	{
+		padding: 0 1rem 1rem 1rem;	
+		position: absolute;
+		bottom: 0;
+		width: 100%;	
+	}
+	
+	.handle	{
+		position: absolute;
+		height: 1rem;
+		width: 100%;
+	}
+	
+	.handle-top	{
+		top: 0;
+		cursor: n-resize;
+	}
+	
+	.handle-bottom	{
+		bottom: 0;
+		cursor: s-resize;
 	}
 }

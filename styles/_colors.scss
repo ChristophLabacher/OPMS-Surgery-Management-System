@@ -17,7 +17,7 @@ $lightblue: rgb(50, 179, 224);
 $darkblue: rgb(13, 131, 182);
 $lightgreen: rgb(0, 175, 150);
 $darkgreen: rgb(0, 135, 112);
-$red: rgb(211, 49, 49);
+$red: rgb(209, 63, 63);
 
 
 /************************
@@ -30,4 +30,40 @@ $grey4: #3b3c3d;
 $grey3: #414344;
 $grey2: #494b4c;
 $grey1: #5c5e60;
+$grey0: #999999;
+
 $transparentwhite: rgba(255,255,255, .1);
+
+
+/************************
+*		STATES		*
+************************/
+
+.state-1	{
+	background-color: $lightyellow;
+	color: $black !important;
+}
+
+.state-2	{
+	background-color: $yellow;
+}
+
+.state-3, .state-11	{
+	background-color: $darkyellow;
+}
+
+.state-4, .state-10	{
+	background-color: $lightblue;
+}
+
+.state-5, .state-9	{
+	background-color: $darkblue;
+}
+
+.state-6, .state-8	{
+	background-color: $lightgreen;
+}
+
+.state-7	{
+	background-color: $darkgreen;
+}

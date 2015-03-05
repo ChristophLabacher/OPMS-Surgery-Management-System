@@ -12,6 +12,15 @@ $(document).ready(function()	{
 		}
 		
 		$("nav").toggleClass("active");
+	});
+	
+	/************************
+	*	Expand TOOLBAR		*
+	************************/
+	$(".toolbar ul[action = 'expand-toolbar'] li").click(function()	{	
+		var target = $(this).closest(".view").find(".toolbar");
 
+		$(this).toggleClass("active");		
+		target.toggleClass("active");
 	});
 });
