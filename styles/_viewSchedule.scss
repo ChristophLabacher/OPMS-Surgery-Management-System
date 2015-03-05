@@ -3,6 +3,7 @@
 		float: right;
 		
 		li	{
+			border-left: 1px solid $grey6;
 			width: $bigUnit;
 		}
 	}
@@ -28,34 +29,40 @@
 	}
 	
 	.scale-time	{
-		width: 5rem;
-		padding-top: 5rem;
+		width: $smallUnit;
+		padding-top: $smallUnit;
 		
 		float: left;
 		z-index: 1;
 		
 		text-align: center;
 		
+		background-color: $grey3;
+		border-right: 1px solid $grey4;
+		
 		li	{
-			height: 12rem;
+			height: 61px; /*6rem + 1px */;
+			margin-bottom: 59px /*6rem - 1px */;
 			padding-top: .5rem;	
-			border-top: 1px solid black;
+			border-top: 1px solid $transparentwhite;
+			border-bottom: 1px dotted $transparentwhite;
 			
 			&:first-child	{
 				border-top: none;
 			}
 		}
-		
-		background-color: olive;
 	}
 	
 	.scale-rooms	{
-		height: 5rem;
-		width: 11 * $bigUnit;	
+		height: $smallUnit;
+		width: 12 * $bigUnit;	
 		margin-left: 5rem;
+
+		background-color: $grey1;
+		border-bottom: 1px solid $grey3;
 		
 		li {
-			height: 5rem;
+			height: $smallUnit;
 			width: $bigUnit;
 			float: left;
 			
@@ -70,21 +77,29 @@
 			}
 			
 			&.active	{
-				width: 3 * $bigUnit;
+				width: 4 * $bigUnit;
 			}
 		}
 	}
 	
+	.scale-overlay	{
+		height: $smallUnit;
+		width: $smallUnit;
+		background: linear-gradient($grey3 30%, transparent 130%);
+		
+		z-index: 2;
+	}
+	
 	.timetable-container	{
 		margin: 5rem 0 0 5rem;
-		overflow: hidden;
+		overflow: scroll;
 		position: relative;
 	}
 	
 	.timetable	{
 		height: 24 * 12rem;
-		width: 11 * $bigUnit;
-		background-color: lime;
+		width: 12 * $bigUnit;
+		background-color: $grey1;
 	}
 	
 	.column	{
@@ -94,10 +109,10 @@
 		
 		overflow: hidden;
 		
-		border-right: 1px solid black;
+		border-right: 1px solid $grey3;
 		
 		&.active	{
-			width: 3 * $bigUnit;
+			width: 4 * $bigUnit;
 		}
 		
 		.column-main	{
@@ -114,7 +129,7 @@
 				position: absolute;
 				width: 100%;
 
-				border-top: 1px solid black;
+				border-top: 1px solid $transparentwhite;
 				
 				&:nth-of-type(odd)	{
 					border-style: dotted;
@@ -123,10 +138,16 @@
 		}
 		
 		.column-details	{
-			width: 2* $bigUnit;
+			width: 3 * $bigUnit;
 			height: 100%;
 
 			margin-left: $bigUnit;
+			background-color: $grey6;
+
+		}
+		
+		&:last-child	{
+			border-right: none;
 		}
 	}
 }

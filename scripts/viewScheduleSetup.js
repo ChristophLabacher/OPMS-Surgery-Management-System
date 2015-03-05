@@ -7,32 +7,14 @@ $(document).ready(function() {
 		}
 	});
 	
-	// Setup scrolling
-	myScroll = new IScroll('#timetable-scrollable', {
-		scrollX: true,
-		scrollY: true,
-		
-		mouseWheel: true,
-		scrollbars: true,
-		keyBindings: true,
-		
-		click: true,
-		disableMouse: true,
-		freeScroll: true,
-		momentum: false,
-		bounce: false,
-		
-		probeType: 2
-		
-	});
 	
-	myScroll.on('scroll', function()	{
-		console.log(this.x + " - " + this.y);
-		
-		$(".schedule .scale-time").css("transform", "translateY(" + this.y + "px)");
-		$(".schedule .scale-rooms").css("transform", "translateX(" + this.x + "px)");
-
+	// Scroll scales with timetable container
+	$(".timetable-container").scroll(function()	{
+		var y = -$(this).scrollTop();
+		var x = -$(this).scrollLeft();
+		console.log("scrolling");
+		$(".schedule .scale-time").css("transform", "translateY(" + y + "px)");
+		$(".schedule .scale-rooms").css("transform", "translateX(" + x + "px)");		
 	});
-
 	
 });

@@ -1,2 +1,33 @@
-$black: #000000;
-$white: #FFFFFF;
+/************************
+*		BASECOLORS		*
+************************/
+
+$white: rgb(255,255,255);
+$black: rgb(0,0,0);
+
+
+/************************
+*		COLORSCALE		*
+************************/
+
+$lightyellow: rgb(237, 191, 64);
+$yellow: rgb(247, 159, 52);
+$darkyellow: rgb(232, 120, 37);
+$lightblue: rgb(50, 179, 224);
+$darkblue: rgb(13, 131, 182);
+$lightgreen: rgb(0, 175, 150);
+$darkgreen: rgb(0, 135, 112);
+$red: rgb(211, 49, 49);
+
+
+/************************
+*		UI COLORS		*
+************************/
+
+$grey6: #262728;
+$grey5: #363738;
+$grey4: #3b3c3d;
+$grey3: #414344;
+$grey2: #494b4c;
+$grey1: #5c5e60;
+$transparentwhite: rgba(255,255,255, .1);

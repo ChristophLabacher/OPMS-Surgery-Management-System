@@ -17,7 +17,7 @@ nav	{
 	
 	transition: width .5s;
 	
-	background-color: #FF0000;
+	background-color: $grey5;
 	
 	&.active	{
 		width: $smallUnit + $bigUnit;
@@ -26,8 +26,6 @@ nav	{
 
 main	{
 	flex-grow: 1;
-	
-	background-color: #FFFF00;
 }
 
 
@@ -40,11 +38,13 @@ nav	{
 	flex-direction: column;
 	
 	overflow: hidden;
+	border-right: 1px solid $grey6;
 	
 	ul.action-list {
 		li {
 			width: $smallUnit + $bigUnit;
 			padding: 0;
+			background-color: transparent;
 
 			img	{
 				height: $smallUnit;
@@ -53,6 +53,14 @@ nav	{
 				padding: 1.2rem;
 				margin-top: 0;
 				margin-right: .5rem;
+			}
+			
+			&:hover	{
+				background-color: $grey3;
+			}
+			
+			&.active	{
+				background-color: $grey6;			
 			}
 		}
 	}
@@ -102,7 +110,8 @@ nav	{
 		
 		overflow: hidden;
 		
-		background-color: green;
+		border-bottom: 1px solid $grey6;
+		background-color: $grey4;
 		
 		&.active	{
 			height: $smallUnit * 2;
@@ -111,11 +120,17 @@ nav	{
 		.toolbar-top	{
 			width: 100%;
 			height: $smallUnit;
+			border-bottom: 1px solid $grey6;
+			
+			li.active	{
+				border-right: 1px solid $grey6;
+			}
+
 		}
 		
 		.toolbar-content	{
 			height: $smallUnit;
-			background-color: fuchsia;
+			background-color: $grey5;
 		}
 	}
 	
@@ -127,15 +142,11 @@ nav	{
 		width: 100%;
 		flex-grow: 1;
 		flex-shrink: 1;
-		
-		background-color: navy;
-		
+				
 		.center-main	{
 			flex-grow: 1;
 			flex-shrink: 1;			
 			overflow: hidden;
-			
-			background-color: maroon;
 		}
 		
 		.center-side	{
@@ -143,7 +154,8 @@ nav	{
 			width: $bigUnit;
 			overflow: hidden;
 			
-			background-color: silver;
+			border-left: 1px solid $grey6;
+			background-color: $grey3;
 		}
 	}
 }
@@ -166,7 +178,10 @@ ul.action-list {
 		line-height: $smallUnit;
 		text-transform: uppercase;
 		
-		transition: background-color .3s;
+		background-color: $grey4;
+		border-bottom: 1px solid $grey6;
+		
+		transition: all .3s;
 					
 		img	{
 			display: block;
@@ -181,7 +196,32 @@ ul.action-list {
 		
 		&:hover	{
 			cursor: pointer;
-			background-color: lime;
+			background-color: $grey3;
+		}
+		
+		&.active	{
+			background-color: $grey5;		
+			border-bottom: 1px solid transparent;	
 		}
 	}
 }
+
+/************************
+*		SCROLLBARS		*
+************************/
+/*
+
+::-webkit-scrollbar {
+    width: .7rem;
+    height: .7rem;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+	background-color: $grey2;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+	background-color: $grey5;
+}
+*/
