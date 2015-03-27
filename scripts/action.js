@@ -18,7 +18,7 @@ $(document).ready(function()	{
 	*	Expand TOOLBAR		*
 	************************/
 	$(".toolbar ul[action = 'expand-toolbar'] li").click(function()	{	
-		var target = $(this).closest(".view").find(".toolbar");
+		var target = $(this).closest(".center").find(".toolbar");
 
 		$(this).toggleClass("active");		
 		target.toggleClass("active");

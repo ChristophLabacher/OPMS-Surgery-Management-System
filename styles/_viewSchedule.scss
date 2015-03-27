@@ -1,27 +1,5 @@
 .schedule	{
-	.toolbar .add-surgery	{
-		float: right;
-		
-		li	{
-			border-left: 1px solid $grey6;
-			width: $bigUnit;
-			
-			img	{
-				transform: rotate(0);
-				transition: transform .5s;
-			}
-			
-			&.active	{
-				background-color: $grey3;
-				
-				img	{
-					transform: rotate(45deg);
-				}
-			}
-		}
-	}
-	
-	.center-main	{
+	.center-main .content	{
 		position: relative;
 		
 		display: flex;
@@ -34,6 +12,25 @@
 		&.active	{
 			width: 4 * $bigUnit;
 		}
+		
+		.toolbar 			
+			li	{
+				width: $bigUnit;
+				
+				img	{
+					transform: rotate(0);
+					transition: transform .5s;
+				}
+				
+				&.active	{
+					background-color: $grey3;
+					border-bottom: none;
+					
+					img	{
+						transform: rotate(45deg);
+					}
+				}
+			}
 	}
 	
 	.scale	{
@@ -187,6 +184,12 @@
 		
 		.name	{
 			font-weight: 500;
+		}
+		
+		img	{
+			float: right;
+			width: 2rem;
+			width: 2rem;
 		}
 	}
 	

@@ -206,7 +206,7 @@ nav {
         -ms-flex-positive: 1;
             flex-grow: 1;
     height: 100%;
-    opacity: 0.6;
+    opacity: 0.4;
     -webkit-transition: opacity 0.3s;
             transition: opacity 0.3s; }
     nav ul.action-list:nth-of-type(2) li {
@@ -226,13 +226,44 @@ nav {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   width: 100%;
   height: 100vh; }
+  .view .center-main {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-flex-shrink: 1;
+        -ms-flex-negative: 1;
+            flex-shrink: 1;
+    overflow: hidden; }
+  .view .center-side {
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    overflow: hidden;
+    width: 20rem;
+    border-left: 1px solid #262728;
+    background-color: #414344; }
+  .view .center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
   .view .toolbar {
     width: 100%;
     height: 5rem;
@@ -257,20 +288,7 @@ nav {
     .view .toolbar .toolbar-content {
       height: 5rem;
       background-color: #363738; }
-  .view .center {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: stretch;
-    -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+  .view .content {
     width: 100%;
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
@@ -279,23 +297,6 @@ nav {
     -webkit-flex-shrink: 1;
         -ms-flex-negative: 1;
             flex-shrink: 1; }
-    .view .center .center-main {
-      -webkit-box-flex: 1;
-      -webkit-flex-grow: 1;
-          -ms-flex-positive: 1;
-              flex-grow: 1;
-      -webkit-flex-shrink: 1;
-          -ms-flex-negative: 1;
-              flex-shrink: 1;
-      overflow: hidden; }
-    .view .center .center-side {
-      -webkit-flex-shrink: 0;
-          -ms-flex-negative: 0;
-              flex-shrink: 0;
-      width: 20rem;
-      overflow: hidden;
-      border-left: 1px solid #262728;
-      background-color: #414344; }
 
 /************************
 *		ACTION-LIST		*
@@ -371,24 +372,7 @@ strong {
 .card {
   z-index: 2; }
 
-.schedule .toolbar .add-surgery {
-  float: right; }
-  .schedule .toolbar .add-surgery li {
-    border-left: 1px solid #262728;
-    width: 20rem; }
-    .schedule .toolbar .add-surgery li img {
-      -webkit-transform: rotate(0);
-          -ms-transform: rotate(0);
-              transform: rotate(0);
-      -webkit-transition: -webkit-transform 0.5s;
-              transition: transform 0.5s; }
-    .schedule .toolbar .add-surgery li.active {
-      background-color: #414344; }
-      .schedule .toolbar .add-surgery li.active img {
-        -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-                transform: rotate(45deg); }
-.schedule .center-main {
+.schedule .center-main .content {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -404,6 +388,21 @@ strong {
           transition: width 0.6s; }
   .schedule .center-side.active {
     width: 80rem; }
+  .schedule .center-side .toolbar li {
+    width: 20rem; }
+    .schedule .center-side .toolbar li img {
+      -webkit-transform: rotate(0);
+          -ms-transform: rotate(0);
+              transform: rotate(0);
+      -webkit-transition: -webkit-transform 0.5s;
+              transition: transform 0.5s; }
+    .schedule .center-side .toolbar li.active {
+      background-color: #414344;
+      border-bottom: none; }
+      .schedule .center-side .toolbar li.active img {
+        -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+                transform: rotate(45deg); }
 .schedule .scale {
   list-style: none;
   position: absolute; }
@@ -503,6 +502,10 @@ strong {
     color: white; }
     .card .header .name {
       font-weight: 500; }
+    .card .header img {
+      float: right;
+      width: 2rem;
+      width: 2rem; }
   .card .main {
     padding: 0.7rem 1rem; }
     .card .main .diagnose {
