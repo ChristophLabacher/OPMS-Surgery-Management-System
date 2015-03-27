@@ -17,11 +17,40 @@ $(document).ready(function() {
 		$(".schedule .scale-rooms").css("transform", "translateX(" + x + "px)");		
 	});
 	
-	loadFile();
+	loadFileFromServer();
 	getCards();
 });
 
-function loadFile()	{
+function loadFileFromServer()	{
+	// Get json-file
+	var request = new XMLHttpRequest();
+		request.open("GET", "https://spreadsheets.google.com/feeds/list/1oiiPeRnUPX32MkmG8NFB0IauLrWtjoiEMQsE0sCRQ6I/od6/public/values?alt=json", false);
+		request.send(null);
+	// Put json-file into an array
+	raw = JSON.parse(request.responseText);
+	
+	data = [];
+	
+	for (var i = 0; i < raw.feed.entry.length; i++)	{
+		var surgeryRaw = raw.feed.entry[i];
+		var surgery = {
+			"Name" : surgeryRaw.gsx$name.$t,
+			"Prename" : surgeryRaw.gsx$prename.$t,
+			"Birthdate" : surgeryRaw.gsx$birthdate.$t,
+			"Diagnosis" : surgeryRaw.gsx$diagnosis.$t,
+			"Surgery_Team" : surgeryRaw.gsx$surgeryteam.$t,
+			"Surgery_Room" : surgeryRaw.gsx$surgeryroom.$t,
+			"Current_State" : surgeryRaw.gsx$currentstate.$t,
+			"Starttime" : surgeryRaw.gsx$starttime.$t,
+			"Endtime" : surgeryRaw.gsx$endtime.$t
+		};
+		
+		data.push(surgery);
+	}
+}
+
+
+function loadFileLocally()	{
 	// Get json-file
 	var request = new XMLHttpRequest();
 		request.open("GET", "../data/surgeries.json", false);
