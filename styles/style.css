@@ -109,8 +109,7 @@ html {
 *		STATES		*
 ************************/
 .state-1 {
-  background-color: #edbf40;
-  color: black !important; }
+  background-color: #edbf40; }
 
 .state-2 {
   background-color: #f79f34; }
@@ -382,7 +381,8 @@ strong {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  overflow: hidden; }
 .schedule .center-side {
   -webkit-transition: width 0.6s;
           transition: width 0.6s; }
@@ -494,7 +494,8 @@ strong {
   border-radius: 3px;
   background-color: #363738;
   color: #999999;
-  cursor: pointer; }
+  cursor: pointer;
+  overflow: hidden; }
   .card .header {
     border-radius: 3px 3px 0 0;
     padding: 1rem 1rem;
