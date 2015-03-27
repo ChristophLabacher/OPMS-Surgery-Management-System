@@ -170,7 +170,7 @@
 .card-container	{
 	position: absolute;
 	padding: 0 1rem;
-	width: 100%;
+	width: $bigUnit;
 }
 
 .card	{
@@ -228,5 +228,12 @@
 	.handle-bottom	{
 		bottom: 0;
 		cursor: s-resize;
+	}
+}
+
+.center-side	{
+	.card-container	{
+		padding-top: 1rem;
+		position: relative;
 	}
 }

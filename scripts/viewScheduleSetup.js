@@ -35,7 +35,8 @@ $(document).ready(function() {
 		$(".schedule .scale-rooms").css("transform", "translateX(" + x + "px)");		
 	});
 	
-	loadFileLocally();
+//	loadFileLocally()
+	loadFileFromServer();
 	getCards();
 });
 
@@ -95,44 +96,81 @@ function getCards()	{
 		var top = (Starttime.getUTCHours() + Starttime.getUTCMinutes()/60) * 120;
 		var height = ((Endtime.getUTCHours() + Endtime.getUTCMinutes()/60) - (Starttime.getUTCHours() + Starttime.getUTCMinutes()/60)) * 120;
 
-		var card =	"<div class=\"card-container\" action =\"show-card-detail\" case-id=\"" + data[i].Case_Id + "\" style=\"top:" + top + "px;\">" +
-						"<div class=\"card\" style=\"height: " + height + "px;\">" +
-							"<div class=\"handle handle-top\"></div><!-- handle-top -->" +
-							
-							"<div class=\"header state-" + data[i].Current_State + "\">";
-		
-		if (parseInt(data[i].Current_State) >= 8)	{
-			card +=				"<img src=\"imgs/assets/icons/surgery.png\">";
-		}
-		
-		 card +=				"<p class=\"name\">" + data[i].Name + ", " + data[i].Prename + "</p>" +
-								"<p class=\"birthdate\">" + data[i].Birthdate + "</p>" +
-							"</div><!-- header -->";
-							
-		if (height >= 120)	{
-			card += "<div class=\"main\">" +
-						"<p class=\"diagnose\">" + data[i].Diagnosis + "</p>";
-						
-			if (height >= 150)	{
-				card +=	"<p class=\"team\">OP: " + data[i].Surgery_Team + "</p>";
+		console.log(Endtime.getUTCHours());
+
+		if (data[i].Surgery_Room != 0)	{
+			var card =	"<div class=\"card-container\" action =\"show-card-detail\" case-id=\"" + data[i].Case_Id + "\" style=\"top:" + top + "px;\">" +
+							"<div class=\"card\" style=\"height: " + height + "px;\">" +
+								"<div class=\"handle handle-top\"></div><!-- handle-top -->" +
+								
+								"<div class=\"header state-" + data[i].Current_State + "\">";
+			
+			if (parseInt(data[i].Current_State) >= 8)	{
+				card +=				"<img src=\"imgs/assets/icons/surgery.png\">";
 			}
 			
-			card +=		"</div><!-- main -->";
-		}
+			 card +=				"<p class=\"name\">" + data[i].Name + ", " + data[i].Prename + "</p>" +
+									"<p class=\"birthdate\">" + data[i].Birthdate + "</p>" +
+								"</div><!-- header -->";
+								
+			if (height >= 120)	{
+				card += "<div class=\"main\">" +
+							"<p class=\"diagnose\">" + data[i].Diagnosis + "</p>";
 							
-		if (height >= 180)	{
-			card += "<div class=\"footer\">" +
-						"<p class=\"room\"> Saal" + data[i].Surgery_Room + "</p>" +
-						"<p class=\"time\">" + addZero(Starttime.getUTCHours()) + ":" + addZero(Starttime.getUTCMinutes()) + " – " + addZero(Endtime.getUTCHours()) + ":" + addZero(Endtime.getUTCMinutes()) + "</p>" +
-					"</div><!-- footer -->";
+				if (height >= 150)	{
+					card +=	"<p class=\"team\">OP: " + data[i].Surgery_Team + "</p>";
+				}
+				
+				card +=		"</div><!-- main -->";
+			}
+								
+			if (height >= 180)	{
+				card += "<div class=\"footer\">" +
+							"<p class=\"room\"> Saal " + data[i].Surgery_Room + "</p>" +
+							"<p class=\"time\">" + addZero(Starttime.getUTCHours()) + ":" + addZero(Starttime.getUTCMinutes()) + " – " + addZero(Endtime.getUTCHours()) + ":" + addZero(Endtime.getUTCMinutes()) + "</p>" +
+						"</div><!-- footer -->";
+			}
+																				
+			card +=				"<div class=\"handle handle-bottom\"></div><!-- handle-bottom -->" +
+						
+							"</div><!-- card -->" +
+						"</div><!-- card-container -->"
+			
+			$(".column[room='" + data[i].Surgery_Room + "'] .column-main").prepend(card);
+		} else 	{
+			var card =	"<div class=\"card-container\" action =\"show-card-detail\" case-id=\"" + data[i].Case_Id + "\" \">" +
+							"<div class=\"card\" style=\"height: " + height + "px;\">" +
+								"<div class=\"handle handle-top\"></div><!-- handle-top -->" +
+								
+								"<div class=\"header state-" + data[i].Current_State + "\">" +
+									"<p class=\"name\">" + data[i].Name + ", " + data[i].Prename + "</p>" +
+									"<p class=\"birthdate\">" + data[i].Birthdate + "</p>" +
+								"</div><!-- header -->";
+								
+			if (height >= 150)	{
+				card += "<div class=\"main\">" +
+							"<p class=\"diagnose\">" + data[i].Diagnosis + "</p>";
+							
+				if (height >= 180)	{
+					card +=	"<p class=\"team\">OP: " + data[i].Surgery_Team + "</p>";
+				}
+				
+				card +=		"</div><!-- main -->";
+			}
+								
+			if (height >= 120)	{
+				card += "<div class=\"footer\">" +
+							"<p class=\"time\">" + ((Endtime.getTime() - Starttime.getTime())/3600000)  + " Stunden </p>" +
+						"</div><!-- footer -->";
+			}
+																				
+			card +=				"<div class=\"handle handle-bottom\"></div><!-- handle-bottom -->" +
+						
+							"</div><!-- card -->" +
+						"</div><!-- card-container -->"
+			
+			$(".center-side .content").prepend(card);			
 		}
-																			
-		card +=				"<div class=\"handle handle-bottom\"></div><!-- handle-bottom -->" +
-					
-						"</div><!-- card -->" +
-					"</div><!-- card-container -->"
-		
-		$(".column[room='" + data[i].Surgery_Room + "'] .column-main").prepend(card);
 
 	}	
 }
