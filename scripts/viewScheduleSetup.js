@@ -1,5 +1,24 @@
 $(document).ready(function() {
+	bigUnit = 20 * 10;
 	
+	// Load the room data and set timetable width to fit in all rooms
+	
+	loadRoomData();
+	var roomCount = rooms.length;
+	
+	$(".timetable").width(roomCount * bigUnit);
+	$(".scale-rooms").width(roomCount * bigUnit);
+	
+	for (var i = 0; i < rooms.length; i++)	{		
+		var room = "<li room=\"" + rooms[i].id + "\">Saal " + rooms[i].id;
+		if (rooms[i].department)	{
+			room += " <abbr>" + rooms[i].department + "</abbr>";
+		}
+		room += "</li>";
+		
+		$(".scale-rooms").append(room);
+	}
+
 	// Add guidlines for half hours
 	$(".column-main").each(function()	{
 		for(var i = 0; i < 47; i++)	{
@@ -12,14 +31,22 @@ $(document).ready(function() {
 	$(".timetable-container").scroll(function()	{
 		var y = -$(this).scrollTop();
 		var x = -$(this).scrollLeft();
-		console.log("scrolling");
 		$(".schedule .scale-time").css("transform", "translateY(" + y + "px)");
 		$(".schedule .scale-rooms").css("transform", "translateX(" + x + "px)");		
 	});
 	
-	loadFileFromServer();
+	loadFileLocally();
 	getCards();
 });
+
+function loadRoomData()	{
+	// Get json-file
+	var request = new XMLHttpRequest();
+		request.open("GET", "../data/rooms.json", false);
+		request.send(null);
+	// Put json-file into an array
+	rooms = JSON.parse(request.responseText);
+}
 
 function loadFileFromServer()	{
 	// Get json-file
@@ -38,6 +65,7 @@ function loadFileFromServer()	{
 			"Prename" : surgeryRaw.gsx$prename.$t,
 			"Birthdate" : surgeryRaw.gsx$birthdate.$t,
 			"Diagnosis" : surgeryRaw.gsx$diagnosis.$t,
+			"Case_Id" : surgeryRaw.gsx$caseid.$t,
 			"Surgery_Team" : surgeryRaw.gsx$surgeryteam.$t,
 			"Surgery_Room" : surgeryRaw.gsx$surgeryroom.$t,
 			"Current_State" : surgeryRaw.gsx$currentstate.$t,
@@ -67,7 +95,7 @@ function getCards()	{
 		var top = (Starttime.getUTCHours() + Starttime.getUTCMinutes()/60) * 120;
 		var height = ((Endtime.getUTCHours() + Endtime.getUTCMinutes()/60) - (Starttime.getUTCHours() + Starttime.getUTCMinutes()/60)) * 120;
 
-		var card =	"<div class=\"card-container\" style=\"top:" + top + "px;\">" +
+		var card =	"<div class=\"card-container\" action =\"show-card-detail\" case-id=\"" + data[i].Case_Id + "\" style=\"top:" + top + "px;\">" +
 						"<div class=\"card\" style=\"height: " + height + "px;\">" +
 							"<div class=\"handle handle-top\"></div><!-- handle-top -->" +
 							

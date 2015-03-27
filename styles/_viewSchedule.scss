@@ -110,7 +110,6 @@
 	
 	.timetable	{
 		height: 24 * 12rem;
-		width: 12 * $bigUnit;
 		background-color: $grey1;
 	}
 	
@@ -161,6 +160,10 @@
 		&:last-child	{
 			border-right: none;
 		}
+	}
+	
+	.scale-rooms li, .timetable, .column	{
+		transition: width .5s;
 	}
 }
 

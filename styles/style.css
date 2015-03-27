@@ -453,7 +453,6 @@ strong {
   position: relative; }
 .schedule .timetable {
   height: 288rem;
-  width: 240rem;
   background-color: #5c5e60; }
 .schedule .column {
   float: left;
@@ -482,6 +481,9 @@ strong {
     background-color: #262728; }
   .schedule .column:last-child {
     border-right: none; }
+.schedule .scale-rooms li, .schedule .timetable, .schedule .column {
+  -webkit-transition: width 0.5s;
+          transition: width 0.5s; }
 
 .card-container {
   position: absolute;
