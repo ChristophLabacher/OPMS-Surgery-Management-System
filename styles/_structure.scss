@@ -203,6 +203,11 @@ ul.action-list {
 			background-color: $grey5;
 			border-left: 1px solid $grey6;
 			border-right: 1px solid $grey6;
+			
+			
+			&:first-child	{
+				border-left-color: transparent;
+			}
 		}
 		
 		&.active	{

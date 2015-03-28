@@ -94,7 +94,9 @@ html {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none; }
+          user-select: none;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
 
 /************************
 *		BASECOLORS		*
@@ -108,25 +110,28 @@ html {
 /************************
 *		STATES		*
 ************************/
-.state-1 {
+.state-0 {
+  background-color: #494b4c; }
+
+.state-1, .state-11 {
   background-color: #edbf40; }
 
 .state-2 {
   background-color: #f79f34; }
 
-.state-3, .state-11 {
+.state-3 {
   background-color: #e87825; }
 
-.state-4, .state-10 {
+.state-4 {
   background-color: #32b3e0; }
 
-.state-5, .state-9 {
+.state-5, .state-10 {
   background-color: #0d83b6; }
 
-.state-6, .state-8 {
+.state-6, .state-9 {
   background-color: #00af96; }
 
-.state-7 {
+.state-7, .state-8 {
   background-color: #008770; }
 
 /************************
@@ -326,6 +331,8 @@ ul.action-list {
       background-color: #363738;
       border-left: 1px solid #262728;
       border-right: 1px solid #262728; }
+      ul.action-list li:hover:first-child {
+        border-left-color: transparent; }
     ul.action-list li.active {
       background-color: #363738;
       border-left: 1px solid #262728;
@@ -387,22 +394,24 @@ strong {
   -webkit-transition: width 0.6s;
           transition: width 0.6s; }
   .schedule .center-side.active {
-    width: 80rem; }
+    width: 100rem; }
   .schedule .center-side .toolbar li {
-    width: 20rem; }
+    width: 20rem;
+    border-right: none; }
     .schedule .center-side .toolbar li img {
       -webkit-transform: rotate(0);
           -ms-transform: rotate(0);
               transform: rotate(0);
       -webkit-transition: -webkit-transform 0.5s;
               transition: transform 0.5s; }
+    .schedule .center-side .toolbar li:hover {
+      background-color: transparent; }
     .schedule .center-side .toolbar li.active {
-      background-color: #414344;
-      border-bottom: none; }
+      background-color: transparent; }
       .schedule .center-side .toolbar li.active img {
-        -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-                transform: rotate(45deg); }
+        -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
 .schedule .scale {
   list-style: none;
   position: absolute; }
@@ -485,6 +494,9 @@ strong {
   -webkit-transition: width 0.5s;
           transition: width 0.5s; }
 
+/************************
+*		CARD			*
+************************/
 .card-container {
   position: absolute;
   padding: 0 1rem;
@@ -497,7 +509,8 @@ strong {
   background-color: #363738;
   color: #999999;
   cursor: pointer;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
   .card .header {
     border-radius: 3px 3px 0 0;
     padding: 1rem 1rem;
@@ -508,10 +521,10 @@ strong {
     .card .header img {
       float: right;
       width: 2rem;
-      width: 2rem; }
+      height: 2rem; }
   .card .main {
     padding: 0.7rem 1rem; }
-    .card .main .diagnose {
+    .card .main .service {
       margin-bottom: 0.5rem; }
   .card .footer {
     padding: 0 1rem 1rem 1rem;
@@ -532,3 +545,84 @@ strong {
 .center-side .card-container {
   padding-top: 1rem;
   position: relative; }
+.center-side .card {
+  cursor: default; }
+
+/************************
+*		CARD DETAILS	*
+************************/
+.card-details-container {
+  /************************
+	*		Barchart 		*
+	************************/ }
+  .card-details-container .header, .card-details-container .patient-data, .card-details-container .surgery-data, .card-details-container .plan, .card-details-container .timestamps {
+    margin: 2.5rem 5rem; }
+  .card-details-container .header {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    margin-top: 0;
+    padding-top: 2.5rem; }
+    .card-details-container .header .name {
+      font-weight: 500; }
+  .card-details-container table {
+    width: 100%; }
+  .card-details-container tr {
+    border-bottom: 1px dotted #494b4c; }
+    .card-details-container tr:first-child {
+      border-bottom: 1px solid #494b4c; }
+  .card-details-container th {
+    text-align: left;
+    font-weight: 500;
+    padding: 0.75rem 0; }
+  .card-details-container td img {
+    float: right;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    opacity: 0.3;
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s; }
+    .card-details-container td img:hover {
+      opacity: 1; }
+  .card-details-container td {
+    padding: 0.5rem 0;
+    vertical-align: top; }
+    .card-details-container td:first-child {
+      padding: 0.75rem 0;
+      width: 20rem;
+      color: #999999; }
+  .card-details-container input, .card-details-container textarea {
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    vertical-align: middle;
+    resize: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    -webkit-transition: background-color 0.3s, border 0.3s;
+            transition: background-color 0.3s, border 0.3s;
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
+    cursor: default; }
+  .card-details-container .editing input, .card-details-container .editing textarea {
+    background-color: #363738;
+    cursor: pointer; }
+    .card-details-container .editing input:focus, .card-details-container .editing textarea:focus {
+      background-color: #494b4c; }
+  .card-details-container .barchart .barchart-bars {
+    height: 3rem;
+    overflow: hidden; }
+    .card-details-container .barchart .barchart-bars div {
+      height: 100%;
+      width: 9.090909091%;
+      float: left;
+      -webkit-transition: opacity 0.5s;
+              transition: opacity 0.5s;
+      opacity: 0.7; }
+      .card-details-container .barchart .barchart-bars div:hover {
+        opacity: 1; }
+    .card-details-container .barchart .barchart-bars .state-4, .card-details-container .barchart .barchart-bars .state-6, .card-details-container .barchart .barchart-bars .state-8, .card-details-container .barchart .barchart-bars .state-10, .card-details-container .barchart .barchart-bars .state-11 {
+      border-left: 3px solid #262728; }

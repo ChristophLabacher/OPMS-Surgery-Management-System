@@ -65,7 +65,7 @@ function loadFileFromServer()	{
 			"Name" : surgeryRaw.gsx$name.$t,
 			"Prename" : surgeryRaw.gsx$prename.$t,
 			"Birthdate" : surgeryRaw.gsx$birthdate.$t,
-			"Diagnosis" : surgeryRaw.gsx$diagnosis.$t,
+			"Service" : surgeryRaw.gsx$service.$t,
 			"Case_Id" : surgeryRaw.gsx$caseid.$t,
 			"Surgery_Team" : surgeryRaw.gsx$surgeryteam.$t,
 			"Surgery_Room" : surgeryRaw.gsx$surgeryroom.$t,
@@ -115,7 +115,7 @@ function getCards()	{
 								
 			if (height >= 120)	{
 				card += "<div class=\"main\">" +
-							"<p class=\"diagnose\">" + data[i].Diagnosis + "</p>";
+							"<p class=\"service\">" + data[i].Service + "</p>";
 							
 				if (height >= 150)	{
 					card +=	"<p class=\"team\">OP: " + data[i].Surgery_Team + "</p>";
@@ -149,7 +149,7 @@ function getCards()	{
 								
 			if (height >= 150)	{
 				card += "<div class=\"main\">" +
-							"<p class=\"diagnose\">" + data[i].Diagnosis + "</p>";
+							"<p class=\"service\">" + data[i].Service + "</p>";
 							
 				if (height >= 180)	{
 					card +=	"<p class=\"team\">OP: " + data[i].Surgery_Team + "</p>";
