@@ -43,4 +43,27 @@ $(document).ready(function()	{
 		target1.toggleClass("active");
 		target2.toggleClass("active");
 	});
+	
+	/************************
+	*	Edit Section		*
+	************************/
+	$("[action = 'edit-section']").click(function()	{	
+		var target = $(this).closest(".data");
+			
+		if (target.hasClass("editing"))	{
+			target.find("input").attr("readonly", "");
+			target.find("textarea").attr("readonly", "");
+			target.find("select").attr("disabled", "");
+			
+			$(this).attr("src", "imgs/assets/icons/edit.png");
+		} else	{
+			target.find("input").removeAttr("readonly");
+			target.find("textarea").removeAttr("readonly");
+			target.find("select").removeAttr("disabled");
+			
+			$(this).attr("src", "imgs/assets/icons/confirm.png");
+		}
+		
+		target.toggleClass("editing");
+	});
 });

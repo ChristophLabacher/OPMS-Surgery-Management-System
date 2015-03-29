@@ -307,60 +307,22 @@
 		}
 	}
 	
-	input, textarea	{
-		width: 100%;
-		padding: .25rem .5rem;
-		vertical-align: middle;
-		resize: none;
-		
-		color: inherit;
-		font-family: inherit;
-		font-size: inherit;
-		line-height: inherit;
-		font-weight: inherit;
-		
-		transition: background-color .3s, border .3s;
-		background-color: transparent;
-		
-		border: 1px solid transparent;
-		outline: none;
-		
-		cursor: default;
+	.data:not(.editing)	{
+		input, textarea, select	{
+			background-color: transparent;
+			cursor: default;
+			
+			background: none;
+			
+			&:focus	{
+				background-color: inherit;
+			}
+		}		
 	}
 	
-	.editing input, .editing textarea	{
-		background-color: $grey5;
-		//border: 1px solid $grey2;
-		
-		cursor: pointer;
-		
+	input, textarea, select	{
 		&:focus	{
-			background-color: $grey2;	
-		}	
-	}
-	
-	button	{
-		vertical-align: middle;
-		
-		color: inherit;
-		font-family: inherit;
-		font-size: inherit;
-		line-height: inherit;
-		font-weight: inherit;
-				
-		background-color: $darkblue;
-		border: 1px solid transparent;
-		outline: none;	
-		border-radius: 3px;	
-	}
-	
-	.timestamps	{
-		input	{
-			width: 30%;
-		}
-		
-		button	{
-			float: right;
+			background-color: $grey2;
 		}
 	}
 	

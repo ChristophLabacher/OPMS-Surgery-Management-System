@@ -102,7 +102,7 @@
 											
 						<div class="timetable-container">
 							<div class="timetable">
-								<div class="column" room="1">
+								<div class="column active" room="1">
 									
 									<div class="column-main">
 										
@@ -136,114 +136,130 @@
 												<div class="barchart-scale"></div><!-- barchart-scale -->
 											</div><!-- barchart --> 
 											
-											<div class="patient-data">												
+											<div class="patient-data data">												
 												<table class="data-table">
 													<tr>
 														<th>Patienten-Daten</th>
-														<th><img src="imgs/assets/icons/edit.png"></th>
+														<th><img src="imgs/assets/icons/edit.png" action="edit-section"></th>
 													</tr>
 													<tr>
 														<td>Fallnummer</td>
-														<td><input value="12414124124"></td>
+														<td><input value="12414124124" readonly></td>
 													</tr>
 													<tr>
 														<td>Patientennummer</td>
-														<td><input value="1241412414"></td>
+														<td><input value="1241412414" readonly></td>
 													</tr>
 													<tr>
 														<td>Station</td>
-														<td><input value="Ortho"></td>
+														<td>
+															<select disabled>
+																<option>Ortho</option>
+																<option>NCh</option>
+															</select>
+														</td>
 													</tr>
 													<tr>
 														<td>Zimmer-Nummer</td>
-														<td><input value="123123"></td>
+														<td><input value="123123" readonly></td>
 													</tr>
 													<tr>
 														<td>Telefonnummer der Station</td>
-														<td><input value="13151"></td>
+														<td><input value="13151" readonly></td>
 													</tr>
 												</table>
 											</div><!-- patient-data -->
 											
-											<div class="surgery-data">
+											<div class="surgery-data data">
 												<table class="data-table">
 													<tr>
 														<th>OP-Daten</th>
-														<th><img src="imgs/assets/icons/edit.png"></th>
+														<th><img src="imgs/assets/icons/edit.png" action="edit-section"></th>
 													</tr>
 													<tr>
 														<td>Veranlasste Leistung</td>
-														<td><textarea>Implementation zementfreie HTP li.</textarea></td>
+														<td><textarea readonly>Implementation zementfreie HTP li.</textarea></td>
 													</tr>
 													<tr>
 														<td>Diagnose</td>
-														<td><textarea>Wirbelkörperfraktur</textarea></td>
+														<td><textarea readonly>Wirbelkörperfraktur</textarea></td>
 													</tr>
 													<tr>
 														<td>Dauer (erwartet)</td>
-														<td><input value="1:30"></td>
+														<td><input value="1:30" readonly></td>
 													</tr>
 													<tr>
 														<td>Risiken</td>
-														<td><textarea>Keine außerordentlichen Risiken.</textarea></td>
+														<td><textarea readonly>Keine außerordentlichen Risiken.</textarea></td>
 													</tr>
 													<tr>
 														<td>Bemerkung zum Auftrag</td>
-														<td><textarea>48 ZAC 09:00, Restkolektomie</textarea></td>
+														<td><textarea readonly>48 ZAC 09:00, Restkolektomie</textarea></td>
 													</tr>
 												</table>
 											</div><!-- surgery-data -->
 											
-											<div class="plan">
+											<div class="plan data">
 												<table class="data-table">
 													<tr>
 														<th>Planung</th>
-														<th><img src="imgs/assets/icons/edit.png"></th>
+														<th><img src="imgs/assets/icons/edit.png" action="edit-section"></th>
 													</tr>
 													<tr>
 														<td>Raum</td>
-														<td><input value="Saal 1"></td>
+														<td>
+															<select disabled>
+																<option>Saal 1</option>
+																<option>Saal 2</option>
+																<option selected>Saal 3</option>
+																<option>Saal 4</option>
+																<option>Saal 5</option>
+																<option>Saal 6</option>
+																<option>Saal 7</option>
+																<option>Saal 8</option>
+															</select>
+														</td>
 													</tr>
 													<tr>
 														<td>Datum</td>
-														<td><input value="24.01.14"></td>
+														<td><input value="24.01.14" readonly></td>
 													</tr>
 													<tr>
 														<td>Zeitraum</td>
-														<td><input value="08:45 – 09:30"></td>
+														<td><input value="08:45 – 09:30" readonly></td>
 													</tr>
 													<tr>
 														<td>Dauer</td>
-														<td><input value="2:15"></td>
+														<td><input value="2:15" readonly></td>
 													</tr>
 												</table>
 											</div><!-- plan -->
 											
-											<div class="timestamps">
+											<div class="timestamps data">
 												<table class="data-table">
 													<tr>
 														<th>OP-Zeiten</th>
-														<th><img src="imgs/assets/icons/edit.png"></th>
+														<th><img src="imgs/assets/icons/edit.png" action="edit-section"></th>
 													</tr>
 													<tr>
 														<td>Fahrauftrag erteilt</td>
-														<td><input value="07:31" class="text-state-1"></td>
+														<td><input value="07:31" class="text-state-1" readonly></td>
 													</tr>
 													<tr>
 														<td>Fahrauftrag angenommen</td>
-														<td><input value="07:45" class="text-state-2"></td>
+														<td><input value="07:45" class="text-state-2" readonly></td>
 													</tr>
 													<tr>
 														<td>Patient eingeschleust</td>
-														<td><input value="08:18" class="text-state-3"></td>
+														<td><input value="08:18" class="text-state-3" readonly></td>
 													</tr>
 													<tr>
 														<td>Narkoseeinleitung</td>
-														<td><input value="08:42" class="text-state-4"></td>
+														<td><input value="08:42" class="text-state-4" readonly></td>
 													</tr>
 													<tr>
 														<td>Patient im Saal</td>
-														<td><input value="" class="text-state-5"> <button type="button">Aktuelle Uhrzeit einsetzen</button> </td>
+														<td><input value="" class="text-state-5" readonly></td>
 													</tr>
 												</table>
 											</div><!-- timestamps -->

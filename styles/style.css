@@ -464,6 +464,7 @@ button {
   width: auto;
   padding: 1rem 2rem;
   margin-top: 1rem;
+  line-height: 1em;
   border-radius: 0.5rem;
   float: right;
   -webkit-transition: background-color 0.2s;
@@ -748,42 +749,14 @@ button {
     padding-top: 2.5rem; }
     .card-details-container .header .name {
       font-weight: 500; }
-  .card-details-container input, .card-details-container textarea {
-    width: 100%;
-    padding: 0.25rem 0.5rem;
-    vertical-align: middle;
-    resize: none;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-    -webkit-transition: background-color 0.3s, border 0.3s;
-            transition: background-color 0.3s, border 0.3s;
+  .card-details-container .data:not(.editing) input, .card-details-container .data:not(.editing) textarea, .card-details-container .data:not(.editing) select {
     background-color: transparent;
-    border: 1px solid transparent;
-    outline: none;
-    cursor: default; }
-  .card-details-container .editing input, .card-details-container .editing textarea {
-    background-color: #363738;
-    cursor: pointer; }
-    .card-details-container .editing input:focus, .card-details-container .editing textarea:focus {
-      background-color: #494b4c; }
-  .card-details-container button {
-    vertical-align: middle;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-    background-color: #0d83b6;
-    border: 1px solid transparent;
-    outline: none;
-    border-radius: 3px; }
-  .card-details-container .timestamps input {
-    width: 30%; }
-  .card-details-container .timestamps button {
-    float: right; }
+    cursor: default;
+    background: none; }
+    .card-details-container .data:not(.editing) input:focus, .card-details-container .data:not(.editing) textarea:focus, .card-details-container .data:not(.editing) select:focus {
+      background-color: inherit; }
+  .card-details-container input:focus, .card-details-container textarea:focus, .card-details-container select:focus {
+    background-color: #494b4c; }
   .card-details-container .barchart .barchart-bars {
     height: 3rem;
     overflow: hidden; }
