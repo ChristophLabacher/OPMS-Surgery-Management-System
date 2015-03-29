@@ -30,7 +30,7 @@ $grey4: #3b3c3d;
 $grey3: #414344;
 $grey2: #494b4c;
 $grey1: #5c5e60;
-$grey0: #999999;
+$grey0: hsl(0,0,60);
 
 $transparentwhite: rgba(255,255,255, .1);
 
@@ -69,4 +69,32 @@ $transparentwhite: rgba(255,255,255, .1);
 
 .state-7, .state-8	{
 	background-color: $darkgreen;
+}
+
+.text-state-1, .text-state-11	{
+	color: $lightyellow !important;
+}
+
+.text-state-2	{
+	color: $yellow !important;
+}
+
+.text-state-3	{
+	color: $darkyellow !important;
+}
+
+.text-state-4	{
+	color: $lightblue !important;
+}
+
+.text-state-5, .text-state-10	{
+	color: $darkblue !important;
+}
+
+.text-state-6, .text-state-9	{
+	color: $lightgreen !important;
+}
+
+.text-state-7, .text-state-8	{
+	color: $darkgreen !important;
 }

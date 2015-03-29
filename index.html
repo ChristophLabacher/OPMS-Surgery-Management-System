@@ -136,11 +136,11 @@
 												<div class="barchart-scale"></div><!-- barchart-scale -->
 											</div><!-- barchart --> 
 											
-											<div class="patient-data editing">												
-												<table>
+											<div class="patient-data">												
+												<table class="data-table">
 													<tr>
 														<th>Patienten-Daten</th>
-														<td><img src="imgs/assets/icons/edit.png"></td>
+														<th><img src="imgs/assets/icons/edit.png"></th>
 													</tr>
 													<tr>
 														<td>Fallnummer</td>
@@ -166,18 +166,18 @@
 											</div><!-- patient-data -->
 											
 											<div class="surgery-data">
-												<table>
+												<table class="data-table">
 													<tr>
 														<th>OP-Daten</th>
-														<td><img src="imgs/assets/icons/edit.png"></td>
+														<th><img src="imgs/assets/icons/edit.png"></th>
 													</tr>
 													<tr>
 														<td>Veranlasste Leistung</td>
-														<td><textarea resizeable="false">Implementation zementfreie HTP li.</textarea></td>
+														<td><textarea>Implementation zementfreie HTP li.</textarea></td>
 													</tr>
 													<tr>
 														<td>Diagnose</td>
-														<td><textarea resizeable="false">Wirbelkörperfraktur</textarea></td>
+														<td><textarea>Wirbelkörperfraktur</textarea></td>
 													</tr>
 													<tr>
 														<td>Dauer (erwartet)</td>
@@ -185,20 +185,20 @@
 													</tr>
 													<tr>
 														<td>Risiken</td>
-														<td><textarea resizeable="false">Keine außerordentlichen Risiken.</textarea></td>
+														<td><textarea>Keine außerordentlichen Risiken.</textarea></td>
 													</tr>
 													<tr>
 														<td>Bemerkung zum Auftrag</td>
-														<td><textarea resizeable="false">48 ZAC 09:00, Restkolektomie</textarea></td>
+														<td><textarea>48 ZAC 09:00, Restkolektomie</textarea></td>
 													</tr>
 												</table>
 											</div><!-- surgery-data -->
 											
 											<div class="plan">
-												<table>
+												<table class="data-table">
 													<tr>
 														<th>Planung</th>
-														<td><img src="imgs/assets/icons/edit.png"></td>
+														<th><img src="imgs/assets/icons/edit.png"></th>
 													</tr>
 													<tr>
 														<td>Raum</td>
@@ -220,30 +220,30 @@
 											</div><!-- plan -->
 											
 											<div class="timestamps">
-												<table>
+												<table class="data-table">
 													<tr>
 														<th>OP-Zeiten</th>
-														<td><img src="imgs/assets/icons/edit.png"></td>
+														<th><img src="imgs/assets/icons/edit.png"></th>
 													</tr>
 													<tr>
 														<td>Fahrauftrag erteilt</td>
-														<td><input value="07:31"></td>
+														<td><input value="07:31" class="text-state-1"></td>
 													</tr>
 													<tr>
 														<td>Fahrauftrag angenommen</td>
-														<td><input value="07:45"></td>
+														<td><input value="07:45" class="text-state-2"></td>
 													</tr>
 													<tr>
 														<td>Patient eingeschleust</td>
-														<td><input value="08:18"></td>
+														<td><input value="08:18" class="text-state-3"></td>
 													</tr>
 													<tr>
 														<td>Narkoseeinleitung</td>
-														<td><input value="08:42"></td>
+														<td><input value="08:42" class="text-state-4"></td>
 													</tr>
 													<tr>
 														<td>Patient im Saal</td>
-														<td><input value=""></td>
+														<td><input value="" class="text-state-5"> <button type="button">Aktuelle Uhrzeit einsetzen</button> </td>
 													</tr>
 												</table>
 											</div><!-- timestamps -->
@@ -350,6 +350,144 @@
 					</div> <!-- toolbar -->
 					
 					<div class="content">
+						<div class="open-surgeries"></div><!-- open-surgeries -->
+						<div class="add-surgery">
+							<div class="patient-data">
+						
+								<table class="data-table">
+									<tr>
+										<th>Patienten suchen</th>
+										<th><img src="imgs/assets/icons/edit.png"></th>
+									</tr>
+									<tr>
+										<td>Vorname</td>
+										<td><input value=""></td>
+									</tr>
+									<tr>
+										<td>Nachname</td>
+										<td><input value=""></td>
+									</tr>
+									<tr>
+										<td>Geburtsdatum</td>
+										<td><input value=""></td>
+									</tr>
+									<tr>
+										<td>Geschlecht</td>
+										<td>
+											<div class="switch">
+												<input class="" type="checkbox">
+												<label>♀♂</label>
+											</div><!-- switch -->
+										</td>
+									</tr>
+									<tr>
+										<td>Patientennummer</td>
+										<td><input value=""></td>
+									</tr>
+									<tr>
+										<td>Station</td>
+										<td>
+											<select>
+												<option></option>
+												<option>Ortho</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>Zimmer-Nummer</td>
+										<td><input value=""></td>
+									</tr>
+								</table>
+								
+								<table class="data-table">
+									<tr>
+										<th>Medizinische Daten</th>
+										<th><img src="imgs/assets/icons/edit.png"></th>
+									</tr>
+									<tr>
+										<td>Kurzanamnese</td>
+										<td><textarea></textarea></td>
+									</tr>
+									<tr>
+										<td>Schwangerschaft</td>
+										<td>
+											<select>
+												<option>Nicht erhoben</option>
+												<option>Nicht schwanger</option>
+												<option>Schwanger</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>Infektionsgrad</td>
+										<td>
+											<select>
+												<option></option>
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>Diagnose</td>
+										<td><input value=""></td>
+									</tr>
+									<tr>
+										<td>Fragestellung</td>
+										<td><textarea></textarea></td>
+									</tr>
+								</table>
+								
+							</div><!-- patient-data -->
+							
+							<div class="surgery-data">
+								
+								<table class="data-table">
+									<tr>
+										<th>OP-Auftrag</th>
+										<th><img src="imgs/assets/icons/edit.png"></th>
+									</tr>
+									<tr>
+										<td>Veranlasser</td>
+										<td><input value=""></td>
+									</tr>
+									<tr>
+										<td>Veranlassende OE fachl.</td>
+										<td><input value=""></td>
+									</tr>
+									<tr>
+										<td>Verantwortl. MA</td>
+										<td><input value=""></td>
+									</tr>
+								</table>
+								<table class="data-table">
+									<tr>
+										<td>Auftagsnummer</td>
+										<td><input value="1241412414"></td>
+									</tr>
+									<tr>
+										<td>OP-Titel</td>
+										<td><input value=""></td>
+									</tr>
+									<tr>
+										<td>Status</td>
+										<td>
+											<select>
+												<option>Unbestätigt</option>
+												<option>Bestätigt</option>
+											</select>
+										</td>
+									</tr>
+								</table>
+								
+								<button type="button" class="">Auftrag anlegen</button>
+								
+							</div><!-- surgey-data -->
+							
+							
+						</div><!-- add-surgery -->
 					</div><!-- content -->
 					
 				</div><!-- center center-side -->

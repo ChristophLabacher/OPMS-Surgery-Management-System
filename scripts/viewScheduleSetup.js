@@ -169,7 +169,7 @@ function getCards()	{
 							"</div><!-- card -->" +
 						"</div><!-- card-container -->"
 			
-			$(".center-side .content").prepend(card);			
+			$(".center-side .content .open-surgeries").prepend(card);			
 		}
 
 	}	

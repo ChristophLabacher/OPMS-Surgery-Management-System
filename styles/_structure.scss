@@ -165,66 +165,6 @@ nav	{
 	}
 }
 
-/************************
-*		ACTION-LIST		*
-************************/
-
-ul.action-list {
-	float: left;
-
-	li	{
-		float: left;
-		
-		height: $smallUnit;
-		padding: 0 2rem;
-		overflow: hidden;
-		
-		list-style: none;
-		line-height: $smallUnit;
-		text-transform: uppercase;
-		letter-spacing: .04em;
-		
-		border: 1px solid transparent;
-		transition: all .3s;
-					
-		img	{
-			display: block;
-			float: left;
-	
-			width: 2rem;
-			height: 2rem;
-			
-			margin-top: ($smallUnit - 2rem) / 2;	
-			margin-right: 1rem;
-		}
-		
-		&:hover	{
-			cursor: pointer;
-			background-color: $grey5;
-			border-left: 1px solid $grey6;
-			border-right: 1px solid $grey6;
-			
-			
-			&:first-child	{
-				border-left-color: transparent;
-			}
-		}
-		
-		&.active	{
-			background-color: $grey5;	
-			border-left: 1px solid $grey6;
-			border-right: 1px solid $grey6;
-			
-			&:first-child	{
-				border-left-color: transparent;
-			}
-			
-			&:hover	{
-			}
-			
-		}
-	}
-}
 
 /************************
 *		SCROLLBARS		*

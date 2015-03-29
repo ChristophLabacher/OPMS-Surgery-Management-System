@@ -1,4 +1,9 @@
 .schedule	{
+	
+	/************************
+	*		CENTER-MAIN		*
+	************************/
+	
 	.center-main .content	{
 		position: relative;
 		
@@ -6,38 +11,6 @@
 		flex-direction: column;
 		
 		overflow: hidden;
-	}
-	
-	.center-side	{
-		transition: width .6s;
-		
-		&.active	{
-			width: 5 * $bigUnit;
-		}
-		
-		.toolbar	{			
-			li	{
-				width: $bigUnit;
-				border-right: none;
-				
-				img	{
-					transform: rotate(0);
-					transition: transform .5s;
-				}
-				
-				&:hover	{
-					background-color: transparent;
-				}
-				
-				&.active	{
-					background-color: transparent;
-					
-					img	{
-						transform: rotate(-45deg);
-					}
-				}
-			}
-		}
 	}
 	
 	.scale	{
@@ -170,6 +143,62 @@
 	.scale-rooms li, .timetable, .column	{
 		transition: width .5s;
 	}
+	
+	/************************
+	*		CENTER-SIDE		*
+	************************/
+	
+	.center-side	{
+		transition: width .6s;
+		
+		&.active	{
+			width: 5 * $bigUnit;
+		}
+		
+		.toolbar	{			
+			li	{
+				width: $bigUnit;
+				border-right: none;
+				
+				img	{
+					transform: rotate(0);
+					transition: transform .5s;
+				}
+				
+				&:hover	{
+					background-color: transparent;
+				}
+				
+				&.active	{
+					background-color: transparent;
+					
+					img	{
+						transform: rotate(-45deg);
+					}
+				}
+			}
+		}
+		
+		.content	{
+			display: flex;
+			flex-direction: row;
+			align-items: stretch;
+			
+			.open-surgeries	{
+				flex-grow: 0;
+				flex-shrink: 0;
+				
+				width: $bigUnit;
+				overflow: scroll;
+			}
+			
+			.add-surgery	{
+				flex-grow: 1;
+				flex-shrink: 0;
+
+			}
+		}
+	}
 }
 
 /************************
@@ -246,6 +275,10 @@
 	.card-container	{
 		padding-top: 1rem;
 		position: relative;
+		
+		&:last-child	{
+			padding-bottom: 1rem;
+		}
 	}
 	
 	.card	{
@@ -271,51 +304,6 @@
 		
 		.name {
 			font-weight: 500;
-		}
-	}
-	
-	table {
-		width: 100%;
-	}
-	
-	tr	{
-		border-bottom: 1px dotted $grey2;
-		
-		&:first-child	{
-			border-bottom: 1px solid $grey2;
-		}
-	}
-	
-	th	{
-		text-align: left;
-		font-weight: 500;
-		
-		padding: .75rem 0;
-	}
-	
-	// Edit button
-	td img {
-		float: right;
-		width: 2rem;
-		height: 2rem;
-		cursor: pointer;
-		
-		opacity: .3;
-		transition: opacity .3s;
-		
-		&:hover	{
-			opacity: 1;
-		}
-	}
-	
-	td	{
-		padding: .5rem 0;
-		vertical-align: top;
-		
-		&:first-child	{
-			padding: .75rem 0;
-			width: $bigUnit;
-			color: $grey0;
 		}
 	}
 	
@@ -351,6 +339,31 @@
 		}	
 	}
 	
+	button	{
+		vertical-align: middle;
+		
+		color: inherit;
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		font-weight: inherit;
+				
+		background-color: $darkblue;
+		border: 1px solid transparent;
+		outline: none;	
+		border-radius: 3px;	
+	}
+	
+	.timestamps	{
+		input	{
+			width: 30%;
+		}
+		
+		button	{
+			float: right;
+		}
+	}
+	
 	/************************
 	*		Barchart 		*
 	************************/
@@ -378,4 +391,35 @@
 		}
 
 	}
+}
+
+/************************
+*		ADD-Surgery		*
+************************/
+
+.add-surgery	{
+	width: 4 * $bigUnit;
+	
+	.patient-data	{
+		width: 2 * $bigUnit;
+		float: left;
+		
+		padding: 0 $smallUnit/2 $smallUnit $smallUnit/2;
+		margin-top: $smallUnit/2;
+		
+		border-right: 1px solid $grey5;
+	}
+	
+	.surgery-data	{
+		width: 2 * $bigUnit;
+		float: left;
+		
+		padding: 0 $smallUnit $smallUnit/2 $smallUnit/2;
+		margin-top: $smallUnit/2;
+	}
+	
+	.inactive	{
+		opacity: .4;
+	}
+	
 }
