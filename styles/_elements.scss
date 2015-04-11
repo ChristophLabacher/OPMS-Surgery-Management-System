@@ -20,7 +20,7 @@ ul.action-list {
 		border: 1px solid transparent;
 		transition: all .3s;
 					
-		img	{
+		img, svg	{
 			display: block;
 			float: left;
 	
@@ -29,6 +29,11 @@ ul.action-list {
 			
 			margin-top: ($smallUnit - 2rem) / 2;	
 			margin-right: 1rem;
+		}
+		
+		svg	path {
+			fill: $white;
+			transition: fill .3s;
 		}
 		
 		&:hover	{
@@ -40,6 +45,10 @@ ul.action-list {
 			
 			&:first-child	{
 				border-left-color: transparent;
+			}
+			
+			svg path	{
+				fill: $lightgreen;
 			}
 		}
 		
@@ -53,6 +62,10 @@ ul.action-list {
 			}
 			
 			&:hover	{
+			}
+			
+			svg path	{
+				fill: $lightgreen;
 			}
 			
 		}
@@ -78,8 +91,8 @@ table.data-table {
 			border-style: solid;
 		}
 		
-		&.top-space td	{
-			margin-top: 2rem;
+		&.no-border	{
+			border: none;
 		}
 	}
 	
@@ -112,6 +125,11 @@ table.data-table {
 			padding: 1rem 1rem 1rem 0;
 			width: 3 * $smallUnit;
 			color: $grey0;
+		}
+		
+		&.button	{
+			color: $white;
+			padding: 0;
 		}
 	}
 }
@@ -151,6 +169,10 @@ select	{
 	background-size: 1.5rem;
 	background-position: 98% 50%;
 	background-repeat: no-repeat;
+	
+	&:hover	{
+		cursor: pointer;
+	}
 }
 
 button	{
@@ -161,18 +183,19 @@ button	{
 	
 	border-radius: .5rem;
 	float: right;
-	transition: background-color .2s;
+	transition: background-color .1s;
 	cursor: pointer;
 
-	&:hover	{
+	&:hover, &:focus	{
 		background-color: $lightgreen;
 	}
 	
-	&.danger:hover	{
+	&.danger:hover, &.danger:focus	{
 		background-color: $red;	
 	}
 }
 
+/*
 .switch	{
 	position: relative;
 	
@@ -230,4 +253,65 @@ button	{
 		left: 2rem;
 		border-radius: 0 3px 3px 0;
 	}
+}
+*/
+
+.switch	{
+	position: relative;
+	
+	input	{
+		position: absolute;
+		z-index: 2;
+		opacity: 0;
+		cursor: pointer;
+		width: 100%;
+		height: 2.8rem;
+	}
+	
+	label	{
+		color: $grey2;
+		
+		position: relative;
+		display: block;
+		cursor: pointer;
+		
+		width: 100%;
+		height: 2.8rem;
+		padding: .5rem;
+		
+		border: 1px solid $grey6;
+		background-color: $grey6;
+		
+		span	{
+			display: block;
+			float: left;
+			width: 50%;
+			text-align: center;
+		}
+	}
+	
+
+	input + label:before	{
+		color: $white;
+		text-align: center;
+		padding-top: .5rem;
+		background-color: $grey5;
+
+		display: block;
+		position: absolute;
+		top: 0px;
+		width: 50%;
+		height: 100%;
+		
+		transition: all .5s;
+		
+		content:"Unbestätigt";
+		left: 0px;
+	}
+	
+	input:checked + label:before	{
+		content: "Bestätigt";
+		left: 50%;
+	}
+
 }

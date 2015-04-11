@@ -35,7 +35,7 @@
 		<nav class="">
 			<ul class="action-list">
 				<li><img src="imgs/assets/icons/statistic.png">Statistiken</li>
-				<li class="active"><img src="imgs/assets/icons/schedule.png">Operationen</li>
+				<li class="active"><img class="svg" src="imgs/assets/icons/schedule.svg">Operationen</li>
 				<li><img src="imgs/assets/icons/person.png">Dienstplan</li>
 				<li><img src="imgs/assets/icons/message.png">Nachrichten</li>
 			</ul><!-- action-list -->
@@ -55,9 +55,9 @@
 						
 						<div class="toolbar-top clearfix">
 							<ul class="action-list clearfix" action="expand-toolbar">
-								<li><img src="imgs/assets/icons/time.png">Fr. 11.03.2015</li>
-								<li><img src="imgs/assets/icons/print.png">Ansicht drucken</li>
-								<li><img src="imgs/assets/icons/emergency.png">Not-OP</li>
+								<li class="date nottoday"><img class="svg" src="imgs/assets/icons/time.svg">Fr. 11.03.2015</li>
+								<li><img class="svg" src="imgs/assets/icons/print.svg">Ansicht drucken</li>
+								<li><img class="svg" src="imgs/assets/icons/emergency.svg">Not-OP</li>
 							</ul><!-- action-list -->
 						</div><!-- toolbar-top -->
 						
@@ -102,7 +102,7 @@
 											
 						<div class="timetable-container">
 							<div class="timetable">
-								<div class="column active" room="1">
+								<div class="column clearfix" room="1">
 									
 									<div class="column-main">
 										
@@ -113,27 +113,30 @@
 										<div class="card-details-container">
 											
 											<div class="header">
-												<p class="name">Maier, Ursula</p>
-												<p class="birthdate">20.12.48</p>
+												<div class="header-info">
+													<p class="name">Maier, Ursula</p>
+													<p class="birthdate">20.12.48</p>
+												</div><!-- header-info -->
+<!-- 												<button type="button" class="">Fahrauftrag erteilen</button> -->
 											</div><!-- header -->
-											
+																						
 											<div class="barchart">
 											
 												<div class="barchart-bars">
-													<div class="state-1"></div>
-													<div class="state-2"></div>
-													<div class="state-3"></div>
-													<div class="state-4"></div>
-													<div class="state-5"></div>
-													<div class="state-6"></div>
-													<div class="state-7"></div>
-													<div class="state-8"></div>
-													<div class="state-9"></div>
-													<div class="state-10"></div>
-													<div class="state-11"></div>
+													<div class="state-1" state="1" start="07:31"></div>
+													<div class="state-2" state="2" start="07:45"></div>
+													<div class="state-3" state="3" start="08:18"></div>
+													<div class="state-4 active" state="4" start="08:42"></div>
+													<div class="state-5 inactive next" state="5"></div>
+													<div class="state-6 inactive" state="6"></div>
+													<div class="state-7 inactive" state="7"></div>
+													<div class="state-8 inactive" state="8"></div>
+													<div class="state-9 inactive" state="9"></div>
+													<div class="state-10 inactive" state="10"></div>
+													<div class="state-11 inactive" state="11"></div>
 												</div><!-- barchart-bars -->
 												
-												<div class="barchart-scale"></div><!-- barchart-scale -->
+												<div class="barchart-legend text-state-4"></div><!-- barchart-scale -->
 											</div><!-- barchart --> 
 											
 											<div class="patient-data data">												
@@ -259,7 +262,7 @@
 													</tr>
 													<tr>
 														<td>Patient im Saal</td>
-														<td><input value="" class="text-state-5" readonly></td>
+														<td><input value="Jetzt starten" class="text-state-5 start" readonly></td>
 													</tr>
 												</table>
 											</div><!-- timestamps -->
@@ -360,7 +363,7 @@
 					<div class="toolbar">
 						
 							<ul class="action-list clearfix">
-								<li action="expand-center-side"><img src="imgs/assets/icons/add.png">OP hinzufügen</li>
+								<li action="expand-center-side"><img class="svg" src="imgs/assets/icons/add.svg">OP hinzufügen</li>
 							</ul><!-- action-list -->
 						
 					</div> <!-- toolbar -->
@@ -376,11 +379,11 @@
 										<th><img src="imgs/assets/icons/edit.png"></th>
 									</tr>
 									<tr>
-										<td>Vorname</td>
+										<td>Name</td>
 										<td><input value=""></td>
 									</tr>
 									<tr>
-										<td>Nachname</td>
+										<td>Vorname</td>
 										<td><input value=""></td>
 									</tr>
 									<tr>
@@ -390,10 +393,17 @@
 									<tr>
 										<td>Geschlecht</td>
 										<td>
+											<select>
+												<option></option>
+												<option>Weiblich</option>
+												<option>Männlich</option>
+											</select>
+<!--
 											<div class="switch">
 												<input class="" type="checkbox">
 												<label>♀♂</label>
-											</div><!-- switch -->
+											</div>
+-->
 										</td>
 									</tr>
 									<tr>
@@ -412,6 +422,11 @@
 									<tr>
 										<td>Zimmer-Nummer</td>
 										<td><input value=""></td>
+									</tr>
+									<tr class="no-border">
+										<td colspan="2" class="button">
+											<button type="button" class="">Suchen</button>
+										</td>
 									</tr>
 								</table>
 								
@@ -490,15 +505,37 @@
 									<tr>
 										<td>Status</td>
 										<td>
-											<select>
-												<option>Unbestätigt</option>
-												<option>Bestätigt</option>
-											</select>
+											<div class="switch">
+												<input class="" type="checkbox">
+												<label><span>Unbestätig</span> <span>Bestätigt</span></label>
+											</div>
+										</td>
+									</tr>
+									<tr class="no-border">
+										<td colspan="2" class="button">
+											<button type="button" class="">Auftrag anlegen</button>
 										</td>
 									</tr>
 								</table>
-								
-								<button type="button" class="">Auftrag anlegen</button>
+																
+								<table class="data-table">
+									<tr>
+										<th>OP-Auftrag</th>
+										<th><img src="imgs/assets/icons/edit.png"></th>
+									</tr>
+									<tr>
+										<td>Veranlasser</td>
+										<td><input value=""></td>
+									</tr>
+									<tr>
+										<td>Veranlassende OE fachl.</td>
+										<td><input value=""></td>
+									</tr>
+									<tr>
+										<td>Verantwortl. MA</td>
+										<td><input value=""></td>
+									</tr>
+								</table>
 								
 							</div><!-- surgey-data -->
 							

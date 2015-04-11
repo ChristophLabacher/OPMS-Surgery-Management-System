@@ -9,6 +9,7 @@ $(document).ready(function() {
 	$(".timetable").width(roomCount * bigUnit);
 	$(".scale-rooms").width(roomCount * bigUnit);
 	
+	// Create the Room scale
 	for (var i = 0; i < rooms.length; i++)	{		
 		var room = "<li room=\"" + rooms[i].id + "\">Saal " + rooms[i].id;
 		if (rooms[i].department)	{
@@ -95,8 +96,6 @@ function getCards()	{
 
 		var top = (Starttime.getUTCHours() + Starttime.getUTCMinutes()/60) * 120;
 		var height = ((Endtime.getUTCHours() + Endtime.getUTCMinutes()/60) - (Starttime.getUTCHours() + Starttime.getUTCMinutes()/60)) * 120;
-
-		console.log(Endtime.getUTCHours());
 
 		if (data[i].Surgery_Room != 0)	{
 			var card =	"<div class=\"card-container\" action =\"show-card-detail\" case-id=\"" + data[i].Case_Id + "\" style=\"top:" + top + "px;\">" +

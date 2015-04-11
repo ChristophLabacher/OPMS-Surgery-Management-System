@@ -66,4 +66,65 @@ $(document).ready(function()	{
 		
 		target.toggleClass("editing");
 	});
+	
+	/************************
+	*Update Barchart-Legend	*
+	************************/
+	
+	$(".column-details .barchart-bars div[start]").mouseover(function()	{
+		$(this).parent().find(".active").removeClass("highlight");
+		
+		var startTime = $(this).attr("start");
+		var endTime = $(this).next("div").attr("start");
+		var state = $(this).attr("state");
+		
+		var print = "";
+		
+		if (endTime)	{
+			print = startTime + " bis " + endTime;
+		} else	{
+			print = "Seit " + startTime;
+		}
+			
+		print += " · " + states[state].title;
+		
+		var legendClass = "text-state-" + state;
+		
+		var target = $(this).closest(".barchart").find(".barchart-legend");
+		
+		target.removeClass().addClass("barchart-legend").addClass(legendClass);
+		target.text(print);
+	})
+	
+	$(".column-details .barchart-bars div.next").mouseover(function()	{
+		$(this).parent().find(".active").removeClass("highlight");
+
+		var state = $(this).attr("state");
+		
+		var print = "„" + states[state].title + "“ jetzt starten";
+		
+		var legendClass = "text-state-" + state;
+		
+		var target = $(this).closest(".barchart").find(".barchart-legend");
+		
+		target.removeClass().addClass("barchart-legend").addClass(legendClass);
+		target.text(print);
+	});
+	
+	$(".column-details .barchart-bars").mouseout(function()	{
+		var source = $(this).closest(".barchart").find(".barchart-bars div.active");
+		source.addClass("highlight");
+		
+		var startTime = $(source).attr("start");
+		var state = $(source).attr("state");
+		
+		var print = "Seit " + startTime +  " · " + states[state].title;
+		
+		var legendClass = "text-state-" + state;
+		
+		var target = $(source).closest(".barchart").find(".barchart-legend");
+		
+		target.removeClass().addClass("barchart-legend").addClass(legendClass);
+		target.text(print);
+	});
 });

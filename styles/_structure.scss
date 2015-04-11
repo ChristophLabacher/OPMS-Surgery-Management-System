@@ -46,7 +46,7 @@ nav	{
 			padding: 0;
 			background-color: transparent;
 
-			img	{
+			img, svg	{
 				height: $smallUnit;
 				width: $smallUnit;
 				
@@ -60,7 +60,11 @@ nav	{
 			}
 			
 			&.active	{
-				background-color: $grey6;			
+				background-color: $grey6;
+				
+				svg path, svg rect	{
+					fill: $lightgreen;
+				}			
 			}
 		}
 	}

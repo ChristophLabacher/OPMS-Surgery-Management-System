@@ -13,6 +13,10 @@
 		overflow: hidden;
 	}
 	
+	.toolbar .date.not-today svg path	{
+		fill: $red;
+	}
+	
 	.scale	{
 		list-style: none;
 		position: absolute;
@@ -160,7 +164,7 @@
 				width: $bigUnit;
 				border-right: none;
 				
-				img	{
+				svg	{
 					transform: rotate(0);
 					transition: transform .5s;
 				}
@@ -172,8 +176,14 @@
 				&.active	{
 					background-color: transparent;
 					
-					img	{
+					svg	{
 						transform: rotate(-45deg);
+					}
+					
+					&:hover	{
+						svg path	{
+							fill: $red;
+						}
 					}
 				}
 			}
@@ -291,19 +301,29 @@
 ************************/
 
 .card-details-container	{
+	
 	.header, .patient-data, .surgery-data, .plan, .timestamps	{
 		margin: $smallUnit/2 $smallUnit;
 	}
 	
 	.header	{
-		font-size: 1.5em;
-		line-height: 1.4em;
-		
 		margin-top: 0;
 		padding-top: $smallUnit/2;
+		height: 8rem;
 		
+		.header-info	{
+			font-size: 1.5em;
+			line-height: 1.4em;
+			width: 65%;
+			float: left;
+		}
 		.name {
 			font-weight: 500;
+		}
+		
+		button	{
+			margin: 0;
+			background-color: $lightyellow;
 		}
 	}
 	
@@ -326,10 +346,22 @@
 		}
 	}
 	
+	.timestamps .start	{
+		opacity: .3;
+		transition: opacity .3s;
+		
+		&:hover	{
+			opacity: 1;
+			cursor: pointer;
+		}
+	}
+	
 	/************************
 	*		Barchart 		*
 	************************/
 	.barchart	{
+		width: 100%;
+
 		.barchart-bars	{
 			height: 3rem;
 			overflow: hidden;
@@ -339,17 +371,41 @@
 				width: (100%/11);
 				float: left;
 				
-				transition: opacity .5s;
-				opacity: .7;
+				transition: opacity .3s;
+				opacity: .5;
 				
-				&:hover	{
+				&:hover, &.next:hover, &.highlight	{
 					opacity: 1;
+				}
+				
+				&.next:after	{
+					content: "Start";
+					opacity: 0;
+					width: 100%;
+					display: block;
+					text-align: center;
+					line-height: 3rem;
+					cursor: pointer;
+				}
+				
+				&.next:hover:after	{
+					opacity: 1;
+				}
+				
+				&.inactive	{
+					opacity: .1;
 				}
 			}
 			
 			.state-4, .state-6, .state-8, .state-10, .state-11	{
 				border-left: 3px solid $grey6;
 			}
+		}
+		
+		.barchart-legend	{
+			text-align: center;
+			padding-top: 2rem;
+			height: 4rem;
 		}
 
 	}
