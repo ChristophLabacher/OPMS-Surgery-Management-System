@@ -127,7 +127,7 @@
 													<div class="state-2" state="2" start="07:45"></div>
 													<div class="state-3" state="3" start="08:18"></div>
 													<div class="state-4 active" state="4" start="08:42"></div>
-													<div class="state-5 inactive next" state="5"></div>
+													<div class="state-5 inactive next" state="5" action="start-next"></div>
 													<div class="state-6 inactive" state="6"></div>
 													<div class="state-7 inactive" state="7"></div>
 													<div class="state-8 inactive" state="8"></div>
@@ -244,25 +244,37 @@
 														<th>OP-Zeiten</th>
 														<th><img src="imgs/assets/icons/edit.png" action="edit-section"></th>
 													</tr>
-													<tr>
+													<tr state="1">
 														<td>Fahrauftrag erteilt</td>
 														<td><input value="07:31" class="text-state-1" readonly></td>
 													</tr>
-													<tr>
+													<tr state="2">
 														<td>Fahrauftrag angenommen</td>
 														<td><input value="07:45" class="text-state-2" readonly></td>
 													</tr>
-													<tr>
+													<tr state="3">
 														<td>Patient eingeschleust</td>
 														<td><input value="08:18" class="text-state-3" readonly></td>
 													</tr>
-													<tr>
+													<tr state="4">
 														<td>Narkoseeinleitung</td>
 														<td><input value="08:42" class="text-state-4" readonly></td>
 													</tr>
-													<tr>
+													<tr state="5">
 														<td>Patient im Saal</td>
-														<td><input value="Jetzt starten" class="text-state-5 start" readonly></td>
+														<td><input value="Starten" class="text-state-5 next" action="start-next" readonly></td>
+													</tr>
+													<tr state="6">
+														<td>Begin Chirurgische Maßnahme</td>
+														<td><input value="" class="text-state-6" readonly></td>
+													</tr>
+													<tr state="7">
+														<td>Schnitt</td>
+														<td><input value="" class="text-state-7" readonly></td>
+													</tr>
+													<tr state="8">
+														<td>Naht</td>
+														<td><input value="" class="text-state-8" readonly></td>
 													</tr>
 												</table>
 											</div><!-- timestamps -->

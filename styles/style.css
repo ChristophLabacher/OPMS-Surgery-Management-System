@@ -807,11 +807,11 @@ button {
       font-weight: 500; }
   .card-details-container .editing input:focus, .card-details-container .editing textarea:focus, .card-details-container .editing select:hover {
     background-color: #414344; }
-  .card-details-container .timestamps .start {
-    opacity: 0.3;
+  .card-details-container .timestamps:not(.editing) .next {
+    opacity: 0;
     -webkit-transition: opacity 0.3s;
             transition: opacity 0.3s; }
-    .card-details-container .timestamps .start:hover {
+    .card-details-container .timestamps:not(.editing) .next:hover {
       opacity: 1;
       cursor: pointer; }
   .card-details-container .barchart {
