@@ -200,6 +200,11 @@
 				
 				width: $bigUnit;
 				overflow: scroll;
+				border-right: 1px solid $grey5;
+				
+				.new-card	{
+					transition: margin-top 1s;
+				}
 			}
 			
 			.add-surgery	{
@@ -285,7 +290,8 @@
 	.card-container	{
 		padding-top: 1rem;
 		position: relative;
-		
+		height: 100%;
+
 		&:last-child	{
 			padding-bottom: 1rem;
 		}
@@ -320,29 +326,12 @@
 		.name {
 			font-weight: 500;
 		}
-		
-		button	{
-			margin: 0;
-			background-color: $lightyellow;
-		}
 	}
 	
-	.data:not(.editing)	{
-		input, textarea, select	{
-			background-color: transparent;
-			cursor: default;
-			
-			background: none;
-			
-			&:focus	{
-				background-color: inherit;
-			}
-		}		
-	}
-	
-	input, textarea, select	{
-		&:focus	{
-			background-color: $grey2;
+
+	.editing	{
+		input:focus, textarea:focus, select:hover	{
+			background-color: $grey3;
 		}
 	}
 	
@@ -418,26 +407,46 @@
 .add-surgery	{
 	width: 4 * $bigUnit;
 	
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	
 	.patient-data	{
 		width: 2 * $bigUnit;
-		float: left;
+		flex-grow: 0;
+		flex-shrink: 1;
 		
-		padding: 0 $smallUnit/2 $smallUnit $smallUnit/2;
+		overflow: scroll;
+
+		padding-left: $smallUnit/2;
+		padding-right: $smallUnit/2;
 		margin-top: $smallUnit/2;
+		margin-bottom: $smallUnit/2;
 		
 		border-right: 1px solid $grey5;
 	}
 	
 	.surgery-data	{
 		width: 2 * $bigUnit;
-		float: left;
+		flex-grow: 0;
+		flex-shrink: 0;
 		
-		padding: 0 $smallUnit $smallUnit/2 $smallUnit/2;
+		padding-left: $smallUnit/2;
+		padding-right: $smallUnit/2;
 		margin-top: $smallUnit/2;
+		margin-bottom: $smallUnit/2;
+
+	}
+	
+	table	{
+		transition: opacity .5s;
 	}
 	
 	.inactive	{
-		opacity: .4;
+		opacity: .3;
 	}
 	
+	.hidden	{
+		display: none;
+	}
 }

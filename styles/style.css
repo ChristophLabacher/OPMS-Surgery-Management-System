@@ -409,41 +409,62 @@ ul.action-list {
 /************************
 *		DATA-TABLE		*
 ************************/
-table.data-table {
+table {
   width: 100%;
   margin-top: 4rem; }
-  table.data-table:first-child {
+  table.no-topspace {
     margin-top: 0; }
-  table.data-table tr {
+  table tr {
     border-bottom: 1px dotted #363738; }
-    table.data-table tr:first-child {
+    table tr:first-child {
       border-style: solid; }
-    table.data-table tr.no-border {
+    table tr.no-border {
       border: none; }
-  table.data-table th {
+  table th {
     text-align: left;
     font-weight: 500;
     padding: 0.75rem 0; }
-    table.data-table th img {
-      float: right;
-      width: 2rem;
-      height: 2rem;
-      cursor: pointer;
-      opacity: 0.3;
-      -webkit-transition: opacity 0.3s;
-              transition: opacity 0.3s; }
-      table.data-table th img:hover {
-        opacity: 1; }
-  table.data-table td {
-    padding: 0.5rem 0;
-    vertical-align: top; }
-    table.data-table td:first-child {
-      padding: 1rem 1rem 1rem 0;
-      width: 15rem;
-      color: #999999; }
-    table.data-table td.button {
-      color: white;
-      padding: 0; }
+  table td {
+    padding: 1rem; }
+
+table.data-table th:nth-child(2) {
+  padding: 0;
+  line-height: 3rem;
+  vertical-align: middle; }
+table.data-table th img {
+  float: right;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  opacity: 0.3;
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s; }
+  table.data-table th img:hover {
+    opacity: 1; }
+table.data-table td {
+  padding: 0.5rem 0;
+  vertical-align: top; }
+  table.data-table td:first-child {
+    padding: 1rem 1rem 1rem 0;
+    width: 15rem;
+    color: #999999; }
+  table.data-table td.button {
+    color: white;
+    padding: 0; }
+
+table.list-table td:last-child {
+  text-align: right; }
+table.list-table tr {
+  background-color: transparent;
+  -webkit-transition: background-color 0.3s;
+          transition: background-color 0.3s; }
+table.list-table tr:nth-child(even) {
+  background-color: #494b4c; }
+table.list-table tr:not(:first-child) {
+  border-bottom: none; }
+table.list-table tr:not(:first-child):hover {
+  cursor: pointer;
+  background-color: #5c5e60; }
 
 /************************
 *		FORMS		*
@@ -490,66 +511,6 @@ button {
   button.danger:hover, button.danger:focus {
     background-color: #d13f3f; }
 
-/*
-.switch	{
-	position: relative;
-	
-	input	{
-		position: absolute;
-		z-index: 2;
-		opacity: 0;
-		cursor: pointer;
-		width: 4rem;
-		height: 3rem;
-	}
-	
-	label	{
-		letter-spacing: .4em;
-		color: $grey1;
-		font-size: 1.2em;
-		line-height: 1.2em;
-		
-		position: relative;
-		display: block;
-		cursor: pointer;
-		
-		width: 4rem;
-		height: 3rem;
-		padding: .5rem;
-
-		border-radius: 3px;
-		border: 1px solid $grey6;
-		background-color: $grey5;
-		
-		content: "♀ ♂"
-	}
-	
-	input + label:before	{
-		color: $white;
-		padding-left: .4rem;
-		padding-top: .5rem;
-	
-		content:"♀";
-
-		display: block;
-		position: absolute;
-		width: 2rem;
-		height: 3rem;
-		background-color: $grey6;
-		transition: all .3s;
-		
-		left: 0px;
-		top: -1px;
-		border-radius: 3px 0 0 3px;
-	}
-	
-	input:checked + label:before	{
-		content: "♂";
-		left: 2rem;
-		border-radius: 0 3px 3px 0;
-	}
-}
-*/
 .switch {
   position: relative; }
   .switch input {
@@ -579,6 +540,7 @@ button {
     text-align: center;
     padding-top: 0.5rem;
     background-color: #363738;
+    border: 1px solid transparent;
     display: block;
     position: absolute;
     top: 0px;
@@ -591,6 +553,14 @@ button {
   .switch input:checked + label:before {
     content: "Bestätigt";
     left: 50%; }
+
+.data:not(.editing) input, .data:not(.editing) textarea, .data:not(.editing) select, .data:not(.editing) .switch label, .data:not(.editing) .switch label:before {
+  background-color: transparent;
+  cursor: default;
+  background: none;
+  border: 1px solid transparent; }
+  .data:not(.editing) input:focus, .data:not(.editing) textarea:focus, .data:not(.editing) select:focus, .data:not(.editing) .switch label:focus, .data:not(.editing) .switch label:before:focus {
+    background-color: inherit; }
 
 .card {
   z-index: 2; }
@@ -744,7 +714,11 @@ button {
             -ms-flex-negative: 0;
                 flex-shrink: 0;
         width: 20rem;
-        overflow: scroll; }
+        overflow: scroll;
+        border-right: 1px solid #363738; }
+        .schedule .center-side .content .open-surgeries .new-card {
+          -webkit-transition: margin-top 1s;
+                  transition: margin-top 1s; }
       .schedule .center-side .content .add-surgery {
         -webkit-box-flex: 1;
         -webkit-flex-grow: 1;
@@ -804,7 +778,8 @@ button {
 
 .center-side .card-container {
   padding-top: 1rem;
-  position: relative; }
+  position: relative;
+  height: 100%; }
   .center-side .card-container:last-child {
     padding-bottom: 1rem; }
 .center-side .card {
@@ -830,17 +805,8 @@ button {
       float: left; }
     .card-details-container .header .name {
       font-weight: 500; }
-    .card-details-container .header button {
-      margin: 0;
-      background-color: #edbf40; }
-  .card-details-container .data:not(.editing) input, .card-details-container .data:not(.editing) textarea, .card-details-container .data:not(.editing) select {
-    background-color: transparent;
-    cursor: default;
-    background: none; }
-    .card-details-container .data:not(.editing) input:focus, .card-details-container .data:not(.editing) textarea:focus, .card-details-container .data:not(.editing) select:focus {
-      background-color: inherit; }
-  .card-details-container input:focus, .card-details-container textarea:focus, .card-details-container select:focus {
-    background-color: #494b4c; }
+  .card-details-container .editing input:focus, .card-details-container .editing textarea:focus, .card-details-container .editing select:hover {
+    background-color: #414344; }
   .card-details-container .timestamps .start {
     opacity: 0.3;
     -webkit-transition: opacity 0.3s;
@@ -885,17 +851,52 @@ button {
 *		ADD-Surgery		*
 ************************/
 .add-surgery {
-  width: 80rem; }
+  width: 80rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch; }
   .add-surgery .patient-data {
     width: 40rem;
-    float: left;
-    padding: 0 2.5rem 5rem 2.5rem;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    -webkit-flex-shrink: 1;
+        -ms-flex-negative: 1;
+            flex-shrink: 1;
+    overflow: scroll;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
     margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     border-right: 1px solid #363738; }
   .add-surgery .surgery-data {
     width: 40rem;
-    float: left;
-    padding: 0 5rem 2.5rem 2.5rem;
-    margin-top: 2.5rem; }
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem; }
+  .add-surgery table {
+    -webkit-transition: opacity 0.5s;
+            transition: opacity 0.5s; }
   .add-surgery .inactive {
-    opacity: 0.4; }
+    opacity: 0.3; }
+  .add-surgery .hidden {
+    display: none; }

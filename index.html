@@ -24,7 +24,7 @@
 		
 		<script type="text/javascript" src="scripts/viewScheduleSetup.js"></script>
 		<script type="text/javascript" src="scripts/viewScheduleAction.js"></script>
-
+		<script type="text/javascript" src="scripts/viewScheduleActionAddSurgery.js"></script>
 
 
 	</head>
@@ -373,169 +373,203 @@
 						<div class="add-surgery">
 							<div class="patient-data">
 						
-								<table class="data-table">
+								<div class="patient data editing">
+									<table class="data-table no-topspace">
+										<tr>
+											<th>Patienten suchen</th>
+											<th></th>
+										</tr>
+										<tr>
+											<td>Name</td>
+											<td><input value=""></td>
+										</tr>
+										<tr>
+											<td>Vorname</td>
+											<td><input value=""></td>
+										</tr>
+										<tr>
+											<td>Geburtsdatum</td>
+											<td><input value=""></td>
+										</tr>
+										<tr>
+											<td>Geschlecht</td>
+											<td>
+												<select>
+													<option></option>
+													<option>Weiblich</option>
+													<option>Männlich</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>Patientennummer</td>
+											<td><input value=""></td>
+										</tr>
+										<tr>
+											<td>Station</td>
+											<td>
+												<select>
+													<option></option>
+													<option>Ortho</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>Zimmer-Nummer</td>
+											<td><input value=""></td>
+										</tr>
+										<tr class="no-border button">
+											<td colspan="2" class="button">
+												<button type="button" class="" action="search">Suchen</button>
+											</td>
+										</tr>
+									</table>
+								</div><!-- data -->
+								
+								<table class="list-table search-result hidden">
 									<tr>
-										<th>Patienten suchen</th>
-										<th><img src="imgs/assets/icons/edit.png"></th>
+										<th colspan="3">Suchergebnis</th>
 									</tr>
-									<tr>
-										<td>Name</td>
-										<td><input value=""></td>
+									<tr action="select-patient">
+										<td>Maier, Ursula</td>
+										<td>04.07.58</td>
+										<td>URO 5</td>
 									</tr>
-									<tr>
-										<td>Vorname</td>
-										<td><input value=""></td>
+									<tr action="select-patient">
+										<td>Maier, Ursula</td>
+										<td>04.07.58</td>
+										<td>URO 5</td>
 									</tr>
-									<tr>
-										<td>Geburtsdatum</td>
-										<td><input value=""></td>
+									<tr action="select-patient">
+										<td>Maier, Ursula</td>
+										<td>04.07.58</td>
+										<td>URO 5</td>
 									</tr>
-									<tr>
-										<td>Geschlecht</td>
-										<td>
-											<select>
-												<option></option>
-												<option>Weiblich</option>
-												<option>Männlich</option>
-											</select>
-<!--
-											<div class="switch">
-												<input class="" type="checkbox">
-												<label>♀♂</label>
-											</div>
--->
-										</td>
+									<tr action="select-patient">
+										<td>Maier, Ursula</td>
+										<td>04.07.58</td>
+										<td>URO 5</td>
 									</tr>
-									<tr>
-										<td>Patientennummer</td>
-										<td><input value=""></td>
-									</tr>
-									<tr>
-										<td>Station</td>
-										<td>
-											<select>
-												<option></option>
-												<option>Ortho</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td>Zimmer-Nummer</td>
-										<td><input value=""></td>
-									</tr>
-									<tr class="no-border">
-										<td colspan="2" class="button">
-											<button type="button" class="">Suchen</button>
-										</td>
+									<tr action="select-patient">
+										<td>Maier, Ursula</td>
+										<td>04.07.58</td>
+										<td>URO 5</td>
 									</tr>
 								</table>
-								
-								<table class="data-table">
-									<tr>
-										<th>Medizinische Daten</th>
-										<th><img src="imgs/assets/icons/edit.png"></th>
-									</tr>
-									<tr>
-										<td>Kurzanamnese</td>
-										<td><textarea></textarea></td>
-									</tr>
-									<tr>
-										<td>Schwangerschaft</td>
-										<td>
-											<select>
-												<option>Nicht erhoben</option>
-												<option>Nicht schwanger</option>
-												<option>Schwanger</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td>Infektionsgrad</td>
-										<td>
-											<select>
-												<option></option>
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td>Diagnose</td>
-										<td><input value=""></td>
-									</tr>
-									<tr>
-										<td>Fragestellung</td>
-										<td><textarea></textarea></td>
-									</tr>
-								</table>
-								
+
+								<div class="medical-data data hidden editing">
+									<table class="data-table">
+										<tr>
+											<th>Medizinische Daten</th>
+											<th></th>
+										</tr>
+										<tr>
+											<td>Kurzanamnese</td>
+											<td><textarea></textarea></td>
+										</tr>
+										<tr>
+											<td>Schwangerschaft</td>
+											<td>
+												<select>
+													<option>Nicht erhoben</option>
+													<option>Nicht schwanger</option>
+													<option>Schwanger</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>Infektionsgrad</td>
+											<td>
+												<select>
+													<option></option>
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>Diagnose</td>
+											<td><input value=""></td>
+										</tr>
+										<tr>
+											<td>Fragestellung</td>
+											<td><textarea></textarea></td>
+										</tr>
+									</table>
+								</div><!-- data -->
 							</div><!-- patient-data -->
 							
 							<div class="surgery-data">
 								
-								<table class="data-table">
-									<tr>
-										<th>OP-Auftrag</th>
-										<th><img src="imgs/assets/icons/edit.png"></th>
-									</tr>
-									<tr>
-										<td>Veranlasser</td>
-										<td><input value=""></td>
-									</tr>
-									<tr>
-										<td>Veranlassende OE fachl.</td>
-										<td><input value=""></td>
-									</tr>
-									<tr>
-										<td>Verantwortl. MA</td>
-										<td><input value=""></td>
-									</tr>
-								</table>
-								<table class="data-table">
-									<tr>
-										<td>Auftagsnummer</td>
-										<td><input value="1241412414"></td>
-									</tr>
-									<tr>
-										<td>OP-Titel</td>
-										<td><input value=""></td>
-									</tr>
-									<tr>
-										<td>Status</td>
-										<td>
-											<div class="switch">
-												<input class="" type="checkbox">
-												<label><span>Unbestätig</span> <span>Bestätigt</span></label>
-											</div>
-										</td>
-									</tr>
-									<tr class="no-border">
-										<td colspan="2" class="button">
-											<button type="button" class="">Auftrag anlegen</button>
-										</td>
-									</tr>
-								</table>
-																
-								<table class="data-table">
-									<tr>
-										<th>OP-Auftrag</th>
-										<th><img src="imgs/assets/icons/edit.png"></th>
-									</tr>
-									<tr>
-										<td>Veranlasser</td>
-										<td><input value=""></td>
-									</tr>
-									<tr>
-										<td>Veranlassende OE fachl.</td>
-										<td><input value=""></td>
-									</tr>
-									<tr>
-										<td>Verantwortl. MA</td>
-										<td><input value=""></td>
-									</tr>
-								</table>
+								<div class="surgery data editing inactive">
+									<table class="data-table no-topspace">
+										<tr>
+											<th>OP-Auftrag</th>
+											<th></th>
+										</tr>
+										<tr>
+											<td>Veranlasser</td>
+											<td><input value=""></td>
+										</tr>
+										<tr>
+											<td>Veranlassende OE fachl.</td>
+											<td><input value=""></td>
+										</tr>
+										<tr>
+											<td>Verantwortl. MA</td>
+											<td><input value=""></td>
+										</tr>
+									</table>
+									<table class="data-table">
+										<tr>
+											<td>Auftagsnummer</td>
+											<td><input value="1241412414"></td>
+										</tr>
+										<tr>
+											<td>Veranlasste Leistung</td>
+											<td><input value=""></td>
+										</tr>
+										<tr>
+											<td>Status</td>
+											<td>
+												<div class="switch">
+													<input class="" type="checkbox">
+													<label><span>Unbestätig</span> <span>Bestätigt</span></label>
+												</div>
+											</td>
+										</tr>
+										<tr class="no-border button">
+											<td colspan="2" class="button">
+												<button type="button" class="" action="create-surgery">Auftrag anlegen</button>
+											</td>
+										</tr>
+									</table>
+								</div><!-- data -->
+
+								<div class="surgery-properties data editing hidden">																	
+									<table class="data-table">
+										<tr>
+											<th>OP-Daten</th>
+											<th></th>
+										</tr>
+										<tr>
+											<td>Dauer</td>
+											<td><input value=""></td>
+										</tr>
+										<tr>
+											<td>Fall</td>
+											<td><input value=""></td>
+										</tr>
+										
+										<tr class="no-border button">
+											<td colspan="2" class="button">
+												<button type="button" class="" action="save-properties">Daten speichern</button>
+											</td>
+										</tr>
+									</table>
+								</div><!-- data -->
 								
 							</div><!-- surgey-data -->
 							

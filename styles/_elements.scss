@@ -76,13 +76,13 @@ ul.action-list {
 *		DATA-TABLE		*
 ************************/
 
-table.data-table {
+table	{
 	width: 100%;
 	margin-top: 4rem;
 	
-	&:first-child	{
+	&.no-topspace {
 		margin-top: 0;
-	}
+	}	
 	
 	tr	{
 		border-bottom: 1px dotted $grey5;
@@ -101,6 +101,21 @@ table.data-table {
 		font-weight: 500;
 		
 		padding: .75rem 0;
+	}
+	
+	td	{
+		padding: 1rem;
+	}
+}
+
+table.data-table {	
+	th	{	
+		
+		&:nth-child(2)	{
+			padding: 0;
+			line-height: 3rem;
+			vertical-align: middle;
+		}	
 		
 		img	{ // Edit button
 			float: right;
@@ -131,6 +146,30 @@ table.data-table {
 			color: $white;
 			padding: 0;
 		}
+	}
+}
+
+table.list-table	{
+	td:last-child	{
+		text-align: right;
+	}
+	
+	tr	{
+		background-color: transparent;
+		transition: background-color .3s;
+	}
+	
+	tr:nth-child(even)	{
+		background-color: $grey2;
+	}
+	
+	tr:not(:first-child)	{
+		border-bottom: none;	
+	}
+	
+	tr:not(:first-child):hover	{
+		cursor: pointer;
+		background-color: $grey1;
 	}
 }
 
@@ -195,67 +234,6 @@ button	{
 	}
 }
 
-/*
-.switch	{
-	position: relative;
-	
-	input	{
-		position: absolute;
-		z-index: 2;
-		opacity: 0;
-		cursor: pointer;
-		width: 4rem;
-		height: 3rem;
-	}
-	
-	label	{
-		letter-spacing: .4em;
-		color: $grey1;
-		font-size: 1.2em;
-		line-height: 1.2em;
-		
-		position: relative;
-		display: block;
-		cursor: pointer;
-		
-		width: 4rem;
-		height: 3rem;
-		padding: .5rem;
-
-		border-radius: 3px;
-		border: 1px solid $grey6;
-		background-color: $grey5;
-		
-		content: "♀ ♂"
-	}
-	
-	input + label:before	{
-		color: $white;
-		padding-left: .4rem;
-		padding-top: .5rem;
-	
-		content:"♀";
-
-		display: block;
-		position: absolute;
-		width: 2rem;
-		height: 3rem;
-		background-color: $grey6;
-		transition: all .3s;
-		
-		left: 0px;
-		top: -1px;
-		border-radius: 3px 0 0 3px;
-	}
-	
-	input:checked + label:before	{
-		content: "♂";
-		left: 2rem;
-		border-radius: 0 3px 3px 0;
-	}
-}
-*/
-
 .switch	{
 	position: relative;
 	
@@ -296,6 +274,7 @@ button	{
 		text-align: center;
 		padding-top: .5rem;
 		background-color: $grey5;
+		border: 1px solid transparent;
 
 		display: block;
 		position: absolute;
@@ -314,4 +293,19 @@ button	{
 		left: 50%;
 	}
 
+}
+
+	
+.data:not(.editing)	{
+	input, textarea, select, .switch label,	.switch label:before{
+		background-color: transparent;
+		cursor: default;
+		
+		background: none;
+		border: 1px solid transparent;
+		
+		&:focus	{
+			background-color: inherit;
+		}
+	}		
 }

@@ -137,7 +137,7 @@ function getCards()	{
 			
 			$(".column[room='" + data[i].Surgery_Room + "'] .column-main").prepend(card);
 		} else 	{
-			var card =	"<div class=\"card-container\" action =\"show-card-detail\" case-id=\"" + data[i].Case_Id + "\" \">" +
+			var card =	"<div class=\"card-container\" case-id=\"" + data[i].Case_Id + "\" \">" +
 							"<div class=\"card\" style=\"height: " + height + "px;\">" +
 								"<div class=\"handle handle-top\"></div><!-- handle-top -->" +
 								

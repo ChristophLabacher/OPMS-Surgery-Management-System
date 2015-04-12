@@ -47,20 +47,14 @@ $(document).ready(function()	{
 	/************************
 	*	Edit Section		*
 	************************/
-	$("[action = 'edit-section']").click(function()	{	
+	$("body").on("click", "[action = 'edit-section']", function()	{
 		var target = $(this).closest(".data");
-			
+
 		if (target.hasClass("editing"))	{
-			target.find("input").attr("readonly", "");
-			target.find("textarea").attr("readonly", "");
-			target.find("select").attr("disabled", "");
-			
+			removeEditability(target);
 			$(this).attr("src", "imgs/assets/icons/edit.png");
 		} else	{
-			target.find("input").removeAttr("readonly");
-			target.find("textarea").removeAttr("readonly");
-			target.find("select").removeAttr("disabled");
-			
+			addEditability(target);
 			$(this).attr("src", "imgs/assets/icons/confirm.png");
 		}
 		
@@ -70,7 +64,6 @@ $(document).ready(function()	{
 	/************************
 	*Update Barchart-Legend	*
 	************************/
-	
 	$(".column-details .barchart-bars div[start]").mouseover(function()	{
 		$(this).parent().find(".active").removeClass("highlight");
 		
@@ -128,3 +121,17 @@ $(document).ready(function()	{
 		target.text(print);
 	});
 });
+
+function removeEditability(_target)	{
+	_target.find("input").attr("readonly", "");
+	_target.find("textarea").attr("readonly", "");
+	_target.find("select").attr("disabled", "");
+	_target.find(".switch input").attr("disabled", "");
+}
+
+function addEditability(_target)	{
+	_target.find("input").removeAttr("readonly");
+	_target.find("textarea").removeAttr("readonly");
+	_target.find("select").removeAttr("disabled");
+	_target.find(".switch input").removeAttr("disabled");
+}
