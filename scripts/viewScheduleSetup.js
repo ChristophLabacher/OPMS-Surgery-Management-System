@@ -19,7 +19,7 @@ $(document).ready(function() {
 		
 		$(".scale-rooms").append(room);
 	}
-
+	
 	// Add guidlines for half hours
 	$(".column-main").each(function()	{
 		for(var i = 0; i < 47; i++)	{
@@ -27,14 +27,42 @@ $(document).ready(function() {
 		}
 	});
 	
+	var h = $(".timetable-container").outerHeight();
+	$(".column-details").height(h);
+	
+	
+	// Scroll timetable-container
+	timetableScroll = new IScroll('.timetable-container', {
+		mouseWheel: true,
+		scrollbars: true,
+		scrollX: true,
+		bounce: false,
+		freeScroll: true,
+		disableTouch: true,
+		disablePointer: true,
+		disableMouse: true,
+		fadeScrollbars: true,
+		scrollbars: 'custom',
+		probeType: 3
+	});
 	
 	// Scroll scales with timetable container
-	$(".timetable-container").scroll(function()	{
-		var y = -$(this).scrollTop();
-		var x = -$(this).scrollLeft();
-		$(".schedule .scale-time").css("transform", "translateY(" + y + "px)");
-		$(".schedule .scale-rooms").css("transform", "translateX(" + x + "px)");		
+	timetableScroll.on("scroll", function()	{
+		$(".schedule .scale-time").css("transform", "translateY(" + this.y + "px)");
+		$(".schedule .scale-rooms").css("transform", "translateX(" + this.x + "px)");	
+		
+		$(".column-details").css("top", -this.y)	
 	});
+	
+	// Scroll columnDetails
+	columnDetailsScroll = new IScroll('.column-details', {
+		mouseWheel: true,
+		scrollbars: true,
+		scrollY: true,
+		bounce: false,
+		scrollbars: 'custom'
+	})
+
 	
 //	loadFileLocally()
 	loadFileFromServer();
@@ -44,7 +72,7 @@ $(document).ready(function() {
 function loadRoomData()	{
 	// Get json-file
 	var request = new XMLHttpRequest();
-		request.open("GET", "../data/rooms.json", false);
+		request.open("GET", "data/rooms.json", false);
 		request.send(null);
 	// Put json-file into an array
 	rooms = JSON.parse(request.responseText);
@@ -83,7 +111,7 @@ function loadFileFromServer()	{
 function loadFileLocally()	{
 	// Get json-file
 	var request = new XMLHttpRequest();
-		request.open("GET", "../data/surgeries.json", false);
+		request.open("GET", "data/surgeries.json", false);
 		request.send(null);
 	// Put json-file into an array
 	data = JSON.parse(request.responseText);

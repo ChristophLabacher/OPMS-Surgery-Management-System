@@ -86,7 +86,7 @@
 	
 	.timetable-container	{
 		margin: 5rem 0 0 5rem;
-		overflow: scroll;
+		overflow: hidden;
 		position: relative;
 	}
 	
@@ -101,6 +101,9 @@
 		height: 24 * 12rem;
 		
 		overflow: hidden;
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
 		
 		border-right: 1px solid $grey3;
 		
@@ -113,8 +116,9 @@
 			
 			width: $bigUnit;
 			height: 100%;
-
-			float: left;
+			
+			flex-grow: 0;
+			flex-shrink: 0;
 			
 			hr	{
 				margin: 0;
@@ -132,11 +136,21 @@
 		
 		.column-details	{
 			width: 3 * $bigUnit;
-			height: 100%;
-
-			margin-left: $bigUnit;
+			
+			height: 500px;	
+			overflow: hidden;
+			position: relative;
+	
+			flex-grow: 0;
+			flex-shrink: 0;
+			
 			background-color: $grey6;
-
+			
+			.iScrollVerticalScrollbar	{
+				right: 10px;
+				top: 10px;
+				bottom: 10px;
+			}
 		}
 		
 		&:last-child	{
@@ -307,28 +321,24 @@
 ************************/
 
 .card-details-container	{
-	
-	.header, .patient-data, .surgery-data, .plan, .timestamps	{
+	padding: $smallUnit/2 0;
+		
+	.header	{
+		margin: 0 $smallUnit $smallUnit/2 $smallUnit;
+	}
+	.data	{
 		margin: $smallUnit/2 $smallUnit;
 	}
 	
 	.header	{
-		margin-top: 0;
-		padding-top: $smallUnit/2;
-		height: 8rem;
-		
-		.header-info	{
-			font-size: 1.5em;
-			line-height: 1.4em;
-			width: 65%;
-			float: left;
-		}
+		font-size: 1.5em;
+		line-height: 1.4em;
+			
 		.name {
 			font-weight: 500;
 		}
 	}
 	
-
 	.editing	{
 		input:focus, textarea:focus, select:hover	{
 			background-color: $grey3;
@@ -359,7 +369,7 @@
 				height: 100%;
 				width: (100%/11);
 				float: left;
-				
+
 				transition: opacity .3s;
 				opacity: .5;
 				

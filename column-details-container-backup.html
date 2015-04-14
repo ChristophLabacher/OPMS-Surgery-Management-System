@@ -1,0 +1,166 @@
+											<div class="header">
+												<div class="header-info">
+													<p class="name">Maier, Ursula</p>
+													<p class="birthdate">20.12.48</p>
+												</div><!-- header-info -->
+<!-- 												<button type="button" class="">Fahrauftrag erteilen</button> -->
+											</div><!-- header -->
+																						
+											<div class="barchart">
+											
+												<div class="barchart-bars">
+													<div class="state-1" state="1" start="07:31"></div>
+													<div class="state-2" state="2" start="07:45"></div>
+													<div class="state-3" state="3" start="08:18"></div>
+													<div class="state-4 active" state="4" start="08:42"></div>
+													<div class="state-5 inactive next" state="5" action="start-next"></div>
+													<div class="state-6 inactive" state="6"></div>
+													<div class="state-7 inactive" state="7"></div>
+													<div class="state-8 inactive" state="8"></div>
+													<div class="state-9 inactive" state="9"></div>
+													<div class="state-10 inactive" state="10"></div>
+													<div class="state-11 inactive" state="11"></div>
+												</div><!-- barchart-bars -->
+												
+												<div class="barchart-legend"></div><!-- barchart-scale -->
+											</div><!-- barchart --> 
+											
+											<div class="patient-data data">												
+												<table class="data-table">
+													<tr>
+														<th>Patienten-Daten</th>
+														<th><img src="imgs/assets/icons/edit.png" action="edit-section"></th>
+													</tr>
+													<tr>
+														<td>Fallnummer</td>
+														<td><input value="12414124124" readonly></td>
+													</tr>
+													<tr>
+														<td>Patientennummer</td>
+														<td><input value="1241412414" readonly></td>
+													</tr>
+													<tr>
+														<td>Station</td>
+														<td>
+															<select disabled>
+																<option>Ortho</option>
+																<option>NCh</option>
+															</select>
+														</td>
+													</tr>
+													<tr>
+														<td>Zimmer-Nummer</td>
+														<td><input value="123123" readonly></td>
+													</tr>
+													<tr>
+														<td>Telefonnummer der Station</td>
+														<td><input value="13151" readonly></td>
+													</tr>
+												</table>
+											</div><!-- patient-data -->
+											
+											<div class="surgery-data data">
+												<table class="data-table">
+													<tr>
+														<th>OP-Daten</th>
+														<th><img src="imgs/assets/icons/edit.png" action="edit-section"></th>
+													</tr>
+													<tr>
+														<td>Veranlasste Leistung</td>
+														<td><textarea readonly>Implementation zementfreie HTP li.</textarea></td>
+													</tr>
+													<tr>
+														<td>Diagnose</td>
+														<td><textarea readonly>Wirbelkörperfraktur</textarea></td>
+													</tr>
+													<tr>
+														<td>Dauer (erwartet)</td>
+														<td><input value="1:30" readonly></td>
+													</tr>
+													<tr>
+														<td>Risiken</td>
+														<td><textarea readonly>Keine außerordentlichen Risiken.</textarea></td>
+													</tr>
+													<tr>
+														<td>Bemerkung zum Auftrag</td>
+														<td><textarea readonly>48 ZAC 09:00, Restkolektomie</textarea></td>
+													</tr>
+												</table>
+											</div><!-- surgery-data -->
+											
+											<div class="plan data">
+												<table class="data-table">
+													<tr>
+														<th>Planung</th>
+														<th><img src="imgs/assets/icons/edit.png" action="edit-section"></th>
+													</tr>
+													<tr>
+														<td>Raum</td>
+														<td>
+															<select disabled>
+																<option>Saal 1</option>
+																<option>Saal 2</option>
+																<option selected>Saal 3</option>
+																<option>Saal 4</option>
+																<option>Saal 5</option>
+																<option>Saal 6</option>
+																<option>Saal 7</option>
+																<option>Saal 8</option>
+															</select>
+														</td>
+													</tr>
+													<tr>
+														<td>Datum</td>
+														<td><input value="24.01.14" readonly></td>
+													</tr>
+													<tr>
+														<td>Zeitraum</td>
+														<td><input value="08:45 – 09:30" readonly></td>
+													</tr>
+													<tr>
+														<td>Dauer</td>
+														<td><input value="2:15" readonly></td>
+													</tr>
+												</table>
+											</div><!-- plan -->
+											
+											<div class="timestamps data">
+												<table class="data-table">
+													<tr>
+														<th>OP-Zeiten</th>
+														<th><img src="imgs/assets/icons/edit.png" action="edit-section"></th>
+													</tr>
+													<tr state="1">
+														<td>Fahrauftrag erteilt</td>
+														<td><input value="07:31" class="text-state-1" readonly></td>
+													</tr>
+													<tr state="2">
+														<td>Fahrauftrag angenommen</td>
+														<td><input value="07:45" class="text-state-2" readonly></td>
+													</tr>
+													<tr state="3">
+														<td>Patient eingeschleust</td>
+														<td><input value="08:18" class="text-state-3" readonly></td>
+													</tr>
+													<tr state="4">
+														<td>Narkoseeinleitung</td>
+														<td><input value="08:42" class="text-state-4" readonly></td>
+													</tr>
+													<tr state="5">
+														<td>Patient im Saal</td>
+														<td><input value="Starten" class="text-state-5 next" action="start-next" readonly></td>
+													</tr>
+													<tr state="6">
+														<td>Begin Chirurgische Maßnahme</td>
+														<td><input value="" class="text-state-6" readonly></td>
+													</tr>
+													<tr state="7">
+														<td>Schnitt</td>
+														<td><input value="" class="text-state-7" readonly></td>
+													</tr>
+													<tr state="8">
+														<td>Naht</td>
+														<td><input value="" class="text-state-8" readonly></td>
+													</tr>
+												</table>
+											</div><!-- timestamps -->

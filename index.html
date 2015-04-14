@@ -16,6 +16,7 @@
 		<!-------------------------<!--! LIBRARIES ------------------------------>
 		<script type="text/javascript" src="scripts/libraries/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="scripts/libraries/moment-2.9.0.js"></script>
+		<script type="text/javascript" src="scripts/libraries/iscroll-probe-5.1.3.js"></script>
 		<script type="text/javascript" src="scripts/libraries/tools.js"></script>
 				
 		<!-------------------------<!--! SCRIPTS ------------------------------>
@@ -24,7 +25,7 @@
 		
 		<script type="text/javascript" src="scripts/viewScheduleSetup.js"></script>
 		<script type="text/javascript" src="scripts/viewScheduleAction.js"></script>
-		<script type="text/javascript" src="scripts/viewScheduleActionAddSurgery.js"></script>
+<!-- 		<script type="text/javascript" src="scripts/viewScheduleActionAddSurgery.js"></script> -->
 
 
 	</head>
@@ -108,21 +109,21 @@
 										
 									</div><!-- column-main -->
 									
-									<div class="column-details">
+									<div class="column-details clearfix">
 										
-										<div class="card-details-container">
-											
+										<div class="card-details-container clearfix">
+
+
 											<div class="header">
 												<div class="header-info">
 													<p class="name">Maier, Ursula</p>
 													<p class="birthdate">20.12.48</p>
 												</div><!-- header-info -->
-<!-- 												<button type="button" class="">Fahrauftrag erteilen</button> -->
 											</div><!-- header -->
-																						
-											<div class="barchart">
 											
-												<div class="barchart-bars">
+											<div class="barchart">
+												
+												<div class="barchart-bars clearfix">
 													<div class="state-1" state="1" start="07:31"></div>
 													<div class="state-2" state="2" start="07:45"></div>
 													<div class="state-3" state="3" start="08:18"></div>
@@ -136,8 +137,9 @@
 													<div class="state-11 inactive" state="11"></div>
 												</div><!-- barchart-bars -->
 												
-												<div class="barchart-legend text-state-4"></div><!-- barchart-scale -->
+												<div class="barchart-legend"></div><!-- barchart-scale -->
 											</div><!-- barchart --> 
+										
 											
 											<div class="patient-data data">												
 												<table class="data-table">
@@ -278,6 +280,7 @@
 													</tr>
 												</table>
 											</div><!-- timestamps -->
+											
 										</div> <!-- card-details-container -->
 										
 									</div><!-- column-details -->
@@ -386,7 +389,7 @@
 							<div class="patient-data">
 						
 								<div class="patient data editing">
-									<table class="data-table no-topspace">
+									<table class="data-table">
 										<tr>
 											<th>Patienten suchen</th>
 											<th></th>
@@ -438,36 +441,38 @@
 									</table>
 								</div><!-- data -->
 								
-								<table class="list-table search-result hidden">
-									<tr>
-										<th colspan="3">Suchergebnis</th>
-									</tr>
-									<tr action="select-patient">
-										<td>Maier, Ursula</td>
-										<td>04.07.58</td>
-										<td>URO 5</td>
-									</tr>
-									<tr action="select-patient">
-										<td>Maier, Ursula</td>
-										<td>04.07.58</td>
-										<td>URO 5</td>
-									</tr>
-									<tr action="select-patient">
-										<td>Maier, Ursula</td>
-										<td>04.07.58</td>
-										<td>URO 5</td>
-									</tr>
-									<tr action="select-patient">
-										<td>Maier, Ursula</td>
-										<td>04.07.58</td>
-										<td>URO 5</td>
-									</tr>
-									<tr action="select-patient">
-										<td>Maier, Ursula</td>
-										<td>04.07.58</td>
-										<td>URO 5</td>
-									</tr>
-								</table>
+								<div class="data">
+									<table class="list-table search-result hidden">
+										<tr>
+											<th colspan="3">Suchergebnis</th>
+										</tr>
+										<tr action="select-patient">
+											<td>Maier, Ursula</td>
+											<td>04.07.58</td>
+											<td>URO 5</td>
+										</tr>
+										<tr action="select-patient">
+											<td>Maier, Ursula</td>
+											<td>04.07.58</td>
+											<td>URO 5</td>
+										</tr>
+										<tr action="select-patient">
+											<td>Maier, Ursula</td>
+											<td>04.07.58</td>
+											<td>URO 5</td>
+										</tr>
+										<tr action="select-patient">
+											<td>Maier, Ursula</td>
+											<td>04.07.58</td>
+											<td>URO 5</td>
+										</tr>
+										<tr action="select-patient">
+											<td>Maier, Ursula</td>
+											<td>04.07.58</td>
+											<td>URO 5</td>
+										</tr>
+									</table>
+								</div><!-- data -->
 
 								<div class="medical-data data hidden editing">
 									<table class="data-table">
@@ -516,7 +521,7 @@
 							<div class="surgery-data">
 								
 								<div class="surgery data editing inactive">
-									<table class="data-table no-topspace">
+									<table class="data-table">
 										<tr>
 											<th>OP-Auftrag</th>
 											<th></th>

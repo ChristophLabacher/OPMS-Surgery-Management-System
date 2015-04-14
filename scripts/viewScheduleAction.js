@@ -14,6 +14,10 @@ $(document).ready(function()	{
 		
 		target.toggleClass("active");
 		$(this).toggleClass("active");
+		
+		setTimeout(function () {
+			timetableScroll.refresh();
+		}, 600);
 	});
 	
 	/************************
@@ -42,6 +46,10 @@ $(document).ready(function()	{
 		
 		target1.toggleClass("active");
 		target2.toggleClass("active");
+		
+		setTimeout(function () {
+			timetableScroll.refresh();
+		}, 0);
 	});
 	
 	/************************

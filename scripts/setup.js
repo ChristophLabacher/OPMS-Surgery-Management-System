@@ -6,7 +6,7 @@ $(document).ready(function() {
 function loadStateData()	{
 	// Get json-file
 	var request = new XMLHttpRequest();
-		request.open("GET", "../data/states.json", false);
+		request.open("GET", "data/states.json", false);
 		request.send(null);
 	// Put json-file into an array
 	states = JSON.parse(request.responseText);
