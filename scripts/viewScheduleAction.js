@@ -1,6 +1,20 @@
 $(document).ready(function()	{
 	
 	/************************
+	*	Drag & Drop			*
+	************************/
+	
+/*
+	$(".card-container").draggable({
+		appendTo: ".timetable",
+		containment: ".timetable",
+		grid: [200, 30],
+		handle: ".header",
+		helper: "clone"
+	});
+	
+*/
+	/************************
 	*	Expand MAIN-SIDE	*
 	************************/
 	$("[action = 'expand-center-side']").click(function()	{	
@@ -33,13 +47,13 @@ $(document).ready(function()	{
 		var currentWidth = $(".timetable").outerWidth();
 		
 		if (target1.hasClass("active"))	{
-			$(".timetable").width(currentWidth - 3 * bigUnit);
-			$(".scale-rooms").width(currentWidth + 3 * bigUnit);
+			$(".timetable").width(currentWidth - 3 * bigUnit - 1);
+			$(".scale-rooms").width(currentWidth - 3 * bigUnit - 1);
 
 			activeColumns--;
 		} else	{
-			$(".timetable").width(currentWidth + 3 * bigUnit);
-			$(".scale-rooms").width(currentWidth + 3 * bigUnit);
+			$(".timetable").width(currentWidth + 3 * bigUnit + 1);
+			$(".scale-rooms").width(currentWidth + 3 * bigUnit + 1);
 
 			activeColumns++;
 		}
@@ -164,6 +178,13 @@ $(document).ready(function()	{
 		var target = $(this).closest(".card-details-container").find(".timestamps").find("input.next");
 		target.attr("value", now).removeClass("next").removeAttr("action");
 		target.parent().parent().next().find("td:last-child input").addClass("next").attr("action", "start-next").attr("value", "Starten");
+		
+		var target = $(this).closest(".card-details-container").find(".header");
+		target.removeClass("state-" + (state-1)).addClass("state-" + state);
+		
+		if (state >= 8)	{
+			target.find(".naht").addClass("active");
+		}
 	});
 	
 	/************************
@@ -190,6 +211,13 @@ $(document).ready(function()	{
 		target = $(this).closest(".column-details ").find(".barchart .barchart-legend");
 		target.removeClass().addClass("barchart-legend").addClass(legendClass);
 		target.text(print);
+		
+		var target = $(this).closest(".card-details-container").find(".header");
+		target.removeClass("state-" + (state-1)).addClass("state-" + state);
+		
+		if (state >= 8)	{
+			target.find(".naht").addClass("active");
+		}
 	});
 
 });

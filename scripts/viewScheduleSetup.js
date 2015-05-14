@@ -25,6 +25,8 @@ $(document).ready(function() {
 		for(var i = 0; i < 47; i++)	{
 			$(this).append("<hr style=\"top: " + (i * 60 + 60) + "px \">");
 		}
+		
+		$(this).append("<hr class=\"now\">")
 	});
 	
 	var h = $(".timetable-container").outerHeight();
@@ -54,6 +56,11 @@ $(document).ready(function() {
 		$(".column-details").css("top", -this.y)	
 	});
 	
+	var pos = (14.61*120) - $(".timetable-container").height()/3;
+	timetableScroll.scrollTo(0,-pos);
+	$(".schedule .scale-time").css("transform", "translateY(" + timetableScroll.y + "px)");
+	$(".column-details").css("top", -timetableScroll.y)	
+	
 	// Scroll columnDetails
 	columnDetailsScroll = new IScroll('.column-details', {
 		mouseWheel: true,
@@ -64,27 +71,8 @@ $(document).ready(function() {
 	})
 
 	
-//	loadFileLocally()
+	//loadFileLocally()
 	loadFileFromServer();
-	getCards();
-});
-
-function loadRoomData()	{
-	// Get json-file
-	var request = new XMLHttpRequest();
-		request.open("GET", "data/rooms.json", false);
-		request.send(null);
-	// Put json-file into an array
-	rooms = JSON.parse(request.responseText);
-}
-
-function loadFileFromServer()	{
-	// Get json-file
-	var request = new XMLHttpRequest();
-		request.open("GET", "https://spreadsheets.google.com/feeds/list/1oiiPeRnUPX32MkmG8NFB0IauLrWtjoiEMQsE0sCRQ6I/od6/public/values?alt=json", false);
-		request.send(null);
-	// Put json-file into an array
-	raw = JSON.parse(request.responseText);
 	
 	data = [];
 	
@@ -105,6 +93,26 @@ function loadFileFromServer()	{
 		
 		data.push(surgery);
 	}
+	
+	getCards();
+});
+
+function loadRoomData()	{
+	// Get json-file
+	var request = new XMLHttpRequest();
+		request.open("GET", "data/rooms.json", false);
+		request.send(null);
+	// Put json-file into an array
+	rooms = JSON.parse(request.responseText);
+}
+
+function loadFileFromServer()	{
+	// Get json-file
+	var request = new XMLHttpRequest();
+		request.open("GET", "https://spreadsheets.google.com/feeds/list/1oiiPeRnUPX32MkmG8NFB0IauLrWtjoiEMQsE0sCRQ6I/od6/public/values?alt=json", false);
+		request.send(null);
+	// Put json-file into an array
+	raw = JSON.parse(request.responseText);
 }
 
 
@@ -114,7 +122,7 @@ function loadFileLocally()	{
 		request.open("GET", "data/surgeries.json", false);
 		request.send(null);
 	// Put json-file into an array
-	data = JSON.parse(request.responseText);
+	raw = JSON.parse(request.responseText);
 }
 
 function getCards()	{

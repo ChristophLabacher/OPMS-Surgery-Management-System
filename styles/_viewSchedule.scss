@@ -45,6 +45,17 @@
 				border-top: none;
 			}
 		}
+		
+		.now	{
+			position: absolute;
+			top: (14.61*120px) + 50px;
+			border: none;
+			background-color: $white;
+			color: $grey6;
+			width: 100%;
+			height: auto;
+			padding: .3rem 0;	
+		}
 	}
 	
 	.scale-rooms	{
@@ -132,6 +143,15 @@
 					border-style: dotted;
 				}
 			}
+			
+			.now	{
+				position: absolute;
+				width: 100%;
+
+				top: (14.61*120px);
+				
+				border-top: 2px solid $white;
+			}
 		}
 		
 		.column-details	{
@@ -173,9 +193,13 @@
 			width: 5 * $bigUnit;
 		}
 		
-		.toolbar	{			
+		.toolbar	{	
+			ul	{
+				width: 100%;
+			}		
+			
 			li	{
-				width: $bigUnit;
+				width: 100%;
 				border-right: none;
 				
 				svg	{
@@ -191,7 +215,7 @@
 					background-color: transparent;
 					
 					svg	{
-						transform: rotate(-45deg);
+						transform: rotate(45deg);
 					}
 					
 					&:hover	{
@@ -213,7 +237,7 @@
 				flex-shrink: 0;
 				
 				width: $bigUnit;
-				overflow: scroll;
+				overflow: hidden;
 				border-right: 1px solid $grey5;
 				
 				.new-card	{
@@ -224,7 +248,6 @@
 			.add-surgery	{
 				flex-grow: 1;
 				flex-shrink: 0;
-
 			}
 		}
 	}
@@ -321,13 +344,14 @@
 ************************/
 
 .card-details-container	{
-	padding: $smallUnit/2 0;
+	padding-bottom: $smallUnit/2;
 		
 	.header	{
-		margin: 0 $smallUnit $smallUnit/2 $smallUnit;
+		padding: $smallUnit/2 $smallUnit;
+		margin-bottom: 3px;
 	}
 	.data	{
-		margin: $smallUnit/2 $smallUnit;
+		margin: $smallUnit;
 	}
 	
 	.header	{
@@ -337,6 +361,23 @@
 		.name {
 			font-weight: 500;
 		}
+		
+		img	{
+			margin-top: 1rem;
+			height: 3rem;
+			float: right;
+		}
+		
+		.naht	{
+			opacity: 0;
+			transition: opacity 1s;
+			
+			&.active	{
+				opacity: 1;
+			}
+		}
+		
+		transition: background-color 1s;
 	}
 	
 	.editing	{
@@ -421,19 +462,29 @@
 	flex-direction: row;
 	align-items: stretch;
 	
+	.data	{
+		margin-top: $smallUnit;	
+		
+		&:first-child	{
+			margin-top: 0;
+		}	
+	}
+	
 	.patient-data	{
 		width: 2 * $bigUnit;
 		flex-grow: 0;
 		flex-shrink: 1;
 		
-		overflow: scroll;
+		overflow: auto;
+		
 
-		padding-left: $smallUnit/2;
+		padding-left: $smallUnit;
 		padding-right: $smallUnit/2;
 		margin-top: $smallUnit/2;
 		margin-bottom: $smallUnit/2;
 		
-		border-right: 1px solid $grey5;
+		border-right: 1px dotted $grey5;
+		
 	}
 	
 	.surgery-data	{
@@ -441,11 +492,13 @@
 		flex-grow: 0;
 		flex-shrink: 0;
 		
+		overflow: auto;
+		
+
 		padding-left: $smallUnit/2;
-		padding-right: $smallUnit/2;
+		padding-right: $smallUnit;
 		margin-top: $smallUnit/2;
 		margin-bottom: $smallUnit/2;
-
 	}
 	
 	table	{

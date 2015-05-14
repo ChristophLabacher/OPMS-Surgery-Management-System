@@ -175,6 +175,10 @@ html {
   background-color: #008770;
 }
 
+.state-danger {
+  background-color: #d13f3f;
+}
+
 .text-state-1, .text-state-11 {
   color: #edbf40 !important;
 }
@@ -764,6 +768,16 @@ button.danger:hover, button.danger:focus {
 .schedule .scale-time li:first-child {
   border-top: none;
 }
+.schedule .scale-time .now {
+  position: absolute;
+  top: 1803.2px;
+  border: none;
+  background-color: white;
+  color: #262728;
+  width: 100%;
+  height: auto;
+  padding: .3rem 0;
+}
 .schedule .scale-rooms {
   height: 5rem;
   width: 240rem;
@@ -846,6 +860,12 @@ button.danger:hover, button.danger:focus {
 .schedule .column .column-main hr:nth-of-type(odd) {
   border-style: dotted;
 }
+.schedule .column .column-main .now {
+  position: absolute;
+  width: 100%;
+  top: 1753.2px;
+  border-top: 2px solid white;
+}
 .schedule .column .column-details {
   width: 60rem;
   height: 500px;
@@ -879,8 +899,11 @@ button.danger:hover, button.danger:focus {
 .schedule .center-side.active {
   width: 100rem;
 }
+.schedule .center-side .toolbar ul {
+  width: 100%;
+}
 .schedule .center-side .toolbar li {
-  width: 20rem;
+  width: 100%;
   border-right: none;
 }
 .schedule .center-side .toolbar li svg {
@@ -897,9 +920,9 @@ button.danger:hover, button.danger:focus {
   background-color: transparent;
 }
 .schedule .center-side .toolbar li.active svg {
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 .schedule .center-side .toolbar li.active:hover svg path {
   fill: #d13f3f;
@@ -928,7 +951,7 @@ button.danger:hover, button.danger:focus {
       -ms-flex-negative: 0;
           flex-shrink: 0;
   width: 20rem;
-  overflow: scroll;
+  overflow: hidden;
   border-right: 1px solid #363738;
 }
 .schedule .center-side .content .open-surgeries .new-card {
@@ -1020,23 +1043,39 @@ button.danger:hover, button.danger:focus {
 *		CARD DETAILS	*
 ************************/
 .card-details-container {
-  padding: 2.5rem 0;
+  padding-bottom: 2.5rem;
   /************************
   *		Barchart 		*
   ************************/
 }
 .card-details-container .header {
-  margin: 0 5rem 2.5rem 5rem;
+  padding: 2.5rem 5rem;
+  margin-bottom: 3px;
 }
 .card-details-container .data {
-  margin: 2.5rem 5rem;
+  margin: 5rem;
 }
 .card-details-container .header {
   font-size: 1.5em;
   line-height: 1.4em;
+  -webkit-transition: background-color 1s;
+          transition: background-color 1s;
 }
 .card-details-container .header .name {
   font-weight: 500;
+}
+.card-details-container .header img {
+  margin-top: 1rem;
+  height: 3rem;
+  float: right;
+}
+.card-details-container .header .naht {
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+          transition: opacity 1s;
+}
+.card-details-container .header .naht.active {
+  opacity: 1;
 }
 .card-details-container .editing input:focus, .card-details-container .editing textarea:focus, .card-details-container .editing select:hover {
   background-color: #414344;
@@ -1111,6 +1150,12 @@ button.danger:hover, button.danger:focus {
       -ms-flex-align: stretch;
           align-items: stretch;
 }
+.add-surgery .data {
+  margin-top: 5rem;
+}
+.add-surgery .data:first-child {
+  margin-top: 0;
+}
 .add-surgery .patient-data {
   width: 40rem;
   -webkit-box-flex: 0;
@@ -1120,12 +1165,12 @@ button.danger:hover, button.danger:focus {
   -webkit-flex-shrink: 1;
       -ms-flex-negative: 1;
           flex-shrink: 1;
-  overflow: scroll;
-  padding-left: 2.5rem;
+  overflow: auto;
+  padding-left: 5rem;
   padding-right: 2.5rem;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-  border-right: 1px solid #363738;
+  border-right: 1px dotted #363738;
 }
 .add-surgery .surgery-data {
   width: 40rem;
@@ -1136,8 +1181,9 @@ button.danger:hover, button.danger:focus {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
+  overflow: auto;
   padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-right: 5rem;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }

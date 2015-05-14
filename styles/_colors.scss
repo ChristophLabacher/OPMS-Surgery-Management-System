@@ -71,6 +71,10 @@ $transparentwhite: rgba(255,255,255, .1);
 	background-color: $darkgreen;
 }
 
+.state-danger	{
+	background-color: $red;
+}
+
 .text-state-1, .text-state-11	{
 	color: $lightyellow !important;
 }

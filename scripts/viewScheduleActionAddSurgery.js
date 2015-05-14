@@ -56,7 +56,7 @@ $(document).ready(function()	{
 		target.removeClass("editing");
 		removeEditability(target);		
 		
-		var surgery = "<div class=\"card-container new-card\" style=\"margin-top: -250px;\" action=\"show-card-detail\" case-id=\"905834220\" \"=\"\"><div class=\"card\" style=\"height: 240px;\"><div class=\"handle handle-top\"></div><!-- handle-top --><div class=\"header state-0\"><p class=\"name\">Maier, Ursula</p><p class=\"birthdate\">13.04.1949</p></div><!-- header --><div class=\"main\"><p class=\"service\">Implementation zementfreie HTP li.</p><p class=\"team\">OP: AVJ, AJW, BAP</p></div><!-- main --><div class=\"footer\"><p class=\"time\">2 Stunden </p></div><!-- footer --><div class=\"handle handle-bottom\"></div><!-- handle-bottom --></div><!-- card --></div>";
+		var surgery = "<div class=\"card-container new-card\" style=\"margin-top: -250px;\" action=\"show-card-detail\" case-id=\"905834220\" \"=\"\"><div class=\"card\" style=\"height: 240px;\"><div class=\"handle handle-top\"></div><!-- handle-top --><div class=\"header state-0\"><p class=\"name\">Eichmann, Jennifer</p><p class=\"birthdate\">13.04.1949</p></div><!-- header --><div class=\"main\"><p class=\"service\">Implementation zementfreie HTP li.</p><p class=\"team\">OP: AVJ, AJW, BAP</p></div><!-- main --><div class=\"footer\"><p class=\"time\">2 Stunden </p></div><!-- footer --><div class=\"handle handle-bottom\"></div><!-- handle-bottom --></div><!-- card --></div>";
 		
 		target = $(this).closest(".center-side");
 		target.find(".open-surgeries").prepend(surgery);
