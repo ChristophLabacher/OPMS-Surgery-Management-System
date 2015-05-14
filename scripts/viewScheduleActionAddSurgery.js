@@ -13,7 +13,11 @@ $(document).ready(function()	{
 	*	SELECT PATIENT		*
 	************************/
 	$(".add-surgery [action = 'select-patient']").click(function()	{	
+		var target = $(this).closest(".patient-data").find(".patient-empty");
+		target.remove();
+				
 		var target = $(this).closest(".patient-data").find(".patient");
+		target.removeClass("hidden")
 		
 		target.find("tr th:first-child").text("Patient");
 		target.find("tr th:nth-child(2)").html("<img src=\"imgs/assets/icons/edit.png\" action=\"edit-section\">");

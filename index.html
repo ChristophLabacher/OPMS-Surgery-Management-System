@@ -421,7 +421,7 @@
 						<div class="add-surgery">
 							<div class="patient-data">
 						
-								<div class="patient data editing">
+								<div class="patient-empty data editing">
 									<table class="data-table">
 										<tr>
 											<th>Patienten suchen</th>
@@ -459,6 +459,8 @@
 												<select>
 													<option></option>
 													<option>Ortho</option>
+													<option>Uro</option>
+													<option>Neuro</option>
 												</select>
 											</td>
 										</tr>
@@ -474,35 +476,85 @@
 									</table>
 								</div><!-- data -->
 								
+								<div class="patient data hidden">
+									<table class="data-table">
+										<tr>
+											<th>Patienten suchen</th>
+											<th></th>
+										</tr>
+										<tr>
+											<td>Name</td>
+											<td><input value="Eichmann"></td>
+										</tr>
+										<tr>
+											<td>Vorname</td>
+											<td><input value="Jennifer"></td>
+										</tr>
+										<tr>
+											<td>Geburtsdatum</td>
+											<td><input value="04.07.1958"></td>
+										</tr>
+										<tr>
+											<td>Geschlecht</td>
+											<td>
+												<select>
+													<option></option>
+													<option selected>Weiblich</option>
+													<option>Männlich</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>Patientennummer</td>
+											<td><input value="930279861"></td>
+										</tr>
+										<tr>
+											<td>Station</td>
+											<td>
+												<select>
+													<option></option>
+													<option>Ortho</option>
+													<option selected>Uro</option>
+													<option>Neuro</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>Zimmer-Nummer</td>
+											<td><input value="321"></td>
+										</tr>
+									</table>
+								</div><!-- data -->
+								
 								<div class="data search-result hidden">
 									<table class="list-table">
 										<tr>
 											<th colspan="3">Suchergebnis</th>
 										</tr>
 										<tr action="select-patient">
-											<td>Maier, Ursula</td>
-											<td>04.07.58</td>
-											<td>URO 5</td>
+											<td>Eichmann, Ursula</td>
+											<td>04.07.1958</td>
+											<td>Neuro</td>
 										</tr>
 										<tr action="select-patient">
-											<td>Maier, Ursula</td>
-											<td>04.07.58</td>
-											<td>URO 5</td>
+											<td>Eichmann, Jennifer</td>
+											<td>13.04.1949</td>
+											<td>Uro</td>
 										</tr>
 										<tr action="select-patient">
-											<td>Maier, Ursula</td>
-											<td>04.07.58</td>
-											<td>URO 5</td>
+											<td>Eichmann, Paul</td>
+											<td>22.01.19994</td>
+											<td>Ortho</td>
 										</tr>
 										<tr action="select-patient">
-											<td>Maier, Ursula</td>
-											<td>04.07.58</td>
-											<td>URO 5</td>
+											<td>Eichmann, Hannes</td>
+											<td>01.11.74</td>
+											<td>Ortho</td>
 										</tr>
 										<tr action="select-patient">
-											<td>Maier, Ursula</td>
-											<td>04.07.58</td>
-											<td>URO 5</td>
+											<td>Eichmann, Sabine</td>
+											<td>19.09.1962</td>
+											<td>Uro</td>
 										</tr>
 									</table>
 								</div><!-- data -->
@@ -532,6 +584,7 @@
 											<td>
 												<select>
 													<option></option>
+													<option>0</option>
 													<option>1</option>
 													<option>2</option>
 													<option>3</option>
@@ -576,11 +629,11 @@
 									<table class="data-table">
 										<tr>
 											<td>Auftagsnummer</td>
-											<td><input value="1241412414"></td>
+											<td><input value="928866607"></td>
 										</tr>
 										<tr>
 											<td>Veranlasste Leistung</td>
-											<td><input value=""></td>
+											<td><textarea></textarea></td>
 										</tr>
 										<tr>
 											<td>Status</td>

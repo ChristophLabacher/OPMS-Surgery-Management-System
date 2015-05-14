@@ -559,12 +559,6 @@ table.list-table tr {
   -webkit-transition: background-color .3s;
           transition: background-color .3s;
 }
-table.list-table tr:nth-child(even) {
-  background-color: #494b4c;
-}
-table.list-table tr:not(:first-child) {
-  border-bottom: none;
-}
 table.list-table tr:not(:first-child):hover {
   cursor: pointer;
   background-color: #5c5e60;
@@ -592,6 +586,10 @@ select, input:not([type='checkbox']), textarea, button {
 }
 select:focus, input:not([type='checkbox']):focus, textarea:focus, button:focus {
   background-color: #262728;
+}
+
+textarea {
+  line-height: 1.4em;
 }
 
 select {

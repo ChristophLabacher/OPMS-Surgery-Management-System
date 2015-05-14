@@ -160,11 +160,7 @@ table.list-table	{
 	}
 	
 	tr:nth-child(even)	{
-		background-color: $grey2;
-	}
-	
-	tr:not(:first-child)	{
-		border-bottom: none;	
+		//background-color: $grey2;
 	}
 	
 	tr:not(:first-child):hover	{
@@ -201,6 +197,10 @@ select, input:not([type='checkbox']), textarea, button	{
 	&:focus	{
 		background-color: $grey6;
 	}
+}
+
+textarea	{
+	line-height: 1.4em;
 }
 
 select	{
