@@ -864,6 +864,14 @@ button.danger:hover, button.danger:focus {
   top: 1753.2px;
   border-top: 2px solid white;
 }
+.schedule .column .column-main .now-top {
+  position: absolute;
+  width: 18rem;
+  margin: 0 1rem;
+  top: 1753.2px;
+  border-top: 2px dotted rgba(255, 255, 255, 0.1);
+  z-index: 2;
+}
 .schedule .column .column-details {
   width: 60rem;
   height: 500px;
@@ -983,13 +991,15 @@ button.danger:hover, button.danger:focus {
   color: #999999;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
 }
 .card .header {
   border-radius: 3px 3px 0 0;
   padding: 1rem 1rem;
   cursor: move;
   color: white;
+  -webkit-transition: background-color 1s;
+          transition: background-color 1s;
 }
 .card .header .name {
   font-weight: 500;
@@ -998,6 +1008,14 @@ button.danger:hover, button.danger:focus {
   float: right;
   width: 2rem;
   height: 2rem;
+}
+.card .header .naht {
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+          transition: opacity 1s;
+}
+.card .header .naht.active {
+  opacity: 1;
 }
 .card .main {
   padding: .7rem 1rem;
@@ -1045,6 +1063,17 @@ button.danger:hover, button.danger:focus {
   /************************
   *		Barchart 		*
   ************************/
+}
+.card-details-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 .card-details-container .header {
   padding: 2.5rem 5rem;

@@ -5,19 +5,23 @@
 	},
 	{
 		"id" : 2,
-		"department" : "NCh"
+		"department" : "Neuro"
 	},
 	{
-		"id" : 3
+		"id" : 3,
+		"department" : "Neuro"
 	},
 	{
-		"id" : 4
+		"id" : 4,
+		"department" : "Ortho"
 	},
 	{
-		"id" : 5
+		"id" : 5,
+		"department" : "Ortho"
 	},
 	{
-		"id" : 6
+		"id" : 6,
+		"department" : "Ortho"
 	},
 	{
 		"id" : 7

@@ -47,8 +47,8 @@ $(document).ready(function()	{
 		var currentWidth = $(".timetable").outerWidth();
 		
 		if (target1.hasClass("active"))	{
-			$(".timetable").width(currentWidth - 3 * bigUnit - 1);
-			$(".scale-rooms").width(currentWidth - 3 * bigUnit - 1);
+			$(".timetable").width(currentWidth - 3 * bigUnit );
+			$(".scale-rooms").width(currentWidth - 3 * bigUnit );
 
 			activeColumns--;
 		} else	{
@@ -185,6 +185,14 @@ $(document).ready(function()	{
 		if (state >= 8)	{
 			target.find(".naht").addClass("active");
 		}
+		
+		var id = $(this).closest(".card-details-container").attr("case-id");
+		var target = $(".card-container[case-id = '" + id + "'] .header");
+		target.removeClass("state-" + (state-1)).addClass("state-" + state);
+		
+		if (state >= 8)	{
+			target.find(".naht").addClass("active");
+		}
 	});
 	
 	/************************
@@ -192,7 +200,12 @@ $(document).ready(function()	{
 	************************/
 	$(".column-details .timestamps").on("click", "[action = 'start-next']", function()	{
 		$(this).removeClass("next").removeAttr("action");
-		$(this).parent().parent().next().find("td:last-child input").addClass("next").attr("action", "start-next").attr("value", "Starten");
+		$(this).parent().parent().next().find("td:last-child input").addClass("next").attr("action", "start-next")
+		
+		var me = this;
+		setTimeout(function()	{
+			$(me).parent().parent().next().find("td:last-child input").attr("value", "Starten");
+		}, 200, me)
 		
 		var date = new Date;
 		var now = addZero(date.getUTCHours()) + ":" + addZero(date.getUTCMinutes());
@@ -213,6 +226,14 @@ $(document).ready(function()	{
 		target.text(print);
 		
 		var target = $(this).closest(".card-details-container").find(".header");
+		target.removeClass("state-" + (state-1)).addClass("state-" + state);
+		
+		if (state >= 8)	{
+			target.find(".naht").addClass("active");
+		}
+		
+		var id = $(this).closest(".card-details-container").attr("case-id");
+		var target = $(".card-container[case-id = '" + id + "'] .header");
 		target.removeClass("state-" + (state-1)).addClass("state-" + state);
 		
 		if (state >= 8)	{
