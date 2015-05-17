@@ -69,8 +69,8 @@ $(document).ready(function() {
 
 	});
 
-	loadFileLocally()
-	//loadFileFromServer();
+	//loadFileLocally()
+	loadFileFromServer();
 
 	data = [];
 
@@ -194,7 +194,7 @@ function getCards()	{
 				card += "<div class=\"main\">" +
 							"<p class=\"service\">" + data[i].Service + "</p>";
 
-				if (height >= 150)	{
+				if (height > 180)	{
 					card +=	"<p class=\"team\">OP: " + data[i].Surgery_Team + "</p>";
 				}
 
@@ -285,7 +285,7 @@ function getCards()	{
 				j = 1;
 			}
 
-			if (j < 11)	{
+			if (j < 12)	{
 				details +=	"<div class=\"state-" + j + " inactive next\" state=\"" + j + "\" action=\"start-next\"></div>";
 				j++;
 			}
@@ -299,7 +299,8 @@ function getCards()	{
 			details +=							"</div><!-- barchart-bars -->";
 
 			if (data[i].Current_State > 0)	{
-				details +=						"<div class=\"barchart-legend text-state-" + data[i].Current_State + "\">" + "Seit " + addZero(Starttime.getUTCHours()) + ":" + addZero(Starttime.getUTCMinutes()) +  " · " + states[data[i].Current_State-1].title + "</div><!-- barchart-scale -->";
+				var state = data[i].Current_State;
+				details +=						"<div class=\"barchart-legend text-state-" + data[i].Current_State + "\">" + "Seit " + addZero(new Date(data[i].Timestamps[state - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[state - 1]).getUTCMinutes()) +  " · " + states[state - 1].title + "</div><!-- barchart-scale -->";
 			} else	{
 				details +=						"<div class=\"barchart-legend\"></div><!-- barchart-scale -->";
 			}
@@ -423,7 +424,7 @@ function getCards()	{
 													"</tr>" +
 													"<tr>" +
 														"<td>Dauer</td>" +
-														"<td><input value=\"" + ((Endtime.getTime() - Starttime.getTime())/3600000)  + " Stunden\" readonly></td>" +
+														"<td><input value=\"" + Math.round(((Endtime.getTime() - Starttime.getTime())/3600000)*100)/100  + " Stunden\" readonly></td>" +
 													"</tr>" +
 												"</table>" +
 											"</div><!-- plan -->" +
@@ -444,7 +445,7 @@ function getCards()	{
 													"</tr>";
 			}
 
-			if (j < 11)	{
+			if (j < 12)	{
 				details +=							"<tr state=\"" + j + "\">" +
 														"<td>" + states[j - 1].title + "</td>" +
 														"<td><input value=\"Starten\" class=\"text-state-" + j + " next\" action=\"start-next\" readonly></td>" +

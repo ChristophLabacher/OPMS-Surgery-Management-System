@@ -51,7 +51,7 @@ $(document).ready(function()	{
 		var currentWidth = $(".timetable").outerWidth();
 
 		if (target1.hasClass("active"))	{
-			if (id == target1.find(".card-details-container").attr("case-id"))	{
+			if (id == target1.find(".card-details-container").attr("case-id") || target1.find(".card-details-container").attr("case-id") === undefined)	{
 				$(".timetable").width(currentWidth - 3 * bigUnit );
 				$(".scale-rooms").width(currentWidth - 3 * bigUnit );
 

@@ -24,7 +24,8 @@
 		"department" : "Ortho"
 	},
 	{
-		"id" : 7
+		"id" : 7,
+		"department" : "Uro"
 	},
 	{
 		"id" : 8
