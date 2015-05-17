@@ -147,11 +147,9 @@
 			.now	{
 				position: absolute;
 				width: 100%;
-
 				top: (14.61*120px);
 				
 				border-top: 2px solid $white;
-				//z-index: 2;
 			}
 			
 			.now-top	{
@@ -162,7 +160,6 @@
 				top: (14.61*120px);
 				
 				border-top: 2px dotted $transparentwhite;
-				z-index: 2;
 			}
 		}
 		
@@ -285,13 +282,13 @@
 	overflow: hidden;
 	
 	box-shadow: 0px 0px 7px rgba(0,0,0,.25);
-
+	
 	.header	{
 		border-radius: 3px 3px 0 0;
 		padding: 1rem 1rem;
 		cursor: move;
 		color: $white;
-		
+
 		.name	{
 			font-weight: 500;
 		}
@@ -380,16 +377,15 @@
 		box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,.5);	
 		z-index: 10;
 	}
-		
-	.header	{
-		padding: $smallUnit/2 $smallUnit;
-		margin-bottom: 3px;
-	}
+	
 	.data	{
 		margin: $smallUnit;
 	}
 	
 	.header	{
+		padding: $smallUnit/2 $smallUnit;
+		margin-bottom: 3px;
+		
 		font-size: 1.5em;
 		line-height: 1.4em;
 			

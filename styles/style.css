@@ -714,8 +714,20 @@ button.danger:hover, button.danger:focus {
   opacity: .2;
 }
 
-.card {
+.card-container:after {
+  z-index: 1;
+}
+
+.column-main hr {
   z-index: 2;
+}
+
+.card {
+  z-index: 3;
+}
+
+.column-main hr.now-top {
+  z-index: 4;
 }
 
 .schedule {
@@ -870,7 +882,6 @@ button.danger:hover, button.danger:focus {
   margin: 0 1rem;
   top: 1753.2px;
   border-top: 2px dotted rgba(255, 255, 255, 0.1);
-  z-index: 2;
 }
 .schedule .column .column-details {
   width: 60rem;
@@ -1075,14 +1086,12 @@ button.danger:hover, button.danger:focus {
   box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
-.card-details-container .header {
-  padding: 2.5rem 5rem;
-  margin-bottom: 3px;
-}
 .card-details-container .data {
   margin: 5rem;
 }
 .card-details-container .header {
+  padding: 2.5rem 5rem;
+  margin-bottom: 3px;
   font-size: 1.5em;
   line-height: 1.4em;
   -webkit-transition: background-color 1s;
