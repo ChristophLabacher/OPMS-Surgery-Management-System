@@ -69,8 +69,8 @@ $(document).ready(function() {
 		
 	});
 	
-	//loadFileLocally()
-	loadFileFromServer();
+	loadFileLocally()
+	//loadFileFromServer();
 	
 	data = [];
 	
@@ -173,7 +173,7 @@ function loadFileFromServer()	{
 function loadFileLocally()	{
 	// Get json-file
 	var request = new XMLHttpRequest();
-		request.open("GET", "data/surgeries.json", false);
+		request.open("GET", "data/surgeries-2.json", false);
 		request.send(null);
 	// Put json-file into an array
 	raw = JSON.parse(request.responseText);
@@ -285,15 +285,20 @@ function getCards()	{
 											"<div class=\"barchart\">" +
 												"<div class=\"barchart-bars clearfix\">";
 											
-			var j;								
-			for (j = 1; j < data[i].Current_State; j++)	{
-			var time = addZero(new Date(data[i].Timestamps[j - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[j - 1]).getUTCMinutes());
-				details +=	"<div class=\"state-" + j + "\" state=\"" + j + "\" start=\"" + time + "\"></div>";
-			}
+			var j;	
 			
-			var time = addZero(new Date(data[i].Timestamps[j - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[j - 1]).getUTCMinutes());
-			details +=	"<div class=\"state-" + j + " active\" state=\"" + j + "\" start=\"" + time + "\"></div>";
-			j++;
+			if (data[i].Current_State > 0)	{						
+				for (j = 1; j <= data[i].Current_State; j++)	{
+					var time = addZero(new Date(data[i].Timestamps[j - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[j - 1]).getUTCMinutes());
+					details +=	"<div class=\"state-" + j + "\" state=\"" + j + "\" start=\"" + time + "\"></div>";
+				}
+				
+				var time = addZero(new Date(data[i].Timestamps[j - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[j - 1]).getUTCMinutes());
+				details +=	"<div class=\"state-" + j + " active\" state=\"" + j + "\" start=\"" + time + "\"></div>";
+				j++;
+			} else	{
+				j = 1;
+			}
 			
 			if (j < 11)	{
 				details +=	"<div class=\"state-" + j + " inactive next\" state=\"" + j + "\" action=\"start-next\"></div>";
