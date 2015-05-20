@@ -23,4 +23,17 @@ $(document).ready(function()	{
 		$(this).toggleClass("active");		
 		target.toggleClass("active");
 	});
+	
+	/************************
+	*	Change VIEW			*
+	************************/
+	$("nav ul li").click(function()	{
+		var scroll = $(this).attr("scroll");
+		var size = $("main").outerHeight();
+		
+		$("nav ul li").removeClass("active");
+		$(this).addClass("active").removeClass("emergency");
+		
+		$("main article").css("top", -scroll * size);
+	});
 });

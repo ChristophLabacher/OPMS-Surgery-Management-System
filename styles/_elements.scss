@@ -31,7 +31,7 @@ ul.action-list {
 			margin-right: 1rem;
 		}
 		
-		svg	path {
+		svg path, svg rect	{
 			fill: $white;
 			transition: fill .3s;
 		}
@@ -47,7 +47,7 @@ ul.action-list {
 				border-left-color: transparent;
 			}
 			
-			svg path	{
+			svg path, svg rect	{
 				fill: $lightgreen;
 			}
 		}
@@ -64,7 +64,7 @@ ul.action-list {
 			&:hover	{
 			}
 			
-			svg path	{
+			svg path, svg rect	{
 				fill: $lightgreen;
 			}
 			
@@ -76,7 +76,7 @@ ul.action-list {
 *		DATA-TABLE		*
 ************************/
 
-table	{
+table:not(.no-data)	{
 	width: 100%;
 	//margin-top: 4rem;
 	
@@ -85,7 +85,7 @@ table	{
 	}	
 	
 	tr	{
-		border-bottom: 1px dotted $grey5;
+		border-bottom: 1px dotted $grey4;
 		
 		&:first-child	{
 			border-style: solid;

@@ -28,6 +28,10 @@ main	{
 	flex-grow: 1;
 }
 
+article	{
+	position: relative;
+}
+
 
 /************************
 *		NAV				*
@@ -61,10 +65,12 @@ nav	{
 			
 			&.active	{
 				background-color: $grey6;
-				
-				svg path, svg rect	{
-					fill: $lightgreen;
-				}			
+				border-top: 1px solid $grey4;
+				border-bottom: 1px solid $grey4;
+			}
+			
+			&.emergency svg path, &.emergency svg rect	{
+				fill: $red;
 			}
 		}
 	}
@@ -108,7 +114,7 @@ nav	{
 	height: 100vh;
 	
 	.center-main	{
-		flex-grow: 0;
+		flex-grow: 1;
 		flex-shrink: 2;			
 		overflow: hidden;
 	}

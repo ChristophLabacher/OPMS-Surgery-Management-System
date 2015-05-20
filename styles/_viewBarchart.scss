@@ -1,0 +1,210 @@
+.barchart	{
+	.center-main .content	{
+		position: relative;
+		
+		display: flex;
+		flex-direction: column;
+		
+		overflow: hidden;
+	}
+	
+	.toolbar .date.not-today svg path	{
+		fill: $red;
+	}
+	
+	.scale	{
+		list-style: none;
+		position: absolute;
+	}
+	
+	.scale-time	{
+		height: $smallUnit;
+		width: 100%;
+		background-color: $grey3;
+		border-bottom: 1px solid $grey4;
+		padding-left: ($smallUnit/2) + $smallUnit*3 + $smallUnit*3;
+		padding-right: $bigUnit + 2.5rem;
+		
+		ul	{
+			width: 100%;
+			position: relative;
+			
+			li	{
+				float: left;
+				list-style: none;
+				width: (100%/12);
+				height: $smallUnit - 1rem;
+				margin-top: 1rem;
+				border-left: 1px solid $transparentwhite;
+				padding-left: .5rem;
+			}
+			
+			.now	{
+				position: absolute;
+				left: (14.61*(100%/24));
+				border-left: 2px solid $white;
+				padding: 0;
+
+				
+				span	{
+					color: $black;
+					background-color: $white;
+					padding: .3rem .5rem;
+					margin-left: -1px;
+					margin-top: -.3rem;
+				}
+			}
+		}
+	}
+	
+	.chart-container	{
+		margin-top: 5rem;
+		overflow: hidden;
+		position: relative;
+	}
+	
+	.chart	{
+		background-color: $grey1;
+		padding: 0 $smallUnit/2;
+	}
+	
+	.room	{
+		display: flex;
+		flex-direction: row;
+		
+		background-color: $grey1;
+		border-bottom: 1px solid $grey3;
+ 		//padding: 4rem 0;
+		
+		&:last-child	{
+			margin-bottom: 0;
+		}
+		
+		.info, .patient, .barchart, .service	{
+			margin-bottom: 2rem;
+			margin-top: 2rem;
+			min-height: 4rem;
+			
+			&:first-child	{
+				margin-top: $smallUnit;
+			}
+			
+			&:last-child	{
+				margin-bottom: $smallUnit;
+			}
+		}
+		
+		.info	{
+			width: $smallUnit*3;
+		}
+		
+		.patients	{
+			width: $smallUnit*3;
+			padding-right: 2rem;
+		}
+		
+		.barcharts	{
+			position: relative;
+			flex-grow: 1;
+		}
+		
+		.services	{
+			width: $bigUnit;
+			padding-left: 2rem;
+		}
+	}
+	
+	.info	{
+		font-size: 1.5em;
+		line-height: 1.4em;
+		
+		abbr	{
+			display: block;
+			opacity: .6;
+		}
+	}
+	
+	.patient	{
+		.name	{
+			font-weight: 500;
+		}
+	}
+	
+	.lines	{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		
+		li 	{
+			position: relative;
+			list-style: none;
+			float: left;
+			width: (100%/24);
+			height: 100%;
+			border-left: 1px solid $transparentwhite;
+			
+			&:last-child	{
+				border-right: 1px solid $transparentwhite;	
+			}
+		}
+		
+		.now, .now-top	{
+			position: absolute;
+			left: (14.61*(100%/24));
+		}
+		
+		.now	{
+			border-left: 2px solid white;
+		}
+		
+		.now-top	{
+			border-left: 2px dotted $lesstransparentwhite;
+			z-index: 3;
+		}
+	}
+	
+	.blocked	{
+		position: absolute;
+		top: 0;
+		height: 100%;
+		opacity: .05;
+		//background-color: red;
+		background-image: url("../imgs/assets/pattern.png");
+		background-size: 40px;
+	}
+
+	
+	.barchart	{
+		position: relative;
+		
+		.barchart-bars	{
+			width: 100%;
+			height: 3rem;
+			
+			div	{
+				position: relative;
+				z-index: 1;
+				height: 100%;
+				float: left;
+			}
+			
+			.state-4, .state-6, .state-8, .state-10, .state-11	{
+				border-left: 1px solid $grey1;
+			}
+		}
+		
+		img	{
+			display: block;
+			position: absolute;
+			top: 0;
+			height: 1.5rem;
+			opacity: .4;
+			z-index: 2;
+			
+			&.right-edge	{
+				transform: translateX(-100%);
+			}
+		}
+	}
+}
