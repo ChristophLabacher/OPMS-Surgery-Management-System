@@ -144,7 +144,7 @@ html {
 *		STATES		*
 ************************/
 .state-0 {
-  background-color: #494b4c;
+  background-color: #434a51;
 }
 
 .state-1, .state-11 {
@@ -238,7 +238,7 @@ nav {
           flex-shrink: 0;
   -webkit-transition: width .5s;
           transition: width .5s;
-  background-color: #363738;
+  background-color: #181f25;
 }
 nav.active {
   width: 25rem;
@@ -265,7 +265,7 @@ nav {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
-  border-right: 1px solid #262728;
+  border-right: 1px solid #121921;
 }
 nav ul.action-list li {
   width: 25rem;
@@ -280,10 +280,10 @@ nav ul.action-list li img, nav ul.action-list li svg {
   margin-right: .5rem;
 }
 nav ul.action-list li:hover {
-  background-color: #414344;
+  background-color: #272e35;
 }
 nav ul.action-list li.active {
-  background-color: #262728;
+  background-color: #121921;
 }
 nav ul.action-list li.active svg path, nav ul.action-list li.active svg rect {
   fill: #00af96;
@@ -347,8 +347,8 @@ nav ul.action-list:nth-of-type(2):hover {
           flex-shrink: 0;
   overflow: hidden;
   width: 20rem;
-  border-left: 1px solid #262728;
-  background-color: #414344;
+  border-left: 1px solid #121921;
+  background-color: #272e35;
 }
 .view .center {
   display: -webkit-box;
@@ -372,8 +372,8 @@ nav ul.action-list:nth-of-type(2):hover {
       -ms-flex-negative: 0;
           flex-shrink: 0;
   overflow: hidden;
-  background-color: #3b3c3d;
-  border-bottom: 1px solid #262728;
+  background-color: #1f262e;
+  border-bottom: 1px solid #121921;
   -webkit-transition: height .5s;
           transition: height .5s;
 }
@@ -383,11 +383,11 @@ nav ul.action-list:nth-of-type(2):hover {
 .view .toolbar .toolbar-top {
   width: 100%;
   height: 5rem;
-  border-bottom: 1px solid #262728;
+  border-bottom: 1px solid #121921;
 }
 .view .toolbar .toolbar-content {
   height: 5rem;
-  background-color: #363738;
+  background-color: #181f25;
 }
 .view .content {
   width: 100%;
@@ -471,9 +471,9 @@ ul.action-list li svg path {
 }
 ul.action-list li:hover {
   cursor: pointer;
-  background-color: #363738;
-  border-left: 1px solid #262728;
-  border-right: 1px solid #262728;
+  background-color: #181f25;
+  border-left: 1px solid #121921;
+  border-right: 1px solid #121921;
 }
 ul.action-list li:hover:first-child {
   border-left-color: transparent;
@@ -482,9 +482,9 @@ ul.action-list li:hover svg path {
   fill: #00af96;
 }
 ul.action-list li.active {
-  background-color: #363738;
-  border-left: 1px solid #262728;
-  border-right: 1px solid #262728;
+  background-color: #181f25;
+  border-left: 1px solid #121921;
+  border-right: 1px solid #121921;
 }
 ul.action-list li.active:first-child {
   border-left-color: transparent;
@@ -503,7 +503,7 @@ table.no-topspace {
   margin-top: 0;
 }
 table tr {
-  border-bottom: 1px dotted #363738;
+  border-bottom: 1px dotted #181f25;
 }
 table tr:first-child {
   border-style: solid;
@@ -544,7 +544,7 @@ table.data-table td {
 table.data-table td:first-child {
   padding: 1rem 1rem 1rem 0;
   width: 15rem;
-  color: #999999;
+  color: #94999e;
 }
 table.data-table td.button {
   color: white;
@@ -561,7 +561,7 @@ table.list-table tr {
 }
 table.list-table tr:not(:first-child):hover {
   cursor: pointer;
-  background-color: #5c5e60;
+  background-color: #30363b;
 }
 
 /************************
@@ -579,13 +579,13 @@ select, input:not([type='checkbox']), textarea, button {
   -webkit-appearance: none;
   padding: .5rem;
   border-radius: 0px;
-  border: 1px solid #262728;
-  background-color: #363738;
+  border: 1px solid #121921;
+  background-color: #181f25;
   -webkit-transition: background-color .3s;
           transition: background-color .3s;
 }
 select:focus, input:not([type='checkbox']):focus, textarea:focus, button:focus {
-  background-color: #262728;
+  background-color: #121921;
 }
 
 textarea {
@@ -632,15 +632,15 @@ button.danger:hover, button.danger:focus {
   height: 2.8rem;
 }
 .switch label {
-  color: #494b4c;
+  color: #434a51;
   position: relative;
   display: block;
   cursor: pointer;
   width: 100%;
   height: 2.8rem;
   padding: .5rem;
-  border: 1px solid #262728;
-  background-color: #262728;
+  border: 1px solid #121921;
+  background-color: #121921;
 }
 .switch label span {
   display: block;
@@ -652,7 +652,7 @@ button.danger:hover, button.danger:focus {
   color: white;
   text-align: center;
   padding-top: .5rem;
-  background-color: #363738;
+  background-color: #181f25;
   border: 1px solid transparent;
   display: block;
   position: absolute;
@@ -764,8 +764,8 @@ button.danger:hover, button.danger:focus {
   float: left;
   z-index: 1;
   text-align: center;
-  background-color: #414344;
-  border-right: 1px solid #3b3c3d;
+  background-color: #272e35;
+  border-right: 1px solid #1f262e;
 }
 .schedule .scale-time li {
   height: 61px;
@@ -783,7 +783,7 @@ button.danger:hover, button.danger:focus {
   top: 1803.2px;
   border: none;
   background-color: white;
-  color: #262728;
+  color: #121921;
   width: 100%;
   height: auto;
   padding: .3rem 0;
@@ -792,8 +792,8 @@ button.danger:hover, button.danger:focus {
   height: 5rem;
   width: 240rem;
   margin-left: 5rem;
-  background-color: #5c5e60;
-  border-bottom: 1px solid #414344;
+  background-color: #30363b;
+  border-bottom: 1px solid #272e35;
 }
 .schedule .scale-rooms li {
   height: 5rem;
@@ -813,8 +813,8 @@ button.danger:hover, button.danger:focus {
 .schedule .scale-overlay {
   height: 5rem;
   width: 5rem;
-  background: -webkit-linear-gradient(#414344 30%, transparent 130%);
-  background: linear-gradient(#414344 30%, transparent 130%);
+  background: -webkit-linear-gradient(#272e35 30%, transparent 130%);
+  background: linear-gradient(#272e35 30%, transparent 130%);
   z-index: 2;
 }
 .schedule .timetable-container {
@@ -824,7 +824,7 @@ button.danger:hover, button.danger:focus {
 }
 .schedule .timetable {
   height: 288rem;
-  background-color: #5c5e60;
+  background-color: #30363b;
 }
 .schedule .column {
   float: left;
@@ -844,7 +844,7 @@ button.danger:hover, button.danger:focus {
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  border-right: 1px solid #414344;
+  border-right: 1px solid #272e35;
 }
 .schedule .column.active {
   width: 80rem;
@@ -895,7 +895,7 @@ button.danger:hover, button.danger:focus {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
-  background-color: #262728;
+  background-color: #121921;
 }
 .schedule .column .column-details .iScrollVerticalScrollbar {
   right: 10px;
@@ -969,7 +969,7 @@ button.danger:hover, button.danger:focus {
           flex-shrink: 0;
   width: 20rem;
   overflow: hidden;
-  border-right: 1px solid #363738;
+  border-right: 1px solid #181f25;
 }
 .schedule .center-side .content .open-surgeries .new-card {
   -webkit-transition: margin-top 1s;
@@ -998,8 +998,8 @@ button.danger:hover, button.danger:focus {
   width: 100%;
   position: relative;
   border-radius: 3px;
-  background-color: #363738;
-  color: #999999;
+  background-color: #181f25;
+  color: #94999e;
   cursor: pointer;
   overflow: hidden;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
@@ -1114,7 +1114,7 @@ button.danger:hover, button.danger:focus {
   opacity: 1;
 }
 .card-details-container .editing input:focus, .card-details-container .editing textarea:focus, .card-details-container .editing select:hover {
-  background-color: #414344;
+  background-color: #272e35;
 }
 .card-details-container .timestamps:not(.editing) .next {
   opacity: 0;
@@ -1159,7 +1159,7 @@ button.danger:hover, button.danger:focus {
   opacity: .1;
 }
 .card-details-container .barchart .barchart-bars .state-4, .card-details-container .barchart .barchart-bars .state-6, .card-details-container .barchart .barchart-bars .state-8, .card-details-container .barchart .barchart-bars .state-10, .card-details-container .barchart .barchart-bars .state-11 {
-  border-left: 3px solid #262728;
+  border-left: 3px solid #121921;
 }
 .card-details-container .barchart .barchart-legend {
   text-align: center;
@@ -1206,7 +1206,7 @@ button.danger:hover, button.danger:focus {
   padding-right: 2.5rem;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-  border-right: 1px dotted #363738;
+  border-right: 1px dotted #181f25;
 }
 .add-surgery .surgery-data {
   width: 40rem;

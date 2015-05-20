@@ -229,7 +229,7 @@ $(document).ready(function()	{
 	/************************
 	*	Start Next State		*
 	************************/
-	$(".column-details").on("click", ".timestamps [action = 'start-next']", function()	{
+	$(".column-details").on("click", ".timestamps:not(.editing) [action = 'start-next']", function()	{
 		$(this).removeClass("next").removeAttr("action");
 		$(this).parent().parent().next().find("td:last-child input").addClass("next").attr("action", "start-next")
 
