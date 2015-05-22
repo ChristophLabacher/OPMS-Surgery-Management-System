@@ -1,12 +1,13 @@
 $(document).ready(function() {
+	now = new Date("2014-12-08T14:37:11");
 	loadStateData()
 	replaceSVG();
 	
 	loadRoomData();
 	
 	
-	loadFileLocally()
-	//loadFileFromServer();
+	//	loadFileLocally()
+	loadFileFromServer();
 
 	data = [];
 

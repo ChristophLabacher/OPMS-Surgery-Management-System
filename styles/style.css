@@ -1322,9 +1322,10 @@ button.danger:hover, button.danger:focus {
 .barchart .room .info, .barchart .room .patient, .barchart .room .barchart, .barchart .room .service {
   margin-bottom: 2rem;
   margin-top: 2rem;
-  min-height: 4rem;
+  height: 4rem;
+  text-overflow: ellipsis;
 }
-.barchart .room .info:first-child, .barchart .room .patient:first-child, .barchart .room .barchart:first-child, .barchart .room .service:first-child {
+.barchart .room .info:first-of-type, .barchart .room .patient:first-of-type, .barchart .room .barchart:first-of-type, .barchart .room .service:first-of-type {
   margin-top: 5rem;
 }
 .barchart .room .info:last-child, .barchart .room .patient:last-child, .barchart .room .barchart:last-child, .barchart .room .service:last-child {
@@ -1400,7 +1401,7 @@ button.danger:hover, button.danger:focus {
 }
 .barchart .barchart .barchart-bars {
   width: 100%;
-  height: 3rem;
+  height: 4rem;
 }
 .barchart .barchart .barchart-bars div {
   position: relative;
