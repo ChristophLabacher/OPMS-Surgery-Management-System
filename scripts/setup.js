@@ -6,7 +6,7 @@ $(document).ready(function() {
 	loadRoomData();
 	
 	
-	//	loadFileLocally()
+	//loadFileLocally()
 	loadFileFromServer();
 
 	data = [];

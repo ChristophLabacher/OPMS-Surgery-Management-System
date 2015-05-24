@@ -27,14 +27,6 @@ $(document).ready(function() {
 
 function getRooms()	{
 	for (var i = 0; i < rooms.length; i++)	{
-/*
-		var room = "<li room=\"" + rooms[i].id + "\">Saal " + rooms[i].id;
-		if (rooms[i].department)	{
-			room += " <abbr>" + rooms[i].department + "</abbr>";
-		}
-		room += "</li>";
-*/
-
 		var room = 				"<div class=\"room\" room=\"" + rooms[i].id + "\">" +
 									"<div class=\"info\">" +
 										"Saal " +  rooms[i].id;
@@ -66,23 +58,23 @@ function getPatients()	{
 
 		if (data[i].Surgery_Room != 0)	{
 
-			var patient = 				"<div class=\"patient\">" +
+			var patient = 				"<div class=\"patient\" case-id=\"" + data[i].Case_Id + "\">" +
 											"<div class=\"name\">" + data[i].Name + ", " + data[i].Prename + "</div>" +
 											"<div class=\"birthdate\">" + data[i].Birthdate + "</div>" +
 										"</div>";
 			target.find(".patients").append(patient);
 			
-			var service = 				"<div class=\"service\">" +
+			var service = 				"<div class=\"service\" case-id=\"" + data[i].Case_Id + "\">" +
 											data[i].Service;
 										"</div>";
 										
 			target.find(".services").append(service);			
 			
 			if (data[i].Details == true)	{
-				console.log("i");
+
 				if (data[i].Current_State > 0)	{
 					var spacer = getTimeInPercent(new Date("2014-12-08T00:00:00"), new Date(data[i].Timestamps[0]));
-					var barchart = 		"<div class=\"barchart\">" +
+					var barchart = 		"<div class=\"barchart\" case-id=\"" + data[i].Case_Id + "\">" +
 											"<div class=\"barchart-bars clearfix\">" +
 												"<div class=\"spacer\" style=\"width: " + spacer[2] + "%\"></div>";
 					
@@ -107,6 +99,15 @@ function getPatients()	{
 			var time = getTimeInPercent(Starttime, Endtime);
 			var blocked = "<div class=\"blocked\" style=\"left: " + time[0] + "%; width: " + time[2] + "%\"></div>";
 			target.find(".barcharts").append(blocked);
+			
+			var h = $(".patient[case-id='" + data[i].Case_Id + "']").outerHeight();
+			if ($(".service[case-id='" + data[i].Case_Id + "']").outerHeight() > h)	{
+				h = $(".service[case-id='" + data[i].Case_Id + "']").outerHeight();
+			}
+						
+			$(".patient[case-id='" + data[i].Case_Id + "']").height(h);
+			$(".barchart[case-id='" + data[i].Case_Id + "']").height(h);
+			$(".service[case-id='" + data[i].Case_Id + "']").height(h);
 		}
 	}
 }

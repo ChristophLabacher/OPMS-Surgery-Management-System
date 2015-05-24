@@ -1322,7 +1322,7 @@ button.danger:hover, button.danger:focus {
 .barchart .room .info, .barchart .room .patient, .barchart .room .barchart, .barchart .room .service {
   margin-bottom: 2rem;
   margin-top: 2rem;
-  height: 4rem;
+  min-height: 4rem;
   text-overflow: ellipsis;
 }
 .barchart .room .info:first-of-type, .barchart .room .patient:first-of-type, .barchart .room .barchart:first-of-type, .barchart .room .service:first-of-type {

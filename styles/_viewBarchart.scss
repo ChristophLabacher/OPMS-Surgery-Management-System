@@ -83,7 +83,7 @@
 		.info, .patient, .barchart, .service	{
 			margin-bottom: 2rem;
 			margin-top: 2rem;
-			height: 4rem;
+			min-height: 4rem;
 			text-overflow: ellipsis;
 			
 			&:first-of-type	{
