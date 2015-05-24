@@ -32,7 +32,7 @@
 			li	{
 				float: left;
 				list-style: none;
-				width: (100%/12);
+				width: (100%/9);
 				height: $smallUnit - 1rem;
 				margin-top: 1rem;
 				border-left: 1px solid $transparentwhite;
@@ -41,7 +41,7 @@
 			
 			.now	{
 				position: absolute;
-				left: (14.61*(100%/24));
+				left: (8.61*(100%/18));
 				border-left: 2px solid $white;
 				padding: 0;
 
@@ -96,7 +96,6 @@
 		}
 		
 		
-		
 		.info	{
 			width: $smallUnit*3;
 		}
@@ -143,7 +142,7 @@
 			position: relative;
 			list-style: none;
 			float: left;
-			width: (100%/24);
+			width: (100%/18);
 			height: 100%;
 			border-left: 1px solid $transparentwhite;
 			
@@ -154,7 +153,7 @@
 		
 		.now, .now-top	{
 			position: absolute;
-			left: (14.61*(100%/24));
+			left: (8.61*(100%/18));
 		}
 		
 		.now	{

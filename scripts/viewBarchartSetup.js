@@ -4,7 +4,7 @@ $(document).ready(function() {
 	getPatients();
 	
 	$(".lines").each(function()	{
-		for (var i = 0; i < 24; i++)	{
+		for (var i = 0; i < 18; i++)	{
 			$(this).append("<li></li>");
 		}
 	});
@@ -73,7 +73,7 @@ function getPatients()	{
 			if (data[i].Details == true)	{
 
 				if (data[i].Current_State > 0)	{
-					var spacer = getTimeInPercent(new Date("2014-12-08T00:00:00"), new Date(data[i].Timestamps[0]));
+					var spacer = getTimeInPercent(new Date("2014-12-08T06:00:00"), new Date(data[i].Timestamps[0]));
 					var barchart = 		"<div class=\"barchart\" case-id=\"" + data[i].Case_Id + "\">" +
 											"<div class=\"barchart-bars clearfix\">" +
 												"<div class=\"spacer\" style=\"width: " + spacer[2] + "%\"></div>";
@@ -96,7 +96,12 @@ function getPatients()	{
 				}
 			}
 			
-			var time = getTimeInPercent(Starttime, Endtime);
+			var startBuf = Starttime;
+			startBuf.setUTCHours(Starttime.getUTCHours() - 6);
+			var endBuf = Endtime;
+			endBuf.setUTCHours(Endtime.getUTCHours() - 6);
+			
+			var time = getTimeInPercent(startBuf, endBuf);
 			var blocked = "<div class=\"blocked\" style=\"left: " + time[0] + "%; width: " + time[2] + "%\"></div>";
 			target.find(".barcharts").append(blocked);
 			
@@ -115,8 +120,8 @@ function getPatients()	{
 function getTimeInPercent(startTime, endTime)	{
 	var start = startTime.getUTCHours() + (startTime.getUTCMinutes()/60);
 	var end = endTime.getUTCHours() + (endTime.getUTCMinutes()/60);
-	var startPerc = (start/24) * 100;
-	var endPerc = (end/24) * 100;
+	var startPerc = (start/18) * 100;
+	var endPerc = (end/18) * 100;
 	var durationPerc = endPerc - startPerc;
 
 	return [startPerc, endPerc, durationPerc];
