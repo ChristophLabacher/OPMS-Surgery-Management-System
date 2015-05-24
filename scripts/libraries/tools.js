@@ -14,3 +14,7 @@ function constrain(value, f, t)	{
 		return value;
 	}
 }
+
+function addZero(num){
+	return (num<10?"0":"")+num;
+}

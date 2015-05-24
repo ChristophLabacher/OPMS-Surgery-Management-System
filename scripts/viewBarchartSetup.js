@@ -86,28 +86,47 @@ function getPatients()	{
 					if (j < 11)	{
 						var time = getTimeInPercent(new Date(data[i].Timestamps[j - 1]), new Date(now));
 						barchart += "<div class=\"state-" + j + "\" style=\"width: " + time[2] + "%\"></div>"
+						
+						barchart += "<div class=\"legend text-state-" + j + "\">" + "Seit " + addZero(new Date(data[i].Timestamps[j - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[j - 1]).getUTCMinutes()) + " · " +states[data[i].Current_State - 1].title + "</div>";
 					} else if (j == 11)	{
 						barchart += "<div class=\"state-" + j + "\" style=\"width: 1%\"></div>";
 					}
 					
 					barchart += 	"</div><!-- barchart-bars -->";
+					
 					barchart += "</div><!-- barchart -->";
 					target.find(".barcharts").append(barchart);
 				}
+			} else	{
+				var barchart = "<div class=\"barchart\" case-id=\"" + data[i].Case_Id + "\"></div><!-- barchart -->";
+				target.find(".barcharts").append(barchart);
 			}
 			
-			var startBuf = Starttime;
+			var startBuf = new Date(Starttime);
 			startBuf.setUTCHours(Starttime.getUTCHours() - 6);
-			var endBuf = Endtime;
+			var endBuf = new Date(Endtime);
 			endBuf.setUTCHours(Endtime.getUTCHours() - 6);
+			var nowBuf = new Date(now);
+			nowBuf.setUTCHours(now.getUTCHours() - 6);
 			
 			var time = getTimeInPercent(startBuf, endBuf);
 			var blocked = "<div class=\"blocked\" style=\"left: " + time[0] + "%; width: " + time[2] + "%\"></div>";
 			target.find(".barcharts").append(blocked);
 			
-			var h = $(".patient[case-id='" + data[i].Case_Id + "']").outerHeight();
-			if ($(".service[case-id='" + data[i].Case_Id + "']").outerHeight() > h)	{
-				h = $(".service[case-id='" + data[i].Case_Id + "']").outerHeight();
+			if (startBuf < nowBuf && data[i].Details == true)	{
+				$(".barchart[case-id='" + data[i].Case_Id + "']").append("<img class=\"left-edge\" src=\"imgs/assets/left-edge.png\" style=\"left: " + time[0] + "%\">");
+			}
+			
+			if (endBuf < nowBuf && data[i].Details == true && new Date(data[i].Timestamps[data[i].Current_State - 1]) > Endtime)	{
+				
+				console.log();
+				
+				$(".barchart[case-id='" + data[i].Case_Id + "']").append("<img class=\"right-edge\" src=\"imgs/assets/right-edge.png\" style=\"left: " + time[1] + "%\">");
+			}
+			
+			var h = $(".patient[case-id='" + data[i].Case_Id + "']").height();
+			if ($(".service[case-id='" + data[i].Case_Id + "']").height() > h)	{
+				h = $(".service[case-id='" + data[i].Case_Id + "']").height();
 			}
 						
 			$(".patient[case-id='" + data[i].Case_Id + "']").height(h);

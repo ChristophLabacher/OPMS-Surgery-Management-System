@@ -6,8 +6,8 @@ $(document).ready(function() {
 	loadRoomData();
 	
 	
-	//loadFileLocally()
-	loadFileFromServer();
+	loadFileLocally()
+	//loadFileFromServer();
 
 	data = [];
 
@@ -133,7 +133,7 @@ function loadFileFromServer()	{
 function loadFileLocally()	{
 	// Get json-file
 	var request = new XMLHttpRequest();
-		request.open("GET", "data/surgeries-3.json", false);
+		request.open("GET", "data/surgeries.json", false);
 		request.send(null);
 	// Put json-file into an array
 	raw = JSON.parse(request.responseText);

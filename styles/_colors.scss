@@ -24,7 +24,6 @@ $red: rgb(209, 63, 63);
 *		UI COLORS		*
 ************************/
 
-// Light mode
 $grey6: #262728;
 $grey5: #363738;
 $grey4: #3b3c3d;
@@ -32,15 +31,6 @@ $grey3: #414344;
 $grey2: #494b4c;
 $grey1: #5c5e60;
 $grey0: hsl(0,0,60);
-
-// Blueish Mode
-$grey6: hsl(210,22,10);
-$grey5: hsl(210,18,12);
-$grey4: hsl(210,15,15);
-$grey3: hsl(210,12,18);
-$grey2: hsl(210,10,29);
-$grey1: hsl(210,10,21);
-$grey0: hsl(210,5,60);
 
 // Dark mode
 $grey6: hsl(210,5,10);
@@ -50,7 +40,6 @@ $grey3: hsl(210,5,18);
 $grey2: hsl(210,5,29);
 $grey1: hsl(210,5,21);
 $grey0: hsl(210,5,60);
-
 
 $transparentwhite: rgba(255,255,255, .05);
 $lesstransparentwhite: rgba(255,255,255, .2);

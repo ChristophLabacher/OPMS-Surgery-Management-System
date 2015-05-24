@@ -1412,6 +1412,10 @@ button.danger:hover, button.danger:focus {
 .barchart .barchart .barchart-bars .state-4, .barchart .barchart .barchart-bars .state-6, .barchart .barchart .barchart-bars .state-8, .barchart .barchart .barchart-bars .state-10, .barchart .barchart .barchart-bars .state-11 {
   border-left: 1px solid #333638;
 }
+.barchart .barchart .barchart-bars .legend {
+  line-height: 4rem;
+  padding-left: .7rem;
+}
 .barchart .barchart img {
   display: block;
   position: absolute;

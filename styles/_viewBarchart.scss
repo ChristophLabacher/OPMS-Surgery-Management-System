@@ -74,7 +74,6 @@
 		
 		background-color: $grey1;
 		border-bottom: 1px solid $grey3;
- 		//padding: 4rem 0;
 		
 		&:last-child	{
 			margin-bottom: 0;
@@ -171,7 +170,6 @@
 		top: 0;
 		height: 100%;
 		opacity: .05;
-		//background-color: red;
 		background-image: url("../imgs/assets/pattern.png");
 		background-size: 40px;
 	}
@@ -193,6 +191,11 @@
 			
 			.state-4, .state-6, .state-8, .state-10, .state-11	{
 				border-left: 1px solid $grey1;
+			}
+			
+			.legend	{
+				line-height: 4rem;
+				padding-left: .7rem;
 			}
 		}
 		

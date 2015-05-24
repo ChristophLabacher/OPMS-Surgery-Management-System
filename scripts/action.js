@@ -27,6 +27,8 @@ $(document).ready(function()	{
 	/************************
 	*	Change VIEW			*
 	************************/
+	var first = true;
+	
 	$("nav ul li").click(function()	{
 		var scroll = $(this).attr("scroll");
 		var size = $("main").outerHeight();
@@ -35,5 +37,10 @@ $(document).ready(function()	{
 		$(this).addClass("active").removeClass("emergency");
 		
 		$("main article").css("top", -scroll * size);
+		
+		if (first)	{
+			$("nav li.schedule").addClass("emergency");
+			first = false;
+		}
 	});
 });
