@@ -40,11 +40,11 @@
 		<!-------------------------<!--! NAV ------------------------------>
 		<nav>
 			<ul class="action-list">
-				<li><img src="imgs/assets/icons/statistic.png">Statistiken</li>
-				<li scroll="0" class=""><img src="imgs/assets/icons/barchart.png">Verlaufsdiagramm</li>
+				<li><img class="svg" src="imgs/assets/icons/statistic.svg">Statistiken</li>
+				<li scroll="0" class=""><img class="svg" src="imgs/assets/icons/barchart.svg">Verlaufsdiagramm</li>
 				<li scroll="1" class="schedule active"><img class="svg" src="imgs/assets/icons/schedule.svg">Operationen</li>
-				<li><img src="imgs/assets/icons/person.png">Dienstplan</li>
-				<li><img src="imgs/assets/icons/message.png">Nachrichten</li>
+				<li><img class="svg" src="imgs/assets/icons/person.svg">Dienstplan</li>
+				<li><img class="svg" src="imgs/assets/icons/message.svg">Nachrichten</li>
 			</ul><!-- action-list -->
 			
 			<ul class="action-list" action="expand-nav">
@@ -63,12 +63,17 @@
 						
 						<div class="toolbar-top clearfix">
 							<ul class="action-list clearfix" action="expand-toolbar">
-								<li class="date nottoday"><img class="svg" src="imgs/assets/icons/time.svg">Fr. 11.03.2015</li>
+								<li class="date"><img class="svg" src="imgs/assets/icons/time.svg">Fr. 11.03.2015</li>
 								<li><img class="svg" src="imgs/assets/icons/print.svg">Ansicht drucken</li>
+								<li class="">Legende</li>
 							</ul><!-- action-list -->
 						</div><!-- toolbar-top -->
 						
-						<div class="toolbar-content">
+						<div class="toolbar-content">			
+							<div class="legend">
+								<ul class="clearfix">
+								</ul>
+							</div><!-- legend -->
 						</div><!-- toolbar-content -->
 						
 					</div> <!-- toolbar -->
@@ -94,7 +99,7 @@
 							<div class="chart">
 							</div><!-- chart -->
 						</div><!-- chart-container -->
-					</div>				
+					</div>	<!-- content -->
 				</div><!-- center center-main -->
 				
 			</article><!-- view barchart -->

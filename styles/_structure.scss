@@ -69,7 +69,7 @@ nav	{
 				border-bottom: 1px solid $grey4;
 			}
 			
-			&.emergency svg path, &.emergency svg rect	{
+			&.emergency svg path, &.emergency svg rect, &.emergency svg circle, &.emergency svg polygon	{
 				fill: $red;
 			}
 		}

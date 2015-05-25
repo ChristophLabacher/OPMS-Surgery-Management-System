@@ -31,7 +31,7 @@ ul.action-list {
 			margin-right: 1rem;
 		}
 		
-		svg path, svg rect	{
+		svg path, svg rect, svg circle, svg polygon	{
 			fill: $white;
 			transition: fill .3s;
 		}
@@ -47,7 +47,7 @@ ul.action-list {
 				border-left-color: transparent;
 			}
 			
-			svg path, svg rect	{
+			svg path, svg rect, svg circle, svg polygon	{
 				fill: $lightgreen;
 			}
 		}
@@ -64,7 +64,7 @@ ul.action-list {
 			&:hover	{
 			}
 			
-			svg path, svg rect	{
+			svg path, svg rect, svg circle, svg polygon	{
 				fill: $lightgreen;
 			}
 			

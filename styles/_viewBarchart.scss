@@ -12,6 +12,26 @@
 		fill: $red;
 	}
 	
+	
+	.legend	{		
+		li	{
+			float: left;
+			height: $smallUnit;
+			width: (100% / 11);
+			list-style: none;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			align-items: center;
+			padding: 1rem 0;
+		}
+		
+		.state-4, .state-6, .state-8, .state-10, .state-11	{
+			border-left: 3px solid $grey3;
+		}
+	}
+	
 	.scale	{
 		list-style: none;
 		position: absolute;
@@ -61,6 +81,7 @@
 		margin-top: 5rem;
 		overflow: hidden;
 		position: relative;
+		background-color: $grey1;
 	}
 	
 	.chart	{

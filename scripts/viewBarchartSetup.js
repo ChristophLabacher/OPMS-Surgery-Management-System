@@ -9,6 +9,10 @@ $(document).ready(function() {
 		}
 	});
 	
+	for (var i = 0; i < states.length; i++)	{
+		$(".view.barchart .legend ul").append("<li class=\"state-" + (i+1) + "\">" + states[i].title + "</li>");
+	}
+	
 	// Scroll timetable-container
 	barchartScroll = new IScroll('.chart-container', {
 		mouseWheel: true,

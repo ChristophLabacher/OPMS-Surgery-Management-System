@@ -291,7 +291,7 @@ nav ul.action-list li.active {
   border-top: 1px solid #242628;
   border-bottom: 1px solid #242628;
 }
-nav ul.action-list li.emergency svg path, nav ul.action-list li.emergency svg rect {
+nav ul.action-list li.emergency svg path, nav ul.action-list li.emergency svg rect, nav ul.action-list li.emergency svg circle, nav ul.action-list li.emergency svg polygon {
   fill: #d13f3f;
 }
 nav ul.action-list:nth-of-type(2) {
@@ -470,7 +470,7 @@ ul.action-list li img, ul.action-list li svg {
   margin-top: 1.5rem;
   margin-right: 1rem;
 }
-ul.action-list li svg path, ul.action-list li svg rect {
+ul.action-list li svg path, ul.action-list li svg rect, ul.action-list li svg circle, ul.action-list li svg polygon {
   fill: white;
   -webkit-transition: fill .3s;
           transition: fill .3s;
@@ -484,7 +484,7 @@ ul.action-list li:hover {
 ul.action-list li:hover:first-child {
   border-left-color: transparent;
 }
-ul.action-list li:hover svg path, ul.action-list li:hover svg rect {
+ul.action-list li:hover svg path, ul.action-list li:hover svg rect, ul.action-list li:hover svg circle, ul.action-list li:hover svg polygon {
   fill: #00af96;
 }
 ul.action-list li.active {
@@ -495,7 +495,7 @@ ul.action-list li.active {
 ul.action-list li.active:first-child {
   border-left-color: transparent;
 }
-ul.action-list li.active svg path, ul.action-list li.active svg rect {
+ul.action-list li.active svg path, ul.action-list li.active svg rect, ul.action-list li.active svg circle, ul.action-list li.active svg polygon {
   fill: #00af96;
 }
 
@@ -1256,6 +1256,30 @@ button.danger:hover, button.danger:focus {
 .barchart .toolbar .date.not-today svg path {
   fill: #d13f3f;
 }
+.barchart .legend li {
+  float: left;
+  height: 5rem;
+  width: 9.09091%;
+  list-style: none;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0;
+}
+.barchart .legend .state-4, .barchart .legend .state-6, .barchart .legend .state-8, .barchart .legend .state-10, .barchart .legend .state-11 {
+  border-left: 3px solid #2c2e30;
+}
 .barchart .scale {
   list-style: none;
   position: absolute;
@@ -1298,6 +1322,7 @@ button.danger:hover, button.danger:focus {
   margin-top: 5rem;
   overflow: hidden;
   position: relative;
+  background-color: #333638;
 }
 .barchart .chart {
   background-color: #333638;
