@@ -1385,7 +1385,7 @@ button.danger:hover, button.danger:focus {
   border-left: 2px solid white;
 }
 .barchart .lines .now-top {
-  border-left: 2px dotted rgba(255, 255, 255, 0.2);
+  border-left: 2px solid white;
   z-index: 3;
 }
 .barchart .blocked {

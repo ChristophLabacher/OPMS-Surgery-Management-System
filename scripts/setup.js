@@ -1,13 +1,12 @@
 $(document).ready(function() {
 	now = new Date("2014-12-08T14:37:11");
-	loadStateData()
-	replaceSVG();
-	
+	loadStateData()	
 	loadRoomData();
 	
+	replaceSVG();
 	
-	loadFileLocally()
-	//loadFileFromServer();
+	//loadFileLocally()
+	loadFileFromServer();
 
 	data = [];
 
@@ -68,6 +67,10 @@ $(document).ready(function() {
 
 		data.push(surgery);
 	}
+	
+	// Scroll to schedule
+	var size = $("main").outerHeight();
+	$("main article").css("top", -1 * size);
 });
 
 function loadStateData()	{
