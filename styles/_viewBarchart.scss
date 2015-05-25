@@ -183,7 +183,7 @@
 		
 		.now-top	{
 			border-left: 2px solid white;
-			z-index: 3;
+			z-index: 2;
 		}
 	}
 	
@@ -218,6 +218,17 @@
 			.legend	{
 				line-height: 4rem;
 				padding-left: .7rem;
+				transition: opacity .3s;
+				
+				&.past	{
+					opacity: 0;
+				}
+			}
+		}
+		
+		&:hover	{
+			.legend.past	{
+				opacity: 1;
 			}
 		}
 		

@@ -84,16 +84,23 @@ function getPatients()	{
 					
 					for (j = 1; j < data[i].Current_State; j++)	{
 						var time = getTimeInPercent(new Date(data[i].Timestamps[j - 1]), new Date(data[i].Timestamps[j]));
-						barchart += "<div class=\"state-" + j + "\" style=\"width: " + time[2] + "%\"></div>"
+						var startTime = addZero(new Date(data[i].Timestamps[j - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[j - 1]).getUTCMinutes());
+						barchart += "<div class=\"bar state-" + j + "\" start=\"" + startTime + "\" state=\"" + j + "\" style=\"width: " + time[2] + "%\"></div>"
 					}
 					
 					if (j < 11)	{
 						var time = getTimeInPercent(new Date(data[i].Timestamps[j - 1]), new Date(now));
-						barchart += "<div class=\"state-" + j + "\" style=\"width: " + time[2] + "%\"></div>"
+						var startTime = addZero(new Date(data[i].Timestamps[j - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[j - 1]).getUTCMinutes());
+
+						barchart += "<div class=\"bar active state-" + j + "\" start=\"" + startTime + "\" state=\"" + j + "\" style=\"width: " + time[2] + "%\"></div>"
 						
 						barchart += "<div class=\"legend text-state-" + j + "\">" + "Seit " + addZero(new Date(data[i].Timestamps[j - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[j - 1]).getUTCMinutes()) + " · " +states[data[i].Current_State - 1].title + "</div>";
 					} else if (j == 11)	{
-						barchart += "<div class=\"state-" + j + "\" style=\"width: 2%\"></div>";
+						var startTime = addZero(new Date(data[i].Timestamps[j - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[j - 1]).getUTCMinutes());
+
+						barchart += "<div class=\"bar active state-" + j + "\" start=\"" + startTime + "\" state=\"" + j + "\" style=\"width: 2%\"></div>";
+						
+						barchart += "<div class=\"legend past text-state-" + j + "\">" + "Seit " + addZero(new Date(data[i].Timestamps[j - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[j - 1]).getUTCMinutes()) + " · " +states[data[i].Current_State - 1].title + "</div>";
 					}
 					
 					barchart += 	"</div><!-- barchart-bars -->";

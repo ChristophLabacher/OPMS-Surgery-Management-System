@@ -1412,7 +1412,7 @@ button.danger:hover, button.danger:focus {
 }
 .barchart .lines .now-top {
   border-left: 2px solid white;
-  z-index: 3;
+  z-index: 2;
 }
 .barchart .blocked {
   position: absolute;
@@ -1441,6 +1441,14 @@ button.danger:hover, button.danger:focus {
 .barchart .barchart .barchart-bars .legend {
   line-height: 4rem;
   padding-left: .7rem;
+  -webkit-transition: opacity .3s;
+          transition: opacity .3s;
+}
+.barchart .barchart .barchart-bars .legend.past {
+  opacity: 0;
+}
+.barchart .barchart:hover .legend.past {
+  opacity: 1;
 }
 .barchart .barchart img {
   display: block;
