@@ -10,7 +10,7 @@ $(document).ready(function() {
 	});
 	
 	for (var i = 0; i < states.length; i++)	{
-		$(".view.barchart .legend ul").append("<li class=\"state-" + (i+1) + "\">" + states[i].title + "</li>");
+		$(".view.barchart .legend ul").append("<li class=\"text-state-" + (i+1) + "\">" + states[i].title + "</li>");
 	}
 	
 	// Scroll timetable-container
@@ -93,7 +93,7 @@ function getPatients()	{
 						
 						barchart += "<div class=\"legend text-state-" + j + "\">" + "Seit " + addZero(new Date(data[i].Timestamps[j - 1]).getUTCHours()) + ":" + addZero(new Date(data[i].Timestamps[j - 1]).getUTCMinutes()) + " · " +states[data[i].Current_State - 1].title + "</div>";
 					} else if (j == 11)	{
-						barchart += "<div class=\"state-" + j + "\" style=\"width: 1%\"></div>";
+						barchart += "<div class=\"state-" + j + "\" style=\"width: 2%\"></div>";
 					}
 					
 					barchart += 	"</div><!-- barchart-bars -->";

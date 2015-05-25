@@ -1258,7 +1258,8 @@ button.danger:hover, button.danger:focus {
 }
 .barchart .legend li {
   float: left;
-  height: 5rem;
+  height: 4rem;
+  margin: .5rem 0;
   width: 9.09091%;
   list-style: none;
   overflow: hidden;
@@ -1277,8 +1278,8 @@ button.danger:hover, button.danger:focus {
           align-items: center;
   padding: 1rem 0;
 }
-.barchart .legend .state-4, .barchart .legend .state-6, .barchart .legend .state-8, .barchart .legend .state-10, .barchart .legend .state-11 {
-  border-left: 3px solid #2c2e30;
+.barchart .legend .text-state-4, .barchart .legend .text-state-6, .barchart .legend .text-state-8, .barchart .legend .text-state-10, .barchart .legend .text-state-11 {
+  border-left: 1px solid #2c2e30;
 }
 .barchart .scale {
   list-style: none;

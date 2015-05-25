@@ -16,7 +16,8 @@
 	.legend	{		
 		li	{
 			float: left;
-			height: $smallUnit;
+			height: $smallUnit - 1rem;
+			margin: .5rem 0;
 			width: (100% / 11);
 			list-style: none;
 			overflow: hidden;
@@ -27,8 +28,8 @@
 			padding: 1rem 0;
 		}
 		
-		.state-4, .state-6, .state-8, .state-10, .state-11	{
-			border-left: 3px solid $grey3;
+		.text-state-4, .text-state-6, .text-state-8, .text-state-10, .text-state-11	{
+			border-left: 1px solid $grey3;
 		}
 	}
 	
