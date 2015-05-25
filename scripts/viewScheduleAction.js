@@ -1,19 +1,4 @@
 $(document).ready(function()	{
-
-	/************************
-	*	Drag & Drop			*
-	************************/
-
-/*
-	$(".card-container").draggable({
-		appendTo: ".timetable",
-		containment: ".timetable",
-		grid: [200, 30],
-		handle: ".header",
-		helper: "clone"
-	});
-
-*/
 	/************************
 	*	Expand MAIN-SIDE	*
 	************************/
@@ -37,63 +22,10 @@ $(document).ready(function()	{
 	/************************
 	*	Expand COLUMN		*
 	************************/
-	var activeColumns = 0;
+	activeColumns = 0;
 
-	$("[action = 'show-card-detail']").click(function()	{
-		var target1 = $(this).closest(".column");
-		var room = target1.attr("room");
-		var target2 = $(".scale-rooms li[room = '" + room + "']");
-		var id = $(this).attr("case-id");
-
-		var target3 = target1.find(".column-details").find(".card-details-container");
-		cardDetails[target3.attr("case-id")] = target3;
-
-		var currentWidth = $(".timetable").outerWidth();
-
-		if (target1.hasClass("active"))	{
-			if (id == target1.find(".card-details-container").attr("case-id") || target1.find(".card-details-container").attr("case-id") === undefined)	{
-				$(".timetable").width(currentWidth - 3 * bigUnit );
-				$(".scale-rooms").width(currentWidth - 3 * bigUnit );
-
-				activeColumns--;
-				target1.removeClass("active");
-				target2.removeClass("active");
-			} else	{
-				target1.find(".column-details").empty().prepend(cardDetails[id]);
-
-				var selector = "#" + target1.find(".column-details").attr("id");
-				var scroller = new IScroll(selector, {
-					mouseWheel: true,
-					scrollbars: true,
-					scrollY: true,
-					bounce: false,
-					scrollbars: 'custom'
-				});
-			}
-		} else	{
-			$(".timetable").width(currentWidth + 3 * bigUnit + 1);
-			$(".scale-rooms").width(currentWidth + 3 * bigUnit + 1);
-
-			activeColumns++;
-			target1.addClass("active");
-			target2.addClass("active");
-
-			target1.find(".column-details").empty().prepend(cardDetails[id]);
-
-			var selector = "#" + target1.find(".column-details").attr("id");
-			var scroller = new IScroll(selector, {
-				mouseWheel: true,
-				scrollbars: true,
-				scrollY: true,
-				bounce: false,
-				scrollbars: 'custom'
-			});
-		}
-
-		setTimeout(function () {
-			timetableScroll.refresh();
-		}, 0);
-	});
+	$("[action = 'show-card-detail']").on("click", showCardDetail);
+	// function is all the was down (must be global)
 
 	/************************
 	*	Edit Section		*
@@ -286,4 +218,60 @@ function addEditability(_target)	{
 	_target.find("textarea").removeAttr("readonly");
 	_target.find("select").removeAttr("disabled");
 	_target.find(".switch input").removeAttr("disabled");
+}
+
+function showCardDetail()	{
+	var target1 = $(this).closest(".column");
+	var room = target1.attr("room");
+	var target2 = $(".scale-rooms li[room = '" + room + "']");
+	var id = $(this).attr("case-id");
+
+	var target3 = target1.find(".column-details").find(".card-details-container");
+	cardDetails[target3.attr("case-id")] = target3;
+
+	var currentWidth = $(".timetable").outerWidth();
+
+	if (target1.hasClass("active"))	{
+		if (id == target1.find(".card-details-container").attr("case-id") || target1.find(".card-details-container").attr("case-id") === undefined)	{
+			$(".timetable").width(currentWidth - 3 * bigUnit );
+			$(".scale-rooms").width(currentWidth - 3 * bigUnit );
+
+			activeColumns--;
+			target1.removeClass("active");
+			target2.removeClass("active");
+		} else	{
+			target1.find(".column-details").empty().prepend(cardDetails[id]);
+
+			var selector = "#" + target1.find(".column-details").attr("id");
+			var scroller = new IScroll(selector, {
+				mouseWheel: true,
+				scrollbars: true,
+				scrollY: true,
+				bounce: false,
+				scrollbars: 'custom'
+			});
+		}
+	} else	{
+		$(".timetable").width(currentWidth + 3 * bigUnit + 1);
+		$(".scale-rooms").width(currentWidth + 3 * bigUnit + 1);
+
+		activeColumns++;
+		target1.addClass("active");
+		target2.addClass("active");
+
+		target1.find(".column-details").empty().prepend(cardDetails[id]);
+
+		var selector = "#" + target1.find(".column-details").attr("id");
+		var scroller = new IScroll(selector, {
+			mouseWheel: true,
+			scrollbars: true,
+			scrollY: true,
+			bounce: false,
+			scrollbars: 'custom'
+		});
+	}
+
+	setTimeout(function () {
+		timetableScroll.refresh();
+	}, 0);
 }

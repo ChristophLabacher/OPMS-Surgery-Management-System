@@ -1,7 +1,7 @@
 [
 	{
 		"id" : 1,
-		"department" : "Ortho"
+		"department" : "Neuro"
 	},
 	{
 		"id" : 2,
@@ -28,9 +28,11 @@
 		"department" : "Uro"
 	},
 	{
-		"id" : 8
+		"id" : 8,
+		"department" : "Uro"
 	},
 	{
-		"id" : 9
+		"id" : 9,
+		"department" : "DaVinci"
 	}
 ]

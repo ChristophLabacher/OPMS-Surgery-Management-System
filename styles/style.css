@@ -1053,11 +1053,11 @@ button.danger:hover, button.danger:focus {
 }
 .card .handle-top {
   top: 0;
-  cursor: n-resize;
+  cursor: ns-resize;
 }
 .card .handle-bottom {
   bottom: 0;
-  cursor: s-resize;
+  cursor: ns-resize;
 }
 
 .center-side .card-container {

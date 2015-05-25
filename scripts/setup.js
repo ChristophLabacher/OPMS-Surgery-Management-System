@@ -5,8 +5,8 @@ $(document).ready(function() {
 	
 	replaceSVG();
 	
-	//loadFileLocally()
-	loadFileFromServer();
+	loadFileLocally()
+	//loadFileFromServer();
 
 	data = [];
 
