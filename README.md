@@ -6,6 +6,8 @@
 
 We only show the data that is necessary but always keep all data in reach in case it is needed. The user is guided and supported but not constrained or patronized. The interface is designed to be easy on the eyes and very clear about timeframes, states and the relationship between different parts of data.
 
+![](readme/opms-4.jpg)
+
 ## Prototype
 
 In this repository you can find a high-fidelity prototype built in HTML, CSS and JavaScript. We built it in order to be able to test the interface and present it in a way so that people could actually explore how the information is shown.
