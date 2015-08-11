@@ -6,6 +6,8 @@
 
 We only show the data that is necessary but always keep all data in reach in case it is needed. The user is guided and supported but not constrained or patronized. The interface is designed to be easy on the eyes and very clear about timeframes, states and the relationship between different parts of data.
 
+**Find out more: [www.christophlabacher.com/opms](http://www.christophlabacher.com/opms)**
+
 ![](readme/opms-4.jpg)
 
 ## Prototype
