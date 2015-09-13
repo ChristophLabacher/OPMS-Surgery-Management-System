@@ -224,6 +224,7 @@ body {
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  width: 80vw;
   height: 100vh;
 }
 
@@ -434,7 +435,6 @@ body {
   line-height: 1.4em;
   cursor: default;
   -webkit-font-feature-settings: 'tnum';
-  -moz-font-feature-settings: 'tnum';
   -ms-font-feature-settings: 'tnum';
   font-feature-settings: 'tnum';
 }
