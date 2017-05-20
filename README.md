@@ -14,7 +14,7 @@ We only show the data that is necessary but always keep all data in reach in cas
 
 In this repository you can find a high-fidelity prototype built in HTML, CSS and JavaScript. We built it in order to be able to test the interface and present it in a way so that people could actually explore how the information is shown.
 
-**The Prototype can be downloaded and run as a stand-alone app for OS X: [Download “OPMS – Surgery-Management-System.app”](https://github.com/ChristophLabacher/OPMS-Surgery-Management-System/releases/download/0.1.0/OPMS-Surgery-Management-System.app.zip).**
+**The Prototype can be downloaded and run as a stand-alone app for OS X: [Download “OPMS – Surgery-Management-System.app”](https://github.com/ChristophLabacher/OPMS-Surgery-Management-System/releases/download/0.2.0/OPMS-Surgery-Management-System.Prototype.zip).**
 
 ## Meta
 OPMS was developed as a student project during summer semester 2014 by [Anna Foltinek](http://anna-foltinek.de) and [Christoph Labacher](http://christophlabacher.com) as part of a course in Interface Design by Thomas Techert.
