@@ -1,7 +1,11 @@
 {
-  "name": "OPMS – Surgery-Management-System",
+  "name": "opms-surgery-management-system",
+  "version": "1.0.0",
   "main": "main.js",
   "devDependencies": {
-    "electron-prebuilt": "^0.37.3"
+    "electron": "^1.6.8"
+  },
+  "scripts": {
+    "package": "electron-packager ./ OPMS-Surgery-Management-System"
   }
 }
