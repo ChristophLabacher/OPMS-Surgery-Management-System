@@ -16,7 +16,7 @@
 		"title" : "Patient im Saal"
 	}, {
 		"state" : 6,
-		"title" : "Beginn Chirurgische Maßnahme"
+		"title" : "Beginn Maßnahme"
 	}, {
 		"state" : 7,
 		"title" : "Schnitt"
@@ -25,12 +25,12 @@
 		"title" : "Naht"
 	},  {
 		"state" : 9,
-		"title" : "Ende Chirurgische Maßnahme"
+		"title" : "Ende Maßnahme"
 	},  {
 		"state" : 10,
 		"title" : "Patient verlässt Saal"
 	},  {
 		"state" : 11,
 		"title" : "Patient im Aufwachraum"
-	} 
+	}
 ]

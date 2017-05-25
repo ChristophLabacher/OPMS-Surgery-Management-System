@@ -72,6 +72,7 @@ nav	{
 	ul.action-list {
 		li {
 			width: $smallUnit + $bigUnit;
+      height: $smallUnit;
 			padding: 0;
 			background-color: transparent;
 
@@ -162,7 +163,7 @@ nav	{
 
 	.toolbar	{
 		width: 100%;
-		height: $smallUnit;
+		height: $verySmallUnit;
 		flex-grow: 0;
 		flex-shrink: 0;
 
@@ -173,12 +174,12 @@ nav	{
 		transition: height .5s;
 
 		&.active	{
-			height: $smallUnit * 2;
+			height: $smallUnit + $verySmallUnit;
 		}
 
 		.toolbar-top	{
 			width: 100%;
-			height: $smallUnit;
+			height: $verySmallUnit;
 			border-bottom: 1px solid $grey6;
 
 			li	{

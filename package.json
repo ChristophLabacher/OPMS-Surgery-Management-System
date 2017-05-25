@@ -6,6 +6,7 @@
     "electron": "^1.6.8"
   },
   "scripts": {
-    "package": "electron-packager ./ OPMS-Surgery-Management-System"
+    "package": "electron-packager ./ OPMS-Surgery-Management-System",
+    "watch": "sass --watch src/styles:src/styles"
   }
 }

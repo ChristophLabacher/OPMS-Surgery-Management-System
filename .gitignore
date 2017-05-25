@@ -2,4 +2,4 @@
 prepros.cfg
 node_modules
 OPMS-Surgery-Management-System-darwin-x64
-sass_cache
+/.sass-cache

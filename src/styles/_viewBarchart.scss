@@ -1,19 +1,19 @@
 .barchart	{
 	.center-main .content	{
 		position: relative;
-		
+
 		display: flex;
 		flex-direction: column;
-		
+
 		overflow: hidden;
 	}
-	
+
 	.toolbar .date.not-today svg path	{
 		fill: $red;
 	}
-	
-	
-	.legend	{		
+
+
+	.legend	{
 		li	{
 			float: left;
 			height: $smallUnit - 1rem;
@@ -27,46 +27,46 @@
 			align-items: center;
 			padding: 0 1rem;
 		}
-		
+
 		.text-state-4, .text-state-6, .text-state-8, .text-state-10, .text-state-11	{
 			border-left: 1px solid $grey3;
 		}
 	}
-	
+
 	.scale	{
 		list-style: none;
 		position: absolute;
 	}
-	
+
 	.scale-time	{
-		height: $smallUnit;
+		height: $verySmallUnit;
 		width: 100%;
 		background-color: $grey3;
 		border-bottom: 1px solid $grey4;
 		padding-left: ($smallUnit/2) + $smallUnit*3 + $smallUnit*3;
 		padding-right: $bigUnit + 2.5rem;
-		
+
 		ul	{
 			width: 100%;
 			position: relative;
-			
+
 			li	{
 				float: left;
 				list-style: none;
 				width: (100%/9);
-				height: $smallUnit - 1rem;
+				height: $verySmallUnit - 1rem;
 				margin-top: 1rem;
 				border-left: 1px solid $transparentwhite;
 				padding-left: .5rem;
 			}
-			
+
 			.now	{
 				position: absolute;
 				left: (8.61*(100%/18));
 				border-left: 2px solid $white;
 				padding: 0;
 
-				
+
 				span	{
 					color: $black;
 					background-color: $white;
@@ -77,88 +77,88 @@
 			}
 		}
 	}
-	
+
 	.chart-container	{
-		margin-top: 5rem;
+		margin-top: $verySmallUnit;
 		overflow: hidden;
 		position: relative;
 		background-color: $grey1;
 	}
-	
+
 	.chart	{
 		background-color: $grey1;
 		padding: 0 $smallUnit/2;
 	}
-	
+
 	.room	{
 		display: flex;
 		flex-direction: row;
-		
+
 		background-color: $grey1;
 		border-bottom: 1px solid $grey3;
-		
+
 		&:last-child	{
 			margin-bottom: 0;
 		}
-		
+
 		.info, .patient, .barchart, .service	{
 			margin-bottom: 2rem;
 			margin-top: 2rem;
 			min-height: 4rem;
 			text-overflow: ellipsis;
-			
+
 			&:first-of-type	{
 				margin-top: $smallUnit;
 			}
-			
+
 			&:last-child	{
 				margin-bottom: $smallUnit;
 			}
 		}
-		
-		
+
+
 		.info	{
 			width: $smallUnit*3;
 		}
-		
+
 		.patients	{
 			width: $smallUnit*3;
 			padding-right: 2rem;
 		}
-		
+
 		.barcharts	{
 			position: relative;
 			flex-grow: 1;
 		}
-		
+
 		.services	{
 			width: $bigUnit;
 			padding-left: 2rem;
 		}
 	}
-	
+
 	.info	{
 		font-size: 1.5em;
 		line-height: 1.4em;
-		
+
 		abbr	{
 			display: block;
 			opacity: .6;
 		}
 	}
-	
+
 	.patient	{
 		.name	{
 			font-weight: 500;
 		}
 	}
-	
+
 	.lines	{
 		position: absolute;
 		top: 0;
 		width: 100%;
 		height: 100%;
-		
+
 		li 	{
 			position: relative;
 			list-style: none;
@@ -166,27 +166,27 @@
 			width: (100%/18);
 			height: 100%;
 			border-left: 1px solid $transparentwhite;
-			
+
 			&:last-child	{
-				border-right: 1px solid $transparentwhite;	
+				border-right: 1px solid $transparentwhite;
 			}
 		}
-		
+
 		.now, .now-top	{
 			position: absolute;
 			left: (8.61*(100%/18));
 		}
-		
+
 		.now	{
 			border-left: 2px solid white;
 		}
-		
+
 		.now-top	{
 			border-left: 2px solid white;
 			z-index: 2;
 		}
 	}
-	
+
 	.blocked	{
 		position: absolute;
 		top: 0;
@@ -196,42 +196,42 @@
 		background-size: 40px;
 	}
 
-	
+
 	.barchart	{
 		position: relative;
-		
+
 		.barchart-bars	{
 			width: 100%;
 			height: 4rem;
-			
+
 			div	{
 				position: relative;
 				z-index: 1;
 				height: 100%;
 				float: left;
 			}
-			
+
 			.state-4, .state-6, .state-8, .state-10, .state-11	{
 				border-left: 1px solid $grey1;
 			}
-			
+
 			.legend	{
 				line-height: 4rem;
 				padding-left: .7rem;
 				transition: opacity .3s;
-				
+
 				&.past	{
 					opacity: 0;
 				}
 			}
 		}
-		
+
 		&:hover	{
 			.legend.past	{
 				opacity: 1;
 			}
 		}
-		
+
 		img	{
 			display: block;
 			position: absolute;
@@ -239,7 +239,7 @@
 			height: 1.5rem;
 			opacity: .4;
 			z-index: 2;
-			
+
 			&.right-edge	{
 				transform: translateX(-100%);
 			}

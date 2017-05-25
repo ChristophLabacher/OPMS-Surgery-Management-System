@@ -121,7 +121,7 @@ html {
 *		STATES		*
 ************************/
 .state-0 {
-  background-color: #464a4e; }
+  background-color: #52575b; }
 
 .state-1, .state-11 {
   background-color: #edbf40; }
@@ -187,7 +187,7 @@ body {
   line-height: 26px;
   border-bottom: 1px solid black;
   user-select: none;
-  color: #94999e;
+  color: #999ea3;
   -webkit-app-region: drag;
   -webkit-user-select: none; }
 
@@ -203,7 +203,7 @@ nav {
   flex-grow: 0;
   flex-shrink: 0;
   transition: width .5s;
-  background-color: #1d1f20; }
+  background-color: #222425; }
   nav.active {
     width: 25rem; }
 
@@ -221,9 +221,10 @@ nav {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-right: 1px solid #181a1b; }
+  border-right: 1px solid #1d1f20; }
   nav ul.action-list li {
     width: 25rem;
+    height: 5rem;
     padding: 0;
     background-color: transparent; }
     nav ul.action-list li img, nav ul.action-list li svg {
@@ -233,11 +234,11 @@ nav {
       margin-top: 0;
       margin-right: .5rem; }
     nav ul.action-list li:hover {
-      background-color: #2c2e30; }
+      background-color: #303336; }
     nav ul.action-list li.active {
-      background-color: #181a1b;
-      border-top: 1px solid #242628;
-      border-bottom: 1px solid #242628; }
+      background-color: #1d1f20;
+      border-top: 1px solid #292b2e;
+      border-bottom: 1px solid #292b2e; }
     nav ul.action-list li.emergency svg path, nav ul.action-list li.emergency svg rect, nav ul.action-list li.emergency svg circle, nav ul.action-list li.emergency svg polygon {
       fill: #d13f3f; }
   nav ul.action-list:nth-of-type(2) {
@@ -272,29 +273,29 @@ nav {
     flex-shrink: 0;
     overflow: hidden;
     width: 20rem;
-    border-left: 1px solid #181a1b;
-    background-color: #2c2e30; }
+    border-left: 1px solid #1d1f20;
+    background-color: #303336; }
   .view .center {
     display: flex;
     flex-direction: column; }
   .view .toolbar {
     width: 100%;
-    height: 5rem;
+    height: 3.5rem;
     flex-grow: 0;
     flex-shrink: 0;
     overflow: hidden;
-    background-color: #242628;
-    border-bottom: 1px solid #181a1b;
+    background-color: #292b2e;
+    border-bottom: 1px solid #1d1f20;
     transition: height .5s; }
     .view .toolbar.active {
-      height: 10rem; }
+      height: 8.5rem; }
     .view .toolbar .toolbar-top {
       width: 100%;
-      height: 5rem;
-      border-bottom: 1px solid #181a1b; }
+      height: 3.5rem;
+      border-bottom: 1px solid #1d1f20; }
     .view .toolbar .toolbar-content {
       height: 5rem;
-      background-color: #1d1f20; }
+      background-color: #222425; }
   .view .content {
     width: 100%;
     flex-grow: 1;
@@ -342,11 +343,11 @@ ul.action-list {
   float: left; }
   ul.action-list li {
     float: left;
-    height: 5rem;
+    height: 3.5rem;
     padding: 0 2rem;
     overflow: hidden;
     list-style: none;
-    line-height: 5rem;
+    line-height: 3.5rem;
     text-transform: uppercase;
     letter-spacing: .04em;
     border: 1px solid transparent;
@@ -354,26 +355,26 @@ ul.action-list {
     ul.action-list li img, ul.action-list li svg {
       display: block;
       float: left;
-      width: 2rem;
-      height: 2rem;
-      margin-top: 1.5rem;
+      width: 1.7rem;
+      height: 1.7rem;
+      margin-top: 0.9rem;
       margin-right: 1rem; }
     ul.action-list li svg path, ul.action-list li svg rect, ul.action-list li svg circle, ul.action-list li svg polygon {
       fill: white;
       transition: fill .3s; }
     ul.action-list li:hover {
       cursor: pointer;
-      background-color: #1d1f20;
-      border-left: 1px solid #181a1b;
-      border-right: 1px solid #181a1b; }
+      background-color: #222425;
+      border-left: 1px solid #1d1f20;
+      border-right: 1px solid #1d1f20; }
       ul.action-list li:hover:first-child {
         border-left-color: transparent; }
       ul.action-list li:hover svg path, ul.action-list li:hover svg rect, ul.action-list li:hover svg circle, ul.action-list li:hover svg polygon {
         fill: #00af96; }
     ul.action-list li.active {
-      background-color: #1d1f20;
-      border-left: 1px solid #181a1b;
-      border-right: 1px solid #181a1b; }
+      background-color: #222425;
+      border-left: 1px solid #1d1f20;
+      border-right: 1px solid #1d1f20; }
       ul.action-list li.active:first-child {
         border-left-color: transparent; }
       ul.action-list li.active svg path, ul.action-list li.active svg rect, ul.action-list li.active svg circle, ul.action-list li.active svg polygon {
@@ -387,7 +388,7 @@ table:not(.no-data) {
   table:not(.no-data).no-topspace {
     margin-top: 0; }
   table:not(.no-data) tr {
-    border-bottom: 1px dotted #242628; }
+    border-bottom: 1px dotted #292b2e; }
     table:not(.no-data) tr:first-child {
       border-style: solid; }
     table:not(.no-data) tr.no-border {
@@ -418,7 +419,7 @@ table.data-table td {
   table.data-table td:first-child {
     padding: 1rem 1rem 1rem 0;
     width: 15rem;
-    color: #94999e; }
+    color: #999ea3; }
   table.data-table td.button {
     color: white;
     padding: 0; }
@@ -430,7 +431,7 @@ table.list-table tr {
   transition: background-color .3s; }
 table.list-table tr:not(:first-child):hover {
   cursor: pointer;
-  background-color: #333638; }
+  background-color: #3d4043; }
 
 /************************
 *		FORMS		*
@@ -447,11 +448,11 @@ select, input:not([type='checkbox']), textarea, button {
   -webkit-appearance: none;
   padding: .5rem;
   border-radius: 0px;
-  border: 1px solid #181a1b;
-  background-color: #1d1f20;
+  border: 1px solid #1d1f20;
+  background-color: #222425;
   transition: background-color .3s; }
   select:focus, input:not([type='checkbox']):focus, textarea:focus, button:focus {
-    background-color: #181a1b; }
+    background-color: #1d1f20; }
 
 textarea {
   line-height: 1.4em; }
@@ -488,15 +489,15 @@ button {
     width: 100%;
     height: 2.8rem; }
   .switch label {
-    color: #464a4e;
+    color: #52575b;
     position: relative;
     display: block;
     cursor: pointer;
     width: 100%;
     height: 2.8rem;
     padding: .5rem;
-    border: 1px solid #181a1b;
-    background-color: #181a1b; }
+    border: 1px solid #1d1f20;
+    background-color: #1d1f20; }
     .switch label span {
       display: block;
       float: left;
@@ -506,7 +507,7 @@ button {
     color: white;
     text-align: center;
     padding-top: .5rem;
-    background-color: #1d1f20;
+    background-color: #222425;
     border: 1px solid transparent;
     display: block;
     position: absolute;
@@ -592,8 +593,8 @@ button {
     float: left;
     z-index: 1;
     text-align: center;
-    background-color: #2c2e30;
-    border-right: 1px solid #242628; }
+    background-color: #303336;
+    border-right: 1px solid #292b2e; }
     .schedule .scale-time li {
       height: 61px;
       /*6rem + 1px */
@@ -608,21 +609,21 @@ button {
       top: 1803.2px;
       border: none;
       background-color: white;
-      color: #181a1b;
+      color: #1d1f20;
       width: 100%;
       height: auto;
       padding: .3rem 0; }
   .schedule .scale-rooms {
-    height: 5rem;
+    height: 3.5rem;
     width: 240rem;
     margin-left: 5rem;
-    background-color: #333638;
-    border-bottom: 1px solid #2c2e30; }
+    background-color: #3d4043;
+    border-bottom: 1px solid #303336; }
     .schedule .scale-rooms li {
-      height: 5rem;
+      height: 3.5rem;
       width: 20rem;
       float: left;
-      padding: 2.5rem 0 0 1rem; }
+      padding: 1.3rem 0 0 1rem; }
       .schedule .scale-rooms li abbr {
         opacity: .6; }
         .schedule .scale-rooms li abbr:before {
@@ -632,15 +633,15 @@ button {
   .schedule .scale-overlay {
     height: 5rem;
     width: 5rem;
-    background: linear-gradient(#2c2e30 30%, transparent 130%);
+    background: linear-gradient(#303336 30%, transparent 130%);
     z-index: 2; }
   .schedule .timetable-container {
-    margin: 5rem 0 0 5rem;
+    margin: 3.5rem 0 0 5rem;
     overflow: hidden;
     position: relative; }
   .schedule .timetable {
     height: 288rem;
-    background-color: #333638; }
+    background-color: #3d4043; }
   .schedule .column {
     float: left;
     width: 20rem;
@@ -649,7 +650,7 @@ button {
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    border-right: 1px solid #2c2e30; }
+    border-right: 1px solid #303336; }
     .schedule .column.active {
       width: 80rem; }
     .schedule .column .column-main {
@@ -683,7 +684,7 @@ button {
       position: relative;
       flex-grow: 0;
       flex-shrink: 0;
-      background-color: #181a1b; }
+      background-color: #1d1f20; }
       .schedule .column .column-details .iScrollVerticalScrollbar {
         right: 10px;
         top: 10px;
@@ -721,7 +722,7 @@ button {
         flex-shrink: 0;
         width: 20rem;
         overflow: hidden;
-        border-right: 1px solid #1d1f20; }
+        border-right: 1px solid #222425; }
         .schedule .center-side .content .open-surgeries .new-card {
           transition: margin-top 1s; }
       .schedule .center-side .content .add-surgery {
@@ -740,8 +741,8 @@ button {
   width: 100%;
   position: relative;
   border-radius: 3px;
-  background-color: #1d1f20;
-  color: #94999e;
+  background-color: #222425;
+  color: #999ea3;
   cursor: pointer;
   overflow: hidden;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25); }
@@ -829,7 +830,7 @@ button {
       .card-details-container .header .naht.active {
         opacity: 1; }
   .card-details-container .editing input:focus, .card-details-container .editing textarea:focus, .card-details-container .editing select:hover {
-    background-color: #2c2e30; }
+    background-color: #303336; }
   .card-details-container .timestamps:not(.editing) .next {
     opacity: 0;
     transition: opacity .3s; }
@@ -862,7 +863,7 @@ button {
         .card-details-container .barchart .barchart-bars div.inactive {
           opacity: .1; }
       .card-details-container .barchart .barchart-bars .state-4, .card-details-container .barchart .barchart-bars .state-6, .card-details-container .barchart .barchart-bars .state-8, .card-details-container .barchart .barchart-bars .state-10, .card-details-container .barchart .barchart-bars .state-11 {
-        border-left: 3px solid #181a1b; }
+        border-left: 3px solid #1d1f20; }
     .card-details-container .barchart .barchart-legend {
       text-align: center;
       padding-top: 2rem;
@@ -889,7 +890,7 @@ button {
     padding-right: 2.5rem;
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
-    border-right: 1px dotted #1d1f20; }
+    border-right: 1px dotted #222425; }
   .add-surgery .surgery-data {
     width: 40rem;
     flex-grow: 0;
@@ -926,15 +927,15 @@ button {
   align-items: center;
   padding: 0 1rem; }
 .barchart .legend .text-state-4, .barchart .legend .text-state-6, .barchart .legend .text-state-8, .barchart .legend .text-state-10, .barchart .legend .text-state-11 {
-  border-left: 1px solid #2c2e30; }
+  border-left: 1px solid #303336; }
 .barchart .scale {
   list-style: none;
   position: absolute; }
 .barchart .scale-time {
-  height: 5rem;
+  height: 3.5rem;
   width: 100%;
-  background-color: #2c2e30;
-  border-bottom: 1px solid #242628;
+  background-color: #303336;
+  border-bottom: 1px solid #292b2e;
   padding-left: 32.5rem;
   padding-right: 22.5rem; }
   .barchart .scale-time ul {
@@ -944,7 +945,7 @@ button {
       float: left;
       list-style: none;
       width: 11.11111%;
-      height: 4rem;
+      height: 2.5rem;
       margin-top: 1rem;
       border-left: 1px solid rgba(255, 255, 255, 0.05);
       padding-left: .5rem; }
@@ -960,18 +961,18 @@ button {
         margin-left: -1px;
         margin-top: -.3rem; }
 .barchart .chart-container {
-  margin-top: 5rem;
+  margin-top: 3.5rem;
   overflow: hidden;
   position: relative;
-  background-color: #333638; }
+  background-color: #3d4043; }
 .barchart .chart {
-  background-color: #333638;
+  background-color: #3d4043;
   padding: 0 2.5rem; }
 .barchart .room {
   display: flex;
   flex-direction: row;
-  background-color: #333638;
-  border-bottom: 1px solid #2c2e30; }
+  background-color: #3d4043;
+  border-bottom: 1px solid #303336; }
   .barchart .room:last-child {
     margin-bottom: 0; }
   .barchart .room .info, .barchart .room .patient, .barchart .room .barchart, .barchart .room .service {
@@ -1042,7 +1043,7 @@ button {
       height: 100%;
       float: left; }
     .barchart .barchart .barchart-bars .state-4, .barchart .barchart .barchart-bars .state-6, .barchart .barchart .barchart-bars .state-8, .barchart .barchart .barchart-bars .state-10, .barchart .barchart .barchart-bars .state-11 {
-      border-left: 1px solid #333638; }
+      border-left: 1px solid #3d4043; }
     .barchart .barchart .barchart-bars .legend {
       line-height: 4rem;
       padding-left: .7rem;
