@@ -2,7 +2,7 @@
 
 ![](readme/opms-3.jpg)
 
-**OPMS is an interface for managing a hospital’s surgery department. It is built around the needs of the users, that we interviewed prior to its design and development.**
+**OPMS is an interface for managing a hospital’s surgery department. It is built around the needs of the users, that we interviewed prior to its design and development.** (This is a student project in interaction design and only a prototype!)
 
 We only show the data that is necessary but always keep all data in reach in case it is needed. The user is guided and supported but not constrained or patronized. The interface is designed to be easy on the eyes and very clear about timeframes, states and the relationship between different parts of data.
 
